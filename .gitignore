@@ -1,0 +1,12 @@
+node_modules/
+dist/
+tmp/
+output/
+.DS_Store
+*.tsbuildinfo
+
+# Local planning and source-of-truth notes. These may contain private context.
+CONTENT.md
+CONTEXT.md
+CV-SOURCE.md
+DESIGN.md
