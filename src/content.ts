@@ -214,10 +214,10 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     work: {
-      eyebrow: '05 // SYSTEMS IN THE WILD',
+      eyebrow: '05 // SELECTED SYSTEMS IN THE WILD',
       title: 'L’AI conta quando cambia il lavoro reale.',
       intro:
-        'Tre sistemi, tre contesti diversi. Il filo comune è trasformare complessità e dati in decisioni più chiare.',
+        'Tre esempi tra i tanti sistemi che ho progettato e sviluppato. Contesti diversi, stesso filo conduttore: trasformare complessità e dati in decisioni più chiare.',
       cases: [
         {
           code: 'CASE_01',
@@ -401,10 +401,10 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     work: {
-      eyebrow: '05 // SYSTEMS IN THE WILD',
+      eyebrow: '05 // SELECTED SYSTEMS IN THE WILD',
       title: 'AI matters when it changes real work.',
       intro:
-        'Three systems, three different contexts. The common thread is turning complexity and data into clearer decisions.',
+        'Three examples from the many systems I have designed and built. Different contexts, same thread: turning complexity and data into clearer decisions.',
       cases: [
         {
           code: 'CASE_01',
