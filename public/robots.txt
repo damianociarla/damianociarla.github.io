@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://damianociarla.github.io/sitemap.xml
+Sitemap: https://damianociarla.dev/sitemap.xml
