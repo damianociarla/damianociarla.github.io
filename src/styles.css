@@ -593,10 +593,10 @@ button {
 }
 
 .metric-copy > p,
-.deliverart-main > p,
+.deliverart-main > p:not(.eyebrow),
 .sdk-proof p,
-.human-copy > p,
-.contact-heading > p {
+.human-copy > p:not(.eyebrow),
+.contact-heading > p:not(.eyebrow) {
   max-width: 39rem;
   margin: 2rem 0 0;
   color: #aeb1b0;
