@@ -262,6 +262,13 @@ export function WebGLStage({ progress, reducedMotion }: WebGLStageProps) {
     const isInteractiveTarget = (target: EventTarget | null) =>
       target instanceof Element && Boolean(target.closest('a, button, input, textarea, select, [role="button"]'));
 
+    const isSelectableTextTarget = (target: EventTarget | null) =>
+      target instanceof Element &&
+      Boolean(target.closest('h1, h2, h3, h4, h5, h6, p, li, dt, dd, blockquote, pre, code, small, time'));
+
+    const shouldPreservePointer = (target: EventTarget | null) =>
+      isInteractiveTarget(target) || isSelectableTextTarget(target);
+
     const isOverGlobe = (event: PointerEvent) => {
       const compact = window.innerWidth < 720;
       const centerX = window.innerWidth * (progress.current > 0.12 ? 0.82 : compact ? 0.79 : 0.7);
@@ -275,11 +282,11 @@ export function WebGLStage({ progress, reducedMotion }: WebGLStageProps) {
         return;
       }
 
-      root.classList.toggle('globe-hover', isOverGlobe(event) && !isInteractiveTarget(event.target));
+      root.classList.toggle('globe-hover', isOverGlobe(event) && !shouldPreservePointer(event.target));
     };
 
     const handlePointerDown = (event: PointerEvent) => {
-      if ((event.pointerType === 'mouse' && event.button !== 0) || isInteractiveTarget(event.target) || !isOverGlobe(event)) {
+      if ((event.pointerType === 'mouse' && event.button !== 0) || shouldPreservePointer(event.target) || !isOverGlobe(event)) {
         return;
       }
 

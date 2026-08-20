@@ -45,6 +45,10 @@ a {
   cursor: default;
 }
 
+:where(h1, h2, h3, h4, h5, h6, p, li, dt, dd, blockquote, pre, code, small, time) {
+  cursor: text;
+}
+
 html.globe-hover body {
   cursor: grab;
 }
