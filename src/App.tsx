@@ -9,8 +9,8 @@ const WebGLStage = lazy(() =>
 
 gsap.registerPlugin(ScrollTrigger);
 
-const personalMail =
-  'mailto:damiano.ciarla@gmail.com?subject=Ciao%20Damiano%2C%20parliamo';
+const personalContactUrl =
+  'https://mail.google.com/mail/?view=cm&fs=1&to=damiano.ciarla%40gmail.com&su=Portfolio%20conversation%20%2F%20Parliamo';
 
 function getInitialLanguage(): Language {
   const stored = window.localStorage.getItem('damiano-language');
@@ -244,7 +244,12 @@ function App() {
                 {text.hero.primary}
                 <ArrowIcon />
               </a>
-              <a className="action action-quiet" href={personalMail}>
+              <a
+                className="action action-quiet"
+                href={personalContactUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {text.hero.secondary}
               </a>
             </div>
@@ -428,7 +433,12 @@ function App() {
             <p>{text.contact.copy}</p>
           </div>
           <div className="contact-routes">
-            <a className="contact-route contact-route-primary reveal" href={personalMail}>
+            <a
+              className="contact-route contact-route-primary reveal"
+              href={personalContactUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               <span>{text.contact.personalLabel}</span>
               <h3>{text.contact.personalTitle}</h3>
               <p>{text.contact.personalCopy}</p>
@@ -462,7 +472,9 @@ function App() {
           >
             LinkedIn
           </a>
-          <a href={personalMail}>Email</a>
+          <a href={personalContactUrl} target="_blank" rel="noreferrer">
+            Email
+          </a>
         </div>
         <span>© {new Date().getFullYear()} Damiano Ciarla</span>
       </footer>
