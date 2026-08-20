@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Damiano Ciarla — Portfolio moved</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="Damiano Ciarla's portfolio is now available at damianociarla.dev." />
+    <link rel="canonical" href="https://damianociarla.dev/" />
+    <meta http-equiv="refresh" content="0; url=https://damianociarla.dev/" />
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        background: #07090b;
+        color: #f7f6f2;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+      }
+
+      a {
+        color: #f3a63a;
+      }
+    </style>
+    <script>
+      const destination = new URL('https://damianociarla.dev');
+      destination.pathname = window.location.pathname;
+      destination.search = window.location.search;
+      destination.hash = window.location.hash;
+      window.location.replace(destination.toString());
+    </script>
+  </head>
+  <body>
+    <p>Portfolio moved to <a href="https://damianociarla.dev/">damianociarla.dev</a>.</p>
+  </body>
+</html>
