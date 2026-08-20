@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from shutil import copy2
 from typing import Iterable
 
 from reportlab.lib.colors import HexColor
@@ -11,6 +12,7 @@ from reportlab.pdfgen.canvas import Canvas
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf"
+PUBLIC_CV = ROOT / "public" / "cv"
 PAGE_W, PAGE_H = A4
 MARGIN_X = 46
 TOP = PAGE_H - 44
@@ -26,11 +28,11 @@ BLUE = HexColor("#167BC0")
 CONTENT = {
     "it": {
         "file": "damiano-ciarla-cv-it.pdf",
-        "role": "TECHNICAL ENTREPRENEUR  /  AI PROGRAMMER",
+        "role": "TECHNICAL LEADER  /  SOFTWARE ARCHITECT  /  AI ENGINEER",
         "summary": (
-            "Vent'anni nel software tra leadership tecnica, architetture, prodotti e impresa. "
-            "Ho co-fondato una startup acquisita da TeamSystem e oggi porto AI, TypeScript e "
-            "sistemi distribuiti dentro problemi operativi reali, restando hands-on."
+            "Technical leader e software architect hands-on con vent'anni di esperienza. Guido "
+            "modernizzazioni end-to-end, trasformo architetture in piattaforme affidabili e porto l'AI "
+            "dentro prodotti reali. Ho co-fondato una startup acquisita da TeamSystem."
         ),
         "location": "Roma, Italia  /  remote anywhere",
         "sections": {
@@ -38,6 +40,7 @@ CONTENT = {
             "experience": "ESPERIENZA SELEZIONATA",
             "impact": "IMPATTO",
             "capabilities": "CAPACITA'",
+            "selected": "SISTEMI E RISULTATI",
             "earlier": "ESPERIENZA PRECEDENTE",
             "opensource": "OPEN SOURCE",
             "education": "FORMAZIONE",
@@ -46,35 +49,60 @@ CONTENT = {
         "current": [
             (
                 "2025 - oggi",
-                "Founder  /  ErinTechLabs",
-                "Software custom, integrazioni e AI applicata. Guida tecnica e delivery di prodotti "
-                "costruiti attorno a processi aziendali reali.",
+                "Founder & AI Product Builder  /  ErinTechLabs",
+                "Guida tecnica e delivery hands-on di prodotti AI e software custom. Tra i progetti: "
+                "un motore di turnazione validato sul piano 2026 e Documento Facile, prodotto per "
+                "comprendere e confrontare documenti personali.",
             ),
             (
                 "2017 - oggi",
-                "Co-founder & technical leadership  /  Deliverart",
-                "CTO storico della piattaforma food-tech. Continuo a guidarne l'evoluzione tecnologica "
-                "dopo l'acquisizione completa da parte di TeamSystem nel 2026.",
+                "Co-founder & Technical Leader  /  Deliverart",
+                "CTO storico e guida dell'evoluzione end-to-end della piattaforma food-tech: prodotto, "
+                "architettura, cloud e delivery. Ho accompagnato Deliverart fino all'acquisizione completa "
+                "da TeamSystem nel 2026 e continuo a coordinarne l'evoluzione tecnica.",
             ),
             (
                 "2018 - oggi",
-                "IT Consultant  /  Verisure",
-                "Analisi e sviluppo di microservizi e sistemi martech per il mercato italiano: "
-                "centinaia di migliaia di lead l'anno su circa dieci sistemi e canali.",
+                "Senior IT Consultant  /  Verisure Italia",
+                "Consulenza continuativa su sistemi business-critical di lead acquisition. Contribuisco "
+                "ad analisi, architettura e sviluppo di flussi multicanale, con focus su automazione, "
+                "affidabilità e riduzione della complessità operativa.",
             ),
         ],
         "impacts": [
-            ("99.7%", "vincoli soddisfatti\nnel fair scheduling"),
+            ("20+", "anni di software\ne delivery reale"),
+            ("99.7%", "vincoli soddisfatti\nnel piano 2026"),
             ("3.8M", "download npm\nnegli ultimi 12 mesi"),
-            ("100%", "Deliverart acquisita\nda TeamSystem"),
         ],
         "capabilities": [
             "Technical leadership",
-            "Architecture & platforms",
+            "Platform modernization",
             "Applied AI",
-            "Hands-on execution",
+            "Hands-on delivery",
         ],
-        "stack": "TypeScript  /  Node.js  /  React  /  API & SDK  /  AI-LLM  /  Agents  /  Cloud  /  Serverless",
+        "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  AI-LLM",
+        "selected": [
+            (
+                "Deliverart  /  Modernizzazione end-to-end",
+                "Ho guidato l'evoluzione progressiva dell'intera piattaforma mantenendo il prodotto "
+                "operativo: frontend moderni, API robuste, servizi containerizzati, test automatici, "
+                "pipeline CI/CD e SDK condivisi tra più domini.",
+                "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
+            ),
+            (
+                "Applied AI  /  Sistemi operativi",
+                "Ho progettato un motore di pianificazione che trasforma regole, vincoli ed equità in "
+                "turnazioni mensili bilanciate, oltre a prodotti AI per analizzare e confrontare documenti.",
+                "99.7% vincoli soddisfatti / piano 2026 / secondi invece di giorni-uomo",
+            ),
+            (
+                "Verisure Italia  /  Consulenza senior",
+                "Contribuisco a sistemi di lead acquisition business-critical attraverso analisi, sviluppo "
+                "e modernizzazione continua di flussi multicanale, con focus su automazione, affidabilità "
+                "e continuità operativa.",
+                "multicanale / automazione / affidabilità / continuità operativa",
+            ),
+        ],
         "earlier": [
             ("2016 - 2017", "Senior PHP Programmer", "CarPlanner"),
             ("2015 - 2016", "Senior PHP Developer / Symfony 2 Specialist", "DigiTouch S.p.A."),
@@ -94,11 +122,11 @@ CONTENT = {
     },
     "en": {
         "file": "damiano-ciarla-cv-en.pdf",
-        "role": "TECHNICAL ENTREPRENEUR  /  AI PROGRAMMER",
+        "role": "TECHNICAL LEADER  /  SOFTWARE ARCHITECT  /  AI ENGINEER",
         "summary": (
-            "Twenty years in software across technical leadership, architecture, products and business. "
-            "I co-founded a startup acquired by TeamSystem and now bring AI, TypeScript and distributed "
-            "systems into real operational problems while staying hands-on."
+            "Hands-on technical leader and software architect with twenty years of experience. I lead "
+            "end-to-end modernization, turn architectures into reliable platforms and bring AI into real "
+            "products. I co-founded a startup acquired by TeamSystem."
         ),
         "location": "Rome, Italy  /  remote anywhere",
         "sections": {
@@ -106,6 +134,7 @@ CONTENT = {
             "experience": "SELECTED EXPERIENCE",
             "impact": "IMPACT",
             "capabilities": "CAPABILITIES",
+            "selected": "SELECTED SYSTEMS & OUTCOMES",
             "earlier": "EARLIER EXPERIENCE",
             "opensource": "OPEN SOURCE",
             "education": "EDUCATION",
@@ -114,35 +143,60 @@ CONTENT = {
         "current": [
             (
                 "2025 - now",
-                "Founder  /  ErinTechLabs",
-                "Custom software, integrations and applied AI. Technical direction and delivery of products "
-                "built around real business operations.",
+                "Founder & AI Product Builder  /  ErinTechLabs",
+                "Technical direction and hands-on delivery of AI products and custom software. Projects "
+                "include a scheduling engine validated across the 2026 plan and Documento Facile, a "
+                "product for understanding and comparing personal documents.",
             ),
             (
                 "2017 - now",
-                "Co-founder & technical leadership  /  Deliverart",
-                "Historical CTO of the food-tech platform. I continue to guide its technological evolution "
-                "after TeamSystem completed its acquisition in 2026.",
+                "Co-founder & Technical Leader  /  Deliverart",
+                "Historical CTO and leader of the food-tech platform's end-to-end evolution across product, "
+                "architecture, cloud and delivery. I led Deliverart through its full acquisition by "
+                "TeamSystem in 2026 and continue to guide its technical evolution.",
             ),
             (
                 "2018 - now",
-                "IT Consultant  /  Verisure",
-                "Analysis and development of microservices and martech systems for Italy: hundreds of "
-                "thousands of leads per year across roughly ten systems and channels.",
+                "Senior IT Consultant  /  Verisure Italy",
+                "Long-term consulting on business-critical lead acquisition systems. I contribute to "
+                "analysis, architecture and development of multichannel flows, focusing on automation, "
+                "reliability and reduced operational complexity.",
             ),
         ],
         "impacts": [
-            ("99.7%", "constraints satisfied\nin fair scheduling"),
+            ("20+", "years of software\nand real delivery"),
+            ("99.7%", "constraints satisfied\nin the 2026 plan"),
             ("3.8M", "npm downloads\nin the last 12 months"),
-            ("100%", "Deliverart acquired\nby TeamSystem"),
         ],
         "capabilities": [
             "Technical leadership",
-            "Architecture & platforms",
+            "Platform modernization",
             "Applied AI",
-            "Hands-on execution",
+            "Hands-on delivery",
         ],
-        "stack": "TypeScript  /  Node.js  /  React  /  API & SDK  /  AI-LLM  /  Agents  /  Cloud  /  Serverless",
+        "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  AI-LLM",
+        "selected": [
+            (
+                "Deliverart  /  End-to-end modernization",
+                "I led the progressive evolution of the entire platform while keeping the product live: "
+                "modern frontends, robust APIs, containerized services, automated tests, CI/CD pipelines "
+                "and shared SDKs across multiple domains.",
+                "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
+            ),
+            (
+                "Applied AI  /  Operational systems",
+                "I designed a planning engine that turns rules, constraints and fairness into balanced "
+                "monthly schedules, alongside AI products for analyzing and comparing documents.",
+                "99.7% constraints satisfied / 2026 plan / seconds instead of person-days",
+            ),
+            (
+                "Verisure Italy  /  Senior consulting",
+                "I contribute to business-critical lead acquisition systems through analysis, development "
+                "and continuous modernization of multichannel flows, focusing on automation, reliability "
+                "and operational continuity.",
+                "multichannel / automation / reliability / operational continuity",
+            ),
+        ],
         "earlier": [
             ("2016 - 2017", "Senior PHP Programmer", "CarPlanner"),
             ("2015 - 2016", "Senior PHP Developer / Symfony 2 Specialist", "DigiTouch S.p.A."),
@@ -305,8 +359,24 @@ def draw_page_one(canvas: Canvas, content: dict) -> None:
 
 def draw_page_two(canvas: Canvas, content: dict) -> None:
     y = draw_header(canvas, content, 2)
-    label(canvas, content["sections"]["earlier"], MARGIN_X, y)
+    label(canvas, content["sections"]["selected"], MARGIN_X, y)
     y -= 22
+
+    for title, description, signal in content["selected"]:
+        canvas.setFillColor(INK)
+        canvas.setFont("Helvetica-Bold", 10.5)
+        canvas.drawString(MARGIN_X, y, title)
+        y -= 16
+        y = draw_wrapped(canvas, description, MARGIN_X, y, PAGE_W - MARGIN_X * 2, size=8.5, leading=11.5)
+        canvas.setFillColor(BLUE)
+        canvas.setFont("Courier", 6.3)
+        canvas.drawString(MARGIN_X, y, signal)
+        y -= 23
+
+    line(canvas, MARGIN_X, y, PAGE_W - MARGIN_X)
+    y -= 24
+    label(canvas, content["sections"]["earlier"], MARGIN_X, y)
+    y -= 20
 
     for dates, role, company in content["earlier"]:
         canvas.setFillColor(MUTED)
@@ -318,9 +388,8 @@ def draw_page_two(canvas: Canvas, content: dict) -> None:
         canvas.setFillColor(MUTED)
         canvas.setFont("Helvetica", 8.4)
         canvas.drawRightString(PAGE_W - MARGIN_X, y, company)
-        y -= 25
+        y -= 20
 
-    y -= 3
     line(canvas, MARGIN_X, y, PAGE_W - MARGIN_X)
     y -= 24
     label(canvas, content["sections"]["opensource"], MARGIN_X, y)
@@ -338,23 +407,20 @@ def draw_page_two(canvas: Canvas, content: dict) -> None:
     canvas.setFont("Helvetica-Bold", 10.5)
     canvas.drawString(MARGIN_X, y, content["education"])
 
-    y -= 38
+    y -= 31
     line(canvas, MARGIN_X, y, PAGE_W - MARGIN_X)
     y -= 24
     label(canvas, content["sections"]["details"], MARGIN_X, y)
     y -= 21
-    x = MARGIN_X
-    x = add_link(canvas, "damiano.ciarla@gmail.com", "mailto:damiano.ciarla@gmail.com", x, y) + 18
-    x = add_link(canvas, "linkedin.com/in/damianociarla", "https://www.linkedin.com/in/damianociarla/", x, y) + 18
+    x = add_link(canvas, "damianociarla.dev", "https://damianociarla.dev/", MARGIN_X, y) + 22
+    add_link(canvas, "damiano.ciarla@gmail.com", "mailto:damiano.ciarla@gmail.com", x, y)
+    y -= 18
+    x = add_link(canvas, "linkedin.com/in/damianociarla", "https://www.linkedin.com/in/damianociarla/", MARGIN_X, y) + 22
     add_link(canvas, "github.com/damianociarla", "https://github.com/damianociarla", x, y)
 
-    canvas.setFillColor(INK)
-    canvas.setFont("Helvetica-Bold", 22)
-    footer_lines = wrap(content["footer"], "Helvetica-Bold", 22, PAGE_W - MARGIN_X * 2)
-    footer_y = 118
-    for text_line in footer_lines:
-        canvas.drawString(MARGIN_X, footer_y, text_line)
-        footer_y -= 27
+    canvas.setFillColor(MUTED)
+    canvas.setFont("Helvetica-Bold", 7.5)
+    canvas.drawString(MARGIN_X, 48, content["footer"])
     canvas.setStrokeColor(BLUE)
     canvas.setLineWidth(2)
     canvas.line(MARGIN_X, 61, MARGIN_X + 72, 61)
@@ -367,7 +433,7 @@ def build(language: str) -> Path:
     canvas = Canvas(str(output), pagesize=A4, pageCompression=1)
     canvas.setTitle(f"Damiano Ciarla - CV ({language.upper()})")
     canvas.setAuthor("Damiano Ciarla")
-    canvas.setSubject("Technical Entrepreneur, AI Programmer and Software Architect")
+    canvas.setSubject("Technical Leader, Software Architect and AI Engineer")
     draw_page_one(canvas, content)
     canvas.showPage()
     draw_page_two(canvas, content)
@@ -376,5 +442,10 @@ def build(language: str) -> Path:
 
 
 if __name__ == "__main__":
+    PUBLIC_CV.mkdir(parents=True, exist_ok=True)
     for lang in ("it", "en"):
-        print(build(lang))
+        generated = build(lang)
+        published = PUBLIC_CV / generated.name
+        copy2(generated, published)
+        print(generated)
+        print(published)

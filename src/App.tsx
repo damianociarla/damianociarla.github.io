@@ -360,7 +360,7 @@ function App() {
             ))}
           </div>
           <p className="stack-line reveal">
-            TypeScript · Node.js · React · APIs · SDKs · AI/LLM · Agents · Cloud · Serverless
+            TypeScript · Next.js · Node.js · Symfony · API Platform · AWS · CI/CD · AI/LLM
           </p>
         </section>
 
@@ -428,24 +428,12 @@ function App() {
             <p>{text.contact.copy}</p>
           </div>
           <div className="contact-routes">
-            <a className="contact-route reveal" href={personalMail}>
+            <a className="contact-route contact-route-primary reveal" href={personalMail}>
               <span>{text.contact.personalLabel}</span>
               <h3>{text.contact.personalTitle}</h3>
               <p>{text.contact.personalCopy}</p>
               <code>$ {text.contact.personalAction}</code>
               <ArrowIcon />
-            </a>
-            <a
-              className="contact-route reveal"
-              href="https://erintechlabs.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>{text.contact.businessLabel}</span>
-              <h3>{text.contact.businessTitle}</h3>
-              <p>{text.contact.businessCopy}</p>
-              <code>{text.contact.businessAction}</code>
-              <ExternalIcon />
             </a>
           </div>
           <div className="cv-row reveal">

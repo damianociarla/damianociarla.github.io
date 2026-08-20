@@ -90,10 +90,6 @@ export type SiteCopy = {
     personalTitle: string;
     personalCopy: string;
     personalAction: string;
-    businessLabel: string;
-    businessTitle: string;
-    businessCopy: string;
-    businessAction: string;
     cvLabel: string;
     cvAction: string;
   };
@@ -103,9 +99,9 @@ export type SiteCopy = {
 export const copy: Record<Language, SiteCopy> = {
   it: {
     meta: {
-      title: 'Damiano Ciarla | Technical Entrepreneur & AI Programmer',
+      title: 'Damiano Ciarla | Technical Leader, Software Architect & AI Engineer',
       description:
-        'Vent’anni nel software tra leadership tecnica, startup, prodotti, architetture e AI applicata. Ancora con le mani nel codice.',
+        'Vent’anni nel software tra leadership tecnica, modernizzazione di piattaforme, startup acquisite e AI applicata. Sempre hands-on.',
     },
     nav: {
       story: 'Percorso',
@@ -126,10 +122,10 @@ export const copy: Record<Language, SiteCopy> = {
       'hands_on_mode............. always',
     ],
     hero: {
-      eyebrow: 'TECHNICAL ENTREPRENEUR // AI PROGRAMMER',
+      eyebrow: 'TECHNICAL LEADER // SOFTWARE ARCHITECT // AI ENGINEER',
       title: 'Damiano\nCiarla',
       body:
-        'Vent’anni nel software. Ho trasformato codice in prodotti, team e aziende. Oggi costruisco con l’AI, ancora con le mani nel codice.',
+        'Vent’anni nel software. Guido modernizzazioni, costruisco piattaforme e trasformo l’AI in prodotti reali. Sempre con le mani nel codice.',
       primary: 'Esplora il percorso',
       secondary: 'Parliamo',
       status: 'Roma / remote anywhere',
@@ -158,7 +154,7 @@ export const copy: Record<Language, SiteCopy> = {
           year: '2017—24',
           label: 'SCALE',
           title: 'Dal codice all’azienda',
-          copy: 'Co-fondo Deliverart e ne guido la tecnologia. Prodotto, team e business diventano un solo sistema da far evolvere.',
+          copy: 'Co-fondo Deliverart e ne guido l’evoluzione end-to-end: prodotto, architettura, cloud e delivery crescono come un solo sistema.',
           signal: 'code → product → company',
         },
         {
@@ -190,10 +186,10 @@ export const copy: Record<Language, SiteCopy> = {
         'Ho co-fondato Deliverart nel 2016 e l’ho guidata come CTO, trasformando la complessità del food delivery in una piattaforma operativa. Dopo l’acquisizione da parte di TeamSystem, continuo a guidarne l’evoluzione tecnologica dall’interno.',
       acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
       sdkLabel: 'COSA HO COSTRUITO',
-      sdkTitle: 'Una piattaforma SDK TypeScript per Deliverart.',
+      sdkTitle: 'Una piattaforma modernizzata senza fermare il prodotto.',
       sdkCopy:
-        'Ho progettato e sviluppato un ecosistema di SDK che offre a web app, servizi e integrazioni un accesso coerente ai domini del prodotto. Contratti tipizzati, validazione runtime e un’architettura a plugin permettono alla piattaforma di crescere senza diventare un monolite.',
-      sdkSignal: '1 piattaforma · più domini di prodotto',
+        'Frontend Next.js, API Symfony e API Platform, servizi su AWS ECS, test automatici e CI/CD. Un’evoluzione progressiva dell’intera piattaforma, con SDK TypeScript per mantenere coerenti domini, web app e integrazioni.',
+      sdkSignal: 'frontend · api · cloud · test · delivery',
     },
     capabilities: {
       eyebrow: 'COSA FACCIO',
@@ -206,8 +202,8 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           index: '02',
-          title: 'Architecture & platforms',
-          copy: 'API, SDK, integrazioni e sistemi complessi che restano leggibili mentre crescono.',
+          title: 'Platform modernization',
+          copy: 'Evoluzione progressiva di frontend, API, cloud e delivery senza fermare il prodotto.',
         },
         {
           index: '03',
@@ -223,7 +219,7 @@ export const copy: Record<Language, SiteCopy> = {
     },
     work: {
       eyebrow: 'SISTEMI SELEZIONATI',
-      title: 'L’AI conta quando cambia il lavoro reale.',
+      title: 'La tecnologia conta quando cambia il lavoro reale.',
       intro:
         'Tre esempi tra i tanti sistemi che ho progettato e sviluppato. Contesti diversi, stesso filo conduttore: trasformare complessità e dati in decisioni più chiare.',
       cases: [
@@ -255,14 +251,14 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           code: 'CASE_03',
-          eyebrow: 'VERISURE // MARTECH',
-          title: 'Lead acquisition su scala enterprise.',
+          eyebrow: 'VERISURE // CONSULENZA SENIOR',
+          title: 'Lead acquisition che cresce senza esporre la complessità.',
           copy:
-            'Dal 2018 analizzo e sviluppo sistemi che collegano canali, microservizi e processi marketing per il mercato italiano.',
+            'Dal 2018 contribuisco all’analisi, allo sviluppo e alla modernizzazione dei sistemi di lead acquisition per il mercato italiano. Il mio lavoro collega flussi multicanale e processi commerciali, con focus su automazione, affidabilità e continuità operativa.',
           metrics: [
-            { value: '100K+', label: 'lead ogni anno' },
-            { value: '≈10', label: 'sistemi e canali' },
-            { value: '8 anni', label: 'di evoluzione continua' },
+            { value: 'MULTICANALE', label: 'flussi connessi end-to-end' },
+            { value: 'AUTOMATION', label: 'meno attività manuali' },
+            { value: 'CONTINUITÀ', label: 'evoluzione senza fermare l’operatività' },
           ],
         },
       ],
@@ -276,17 +272,14 @@ export const copy: Record<Language, SiteCopy> = {
     },
     contact: {
       eyebrow: 'PARLIAMO',
-      title: 'Costruiamo qualcosa di ambizioso.',
+      title: 'Vuoi fare una chiacchierata?',
       copy:
-        'Un prodotto, una trasformazione tecnica o una conversazione che vale il tempo di entrambi.',
-      personalLabel: 'PERSONAL CHANNEL',
-      personalTitle: 'Vuoi offrirmi un lavoro?',
-      personalCopy: 'Ruoli interessanti, speaking, collaborazioni personali o semplicemente una buona conversazione.',
-      personalAction: 'hire damiano',
-      businessLabel: 'COMPANY CHANNEL',
-      businessTitle: 'Hai un sistema da sbloccare?',
-      businessCopy: 'Consulenza, software custom, integrazioni e AI applicata passano da ErinTechLabs.',
-      businessAction: 'Vai a ErinTechLabs',
+        'Hai un progetto interessante e vuoi parlarne? Pensi che possiamo collaborare? Scrivimi.',
+      personalLabel: 'OPEN CHANNEL',
+      personalTitle: 'Scrivimi.',
+      personalCopy:
+        'Lavoro, idee, prodotti, speaking o problemi tecnici difficili: parto sempre da una conversazione.',
+      personalAction: 'scrivimi',
       cvLabel: 'SERVE LA VERSIONE CLASSICA?',
       cvAction: 'Scarica il CV italiano',
     },
@@ -294,9 +287,9 @@ export const copy: Record<Language, SiteCopy> = {
   },
   en: {
     meta: {
-      title: 'Damiano Ciarla | Technical Entrepreneur & AI Programmer',
+      title: 'Damiano Ciarla | Technical Leader, Software Architect & AI Engineer',
       description:
-        'Twenty years in software across technical leadership, startups, products, architecture and applied AI. Still hands-on.',
+        'Twenty years in software across technical leadership, platform modernization, acquired startups and applied AI. Still hands-on.',
     },
     nav: {
       story: 'Story',
@@ -317,10 +310,10 @@ export const copy: Record<Language, SiteCopy> = {
       'hands_on_mode............. always',
     ],
     hero: {
-      eyebrow: 'TECHNICAL ENTREPRENEUR // AI PROGRAMMER',
+      eyebrow: 'TECHNICAL LEADER // SOFTWARE ARCHITECT // AI ENGINEER',
       title: 'Damiano\nCiarla',
       body:
-        'Twenty years in software. I turned code into products, teams and companies. Today I build with AI, still hands-on.',
+        'Twenty years in software. I lead modernization, build platforms and turn AI into real products. Still hands-on.',
       primary: 'Explore the story',
       secondary: 'Let’s talk',
       status: 'Rome / remote anywhere',
@@ -349,7 +342,7 @@ export const copy: Record<Language, SiteCopy> = {
           year: '2017—24',
           label: 'SCALE',
           title: 'From code to company',
-          copy: 'I co-found Deliverart and lead its technology. Product, team and business become one system to evolve.',
+          copy: 'I co-found Deliverart and lead its end-to-end evolution: product, architecture, cloud and delivery grow as one system.',
           signal: 'code → product → company',
         },
         {
@@ -381,10 +374,10 @@ export const copy: Record<Language, SiteCopy> = {
         'I co-founded Deliverart in 2016 and led it as CTO, turning food-delivery complexity into an operational platform. After its acquisition by TeamSystem, I continue to guide its technological evolution from within.',
       acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
       sdkLabel: 'WHAT I BUILT',
-      sdkTitle: 'A TypeScript SDK platform for Deliverart.',
+      sdkTitle: 'A platform modernized without stopping the product.',
       sdkCopy:
-        'I designed and built an SDK ecosystem that gives web apps, services and integrations a consistent way to access product domains. Typed contracts, runtime validation and a plugin architecture let the platform grow without becoming a monolith.',
-      sdkSignal: '1 platform · multiple product domains',
+        'Next.js frontends, Symfony and API Platform APIs, services on AWS ECS, automated tests and CI/CD. A progressive evolution of the whole platform, with TypeScript SDKs keeping domains, web apps and integrations consistent.',
+      sdkSignal: 'frontend · api · cloud · tests · delivery',
     },
     capabilities: {
       eyebrow: 'WHAT I DO',
@@ -397,8 +390,8 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           index: '02',
-          title: 'Architecture & platforms',
-          copy: 'APIs, SDKs, integrations and complex systems that stay legible as they grow.',
+          title: 'Platform modernization',
+          copy: 'Progressive evolution of frontends, APIs, cloud and delivery without stopping the product.',
         },
         {
           index: '03',
@@ -414,7 +407,7 @@ export const copy: Record<Language, SiteCopy> = {
     },
     work: {
       eyebrow: 'SELECTED SYSTEMS',
-      title: 'AI matters when it changes real work.',
+      title: 'Technology matters when it changes real work.',
       intro:
         'Three examples from the many systems I have designed and built. Different contexts, same thread: turning complexity and data into clearer decisions.',
       cases: [
@@ -446,14 +439,14 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           code: 'CASE_03',
-          eyebrow: 'VERISURE // MARTECH',
-          title: 'Enterprise-scale lead acquisition.',
+          eyebrow: 'VERISURE // SENIOR CONSULTING',
+          title: 'Lead acquisition that grows without exposing its complexity.',
           copy:
-            'Since 2018 I have analyzed and developed systems connecting channels, microservices and marketing operations for the Italian market.',
+            'Since 2018 I have contributed to the analysis, development and modernization of lead acquisition systems for the Italian market. My work connects multichannel flows and commercial processes, with a focus on automation, reliability and operational continuity.',
           metrics: [
-            { value: '100K+', label: 'leads every year' },
-            { value: '≈10', label: 'systems and channels' },
-            { value: '8 years', label: 'of continuous evolution' },
+            { value: 'MULTICHANNEL', label: 'flows connected end-to-end' },
+            { value: 'AUTOMATION', label: 'less manual work' },
+            { value: 'CONTINUITY', label: 'evolution without stopping operations' },
           ],
         },
       ],
@@ -467,17 +460,14 @@ export const copy: Record<Language, SiteCopy> = {
     },
     contact: {
       eyebrow: 'LET’S TALK',
-      title: 'Let’s build something ambitious.',
+      title: 'Want to have a chat?',
       copy:
-        'A product, a technical transformation or a conversation worth both our time.',
-      personalLabel: 'PERSONAL CHANNEL',
-      personalTitle: 'Want to offer me a job?',
-      personalCopy: 'Interesting roles, speaking, personal collaborations or simply a good conversation.',
-      personalAction: 'hire damiano',
-      businessLabel: 'COMPANY CHANNEL',
-      businessTitle: 'Have a system to unblock?',
-      businessCopy: 'Consulting, custom software, integrations and applied AI go through ErinTechLabs.',
-      businessAction: 'Visit ErinTechLabs',
+        'Have an interesting project you want to discuss? Think we could work together? Write to me.',
+      personalLabel: 'OPEN CHANNEL',
+      personalTitle: 'Write to me.',
+      personalCopy:
+        'Roles, ideas, products, speaking or difficult technical problems: I always start with a conversation.',
+      personalAction: 'start a conversation',
       cvLabel: 'NEED THE CLASSIC VERSION?',
       cvAction: 'Download the English CV',
     },
