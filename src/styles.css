@@ -45,6 +45,16 @@ a {
   cursor: default;
 }
 
+html.globe-hover body {
+  cursor: grab;
+}
+
+html.globe-dragging body,
+html.globe-dragging body * {
+  cursor: grabbing !important;
+  user-select: none;
+}
+
 a,
 button {
   -webkit-tap-highlight-color: transparent;

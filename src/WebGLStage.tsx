@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
 type WebGLStageProps = {
@@ -9,11 +9,95 @@ type WebGLStageProps = {
 
 type CoreProps = WebGLStageProps;
 
+type GlobeInteractionState = {
+  active: boolean;
+  activity: number;
+  lastX: number;
+  lastY: number;
+  rotationX: number;
+  rotationY: number;
+  velocityX: number;
+  velocityY: number;
+};
+
+type InteractiveCoreProps = CoreProps & {
+  interaction: GlobeInteractionController;
+};
+
 const amber = new THREE.Color('#f3a63a');
 const blue = new THREE.Color('#39a9ff');
 const ice = new THREE.Color('#bde7ff');
 
-function TechnologyCore({ progress, reducedMotion }: CoreProps) {
+class GlobeInteractionController {
+  private state: GlobeInteractionState = {
+    active: false,
+    activity: 0,
+    lastX: 0,
+    lastY: 0,
+    rotationX: 0,
+    rotationY: 0,
+    velocityX: 0,
+    velocityY: 0,
+  };
+
+  get active() {
+    return this.state.active;
+  }
+
+  begin(x: number, y: number) {
+    this.state.active = true;
+    this.state.lastX = x;
+    this.state.lastY = y;
+    this.state.velocityX = 0;
+    this.state.velocityY = 0;
+  }
+
+  move(x: number, y: number) {
+    const deltaX = THREE.MathUtils.clamp(x - this.state.lastX, -70, 70);
+    const deltaY = THREE.MathUtils.clamp(y - this.state.lastY, -70, 70);
+    const horizontal = deltaX * 0.0065;
+    const vertical = deltaY * 0.0048;
+
+    this.state.rotationY += horizontal;
+    this.state.rotationX += vertical;
+    this.state.velocityY = horizontal * 0.72;
+    this.state.velocityX = vertical * 0.72;
+    this.state.activity = Math.min(1, this.state.activity + (Math.abs(deltaX) + Math.abs(deltaY)) * 0.012);
+    this.state.lastX = x;
+    this.state.lastY = y;
+  }
+
+  release() {
+    this.state.active = false;
+  }
+
+  cancel() {
+    this.state.active = false;
+    this.state.velocityX = 0;
+    this.state.velocityY = 0;
+  }
+
+  advance(delta: number) {
+    if (!this.state.active) {
+      const damping = Math.pow(0.91, delta * 60);
+      const frameScale = delta * 60;
+      this.state.rotationX += this.state.velocityX * frameScale;
+      this.state.rotationY += this.state.velocityY * frameScale;
+      this.state.velocityX *= damping;
+      this.state.velocityY *= damping;
+    }
+
+    this.state.activity = THREE.MathUtils.lerp(
+      this.state.activity,
+      this.state.active ? 1 : 0,
+      this.state.active ? 0.16 : 0.035,
+    );
+    this.state.rotationX = THREE.MathUtils.clamp(this.state.rotationX, -0.95, 0.95);
+    return this.state;
+  }
+}
+
+function TechnologyCore({ progress, reducedMotion, interaction }: InteractiveCoreProps) {
   const group = useRef<THREE.Group>(null);
   const core = useRef<THREE.Mesh>(null);
   const shell = useRef<THREE.Mesh>(null);
@@ -23,6 +107,7 @@ function TechnologyCore({ progress, reducedMotion }: CoreProps) {
   const ringA = useRef<THREE.Mesh>(null);
   const ringB = useRef<THREE.Mesh>(null);
   const targetColor = useMemo(() => new THREE.Color(), []);
+  const automaticRotation = useRef(0);
 
   const particlePositions = useMemo(() => {
     const count = 620;
@@ -46,15 +131,17 @@ function TechnologyCore({ progress, reducedMotion }: CoreProps) {
     const value = reducedMotion ? 0.82 : progress.current;
     const time = state.clock.getElapsedTime();
     const colorMix = THREE.MathUtils.smoothstep(value, 0.42, 0.8);
+    const drag = interaction.advance(delta);
+    automaticRotation.current += delta * (0.07 + value * 0.11 + drag.activity * 0.08);
 
     targetColor.copy(amber).lerp(blue, colorMix);
 
     if (group.current) {
-      group.current.rotation.y += delta * (0.07 + value * 0.11);
+      group.current.rotation.y = automaticRotation.current + drag.rotationY;
       group.current.rotation.x = THREE.MathUtils.lerp(
         group.current.rotation.x,
-        -0.18 + state.pointer.y * 0.08,
-        0.025,
+        -0.18 + state.pointer.y * 0.08 + drag.rotationX,
+        drag.active ? 0.16 : 0.045,
       );
       group.current.position.x = THREE.MathUtils.lerp(
         group.current.position.x,
@@ -65,14 +152,15 @@ function TechnologyCore({ progress, reducedMotion }: CoreProps) {
     }
 
     if (core.current) {
-      const pulse = 1 + Math.sin(time * 1.1) * (reducedMotion ? 0 : 0.025);
+      const pulse =
+        1 + Math.sin(time * (1.1 + drag.activity * 1.4)) * (reducedMotion ? 0 : 0.025 + drag.activity * 0.012);
       core.current.scale.setScalar(pulse * (0.9 + value * 0.18));
-      core.current.rotation.z = time * 0.035;
+      core.current.rotation.z = time * (0.035 + drag.activity * 0.085);
     }
 
     if (shell.current) {
-      shell.current.rotation.x = -time * 0.04;
-      shell.current.rotation.z = time * 0.055;
+      shell.current.rotation.x = -time * (0.04 + drag.activity * 0.12);
+      shell.current.rotation.z = time * (0.055 + drag.activity * 0.16);
       shell.current.scale.setScalar(1.08 + value * 0.1);
     }
 
@@ -90,16 +178,16 @@ function TechnologyCore({ progress, reducedMotion }: CoreProps) {
     }
 
     if (particles.current) {
-      particles.current.rotation.y = -time * (0.018 + value * 0.02);
-      particles.current.rotation.z = time * 0.012;
+      particles.current.rotation.y = -time * (0.018 + value * 0.02 + drag.activity * 0.06);
+      particles.current.rotation.z = time * (0.012 + drag.activity * 0.04);
       particles.current.scale.setScalar(0.88 + value * 0.34);
     }
 
     if (ringA.current && ringB.current) {
-      ringA.current.rotation.z = time * 0.11;
-      ringB.current.rotation.x = time * -0.08;
-      ringA.current.visible = value > 0.34;
-      ringB.current.visible = value > 0.57;
+      ringA.current.rotation.z = time * (0.11 + drag.activity * 0.42);
+      ringB.current.rotation.x = time * (-0.08 - drag.activity * 0.36);
+      ringA.current.visible = value > 0.34 || drag.activity > 0.06;
+      ringB.current.visible = value > 0.57 || drag.activity > 0.18;
     }
   });
 
@@ -162,6 +250,87 @@ function TechnologyCore({ progress, reducedMotion }: CoreProps) {
 }
 
 export function WebGLStage({ progress, reducedMotion }: WebGLStageProps) {
+  const interaction = useMemo(() => new GlobeInteractionController(), []);
+
+  useEffect(() => {
+    if (reducedMotion) {
+      return undefined;
+    }
+
+    const root = document.documentElement;
+
+    const isInteractiveTarget = (target: EventTarget | null) =>
+      target instanceof Element && Boolean(target.closest('a, button, input, textarea, select, [role="button"]'));
+
+    const isOverGlobe = (event: PointerEvent) => {
+      const compact = window.innerWidth < 720;
+      const centerX = window.innerWidth * (progress.current > 0.12 ? 0.82 : compact ? 0.79 : 0.7);
+      const centerY = window.innerHeight * 0.5;
+      const radius = Math.min(window.innerWidth, window.innerHeight) * (compact ? 0.48 : 0.34);
+      return Math.hypot(event.clientX - centerX, event.clientY - centerY) <= radius;
+    };
+
+    const updateHover = (event: PointerEvent) => {
+      if (interaction.active || event.pointerType === 'touch') {
+        return;
+      }
+
+      root.classList.toggle('globe-hover', isOverGlobe(event) && !isInteractiveTarget(event.target));
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if ((event.pointerType === 'mouse' && event.button !== 0) || isInteractiveTarget(event.target) || !isOverGlobe(event)) {
+        return;
+      }
+
+      interaction.begin(event.clientX, event.clientY);
+      root.classList.remove('globe-hover');
+      root.classList.add('globe-dragging');
+      event.preventDefault();
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!interaction.active) {
+        updateHover(event);
+        return;
+      }
+
+      interaction.move(event.clientX, event.clientY);
+      event.preventDefault();
+    };
+
+    const stopDragging = (event: PointerEvent) => {
+      if (!interaction.active) {
+        updateHover(event);
+        return;
+      }
+
+      interaction.release();
+      root.classList.remove('globe-dragging');
+      updateHover(event);
+    };
+
+    const clearInteraction = () => {
+      interaction.cancel();
+      root.classList.remove('globe-hover', 'globe-dragging');
+    };
+
+    window.addEventListener('pointerdown', handlePointerDown, { passive: false });
+    window.addEventListener('pointermove', handlePointerMove, { passive: false });
+    window.addEventListener('pointerup', stopDragging);
+    window.addEventListener('pointercancel', clearInteraction);
+    window.addEventListener('blur', clearInteraction);
+
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', stopDragging);
+      window.removeEventListener('pointercancel', clearInteraction);
+      window.removeEventListener('blur', clearInteraction);
+      clearInteraction();
+    };
+  }, [interaction, progress, reducedMotion]);
+
   return (
     <div className="webgl-stage" aria-hidden="true">
       <Canvas
@@ -173,7 +342,7 @@ export function WebGLStage({ progress, reducedMotion }: WebGLStageProps) {
         <ambientLight intensity={0.4} />
         <directionalLight position={[-4, 3, 5]} intensity={2.2} color="#fff3d6" />
         <pointLight position={[3, -1, 2]} intensity={5} color="#168ee8" distance={7} />
-        <TechnologyCore progress={progress} reducedMotion={reducedMotion} />
+        <TechnologyCore progress={progress} reducedMotion={reducedMotion} interaction={interaction} />
       </Canvas>
     </div>
   );
