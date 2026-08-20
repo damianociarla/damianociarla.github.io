@@ -603,6 +603,17 @@ button {
   margin-top: 2rem;
 }
 
+.open-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-top: 2.2rem;
+}
+
+.open-source-links .text-link {
+  margin-top: 0;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;

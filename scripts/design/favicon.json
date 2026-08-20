@@ -1,0 +1,61 @@
+{
+  "canvas": {
+    "width": 64,
+    "height": 64,
+    "viewBox": "0 0 64 64",
+    "units": "px",
+    "background": "#07090B"
+  },
+  "defs": {
+    "gradients": [
+      {
+        "type": "linear",
+        "id": "mark",
+        "x1": 0,
+        "y1": 0,
+        "x2": 1,
+        "y2": 1,
+        "stops": [
+          { "offset": "0%", "color": "#F0A23A" },
+          { "offset": "100%", "color": "#167BC0" }
+        ]
+      }
+    ]
+  },
+  "elements": [
+    {
+      "type": "rect",
+      "x": 1,
+      "y": 1,
+      "width": 62,
+      "height": 62,
+      "rx": 14,
+      "ry": 14,
+      "style": { "fill": "#07090B", "stroke": "#2D3439", "strokeWidth": 2 }
+    },
+    {
+      "type": "polygon",
+      "points": [[32,10],[51,24],[44,48],[20,48],[13,24]],
+      "style": { "fill": "url(#mark)", "opacity": 0.84 }
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 34,
+      "text": "DC",
+      "anchor": "middle",
+      "baseline": "middle",
+      "style": {
+        "fill": "#F7F6F2",
+        "fontFamily": "DejaVu Sans Mono, monospace",
+        "fontSize": 18,
+        "fontWeight": 700,
+        "letterSpacing": -1
+      }
+    }
+  ],
+  "metadata": {
+    "title": "Damiano Ciarla mark",
+    "desc": "DC monogram over a technology core."
+  }
+}

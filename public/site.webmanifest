@@ -1,0 +1,16 @@
+{
+  "name": "Damiano Ciarla",
+  "short_name": "Damiano",
+  "description": "Technical Entrepreneur, Software Architect and AI Programmer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090b",
+  "theme_color": "#07090b",
+  "icons": [
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

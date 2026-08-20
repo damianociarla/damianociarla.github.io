@@ -51,6 +51,7 @@ export type SiteCopy = {
     copy: string;
     note: string;
     link: string;
+    docsLink: string;
   };
   deliverart: {
     eyebrow: string;
@@ -99,9 +100,9 @@ export type SiteCopy = {
 export const copy: Record<Language, SiteCopy> = {
   it: {
     meta: {
-      title: 'Damiano Ciarla - Technical Entrepreneur',
+      title: 'Damiano Ciarla | Technical Entrepreneur & AI Programmer',
       description:
-        'Vent’anni nel software tra leadership tecnica, prodotti, startup, acquisizioni e AI applicata.',
+        'Vent’anni nel software tra leadership tecnica, startup, prodotti, architetture e AI applicata. Ancora con le mani nel codice.',
     },
     nav: {
       story: 'Percorso',
@@ -167,14 +168,15 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     openSource: {
-      eyebrow: '02 // OPEN SOURCE, LONG TAIL',
+      eyebrow: '02 // OPEN SOURCE, ACTIVE AGAIN',
       value: '3.8M',
-      unit: 'download / 12 mesi',
-      title: 'Codice scritto nel 2012. Ancora scaricato milioni di volte.',
+      unit: 'download legacy / 12 mesi',
+      title: 'Dal 2012 al 2026. Il legacy si evolve.',
       copy:
-        'Ho creato node-ffmpeg per rendere più semplice lavorare con i video da Node.js. È un artefatto di un’altra era che continua a produrre valore.',
-      note: 'Snapshot agosto 2026 · 629 stelle · 140 fork',
+        'I 3,8 milioni di download appartengono alla versione storica. Nel 2026 ho modernizzato node-ffmpeg in TypeScript e rilasciato la v1.0.0 per Node.js 24, ESM e CommonJS, con una nuova suite di test e documentazione completa.',
+      note: 'v1.0.0 · rilasciata il 20 agosto 2026 · 629 stelle · 140 fork',
       link: 'Vedi il repository',
+      docsLink: 'Esplora la documentazione',
     },
     deliverart: {
       eyebrow: '03 // FOUNDER MODE',
@@ -286,9 +288,9 @@ export const copy: Record<Language, SiteCopy> = {
   },
   en: {
     meta: {
-      title: 'Damiano Ciarla - Technical Entrepreneur',
+      title: 'Damiano Ciarla | Technical Entrepreneur & AI Programmer',
       description:
-        'Twenty years in software across technical leadership, products, startups, acquisition and applied AI.',
+        'Twenty years in software across technical leadership, startups, products, architecture and applied AI. Still hands-on.',
     },
     nav: {
       story: 'Story',
@@ -354,14 +356,15 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     openSource: {
-      eyebrow: '02 // OPEN SOURCE, LONG TAIL',
+      eyebrow: '02 // OPEN SOURCE, ACTIVE AGAIN',
       value: '3.8M',
-      unit: 'downloads / 12 months',
-      title: 'Code written in 2012. Still downloaded millions of times.',
+      unit: 'legacy downloads / 12 months',
+      title: 'From 2012 to 2026. Legacy, evolved.',
       copy:
-        'I created node-ffmpeg to make video processing easier from Node.js. It is an artifact from another era that keeps producing value.',
-      note: 'August 2026 snapshot · 629 stars · 140 forks',
+        'The 3.8 million downloads belong to the historical release. In 2026, I modernized node-ffmpeg in TypeScript and released v1.0.0 for Node.js 24, ESM and CommonJS, with a new test suite and complete documentation.',
+      note: 'v1.0.0 · released August 20, 2026 · 629 stars · 140 forks',
       link: 'View the repository',
+      docsLink: 'Explore the documentation',
     },
     deliverart: {
       eyebrow: '03 // FOUNDER MODE',

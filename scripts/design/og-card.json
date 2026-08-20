@@ -1,0 +1,224 @@
+{
+  "canvas": {
+    "width": 1200,
+    "height": 630,
+    "viewBox": "0 0 1200 630",
+    "units": "px",
+    "background": "#07090B"
+  },
+  "defs": {
+    "gradients": [
+      {
+        "type": "linear",
+        "id": "coreGlow",
+        "x1": 0,
+        "y1": 0,
+        "x2": 1,
+        "y2": 1,
+        "stops": [
+          { "offset": "0%", "color": "#F0A23A" },
+          { "offset": "48%", "color": "#D98516" },
+          { "offset": "100%", "color": "#167BC0" }
+        ]
+      },
+      {
+        "type": "linear",
+        "id": "edgeGlow",
+        "x1": 0,
+        "y1": 1,
+        "x2": 1,
+        "y2": 0,
+        "stops": [
+          { "offset": "0%", "color": "#167BC0", "opacity": 0.12 },
+          { "offset": "52%", "color": "#07090B", "opacity": 0 },
+          { "offset": "100%", "color": "#D98516", "opacity": 0.22 }
+        ]
+      }
+    ]
+  },
+  "elements": [
+    {
+      "type": "rect",
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 630,
+      "style": { "fill": "url(#edgeGlow)" }
+    },
+    {
+      "type": "group",
+      "id": "grid",
+      "style": { "stroke": "#FFFFFF", "strokeWidth": 1, "opacity": 0.055 },
+      "children": [
+        { "type": "line", "x1": 70, "y1": 0, "x2": 70, "y2": 630 },
+        { "type": "line", "x1": 230, "y1": 0, "x2": 230, "y2": 630 },
+        { "type": "line", "x1": 390, "y1": 0, "x2": 390, "y2": 630 },
+        { "type": "line", "x1": 550, "y1": 0, "x2": 550, "y2": 630 },
+        { "type": "line", "x1": 710, "y1": 0, "x2": 710, "y2": 630 },
+        { "type": "line", "x1": 870, "y1": 0, "x2": 870, "y2": 630 },
+        { "type": "line", "x1": 1030, "y1": 0, "x2": 1030, "y2": 630 },
+        { "type": "line", "x1": 0, "y1": 76, "x2": 1200, "y2": 76 },
+        { "type": "line", "x1": 0, "y1": 236, "x2": 1200, "y2": 236 },
+        { "type": "line", "x1": 0, "y1": 396, "x2": 1200, "y2": 396 },
+        { "type": "line", "x1": 0, "y1": 556, "x2": 1200, "y2": 556 }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "technology-core",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 952,
+          "cy": 306,
+          "r": 188,
+          "style": { "fill": "none", "stroke": "#D98516", "strokeWidth": 1, "opacity": 0.3 }
+        },
+        {
+          "type": "circle",
+          "cx": 952,
+          "cy": 306,
+          "r": 145,
+          "style": { "fill": "none", "stroke": "#167BC0", "strokeWidth": 2, "opacity": 0.42 }
+        },
+        {
+          "type": "ellipse",
+          "cx": 952,
+          "cy": 306,
+          "rx": 205,
+          "ry": 72,
+          "style": { "fill": "none", "stroke": "#EEF0EC", "strokeWidth": 1, "opacity": 0.22 }
+        },
+        {
+          "type": "ellipse",
+          "cx": 952,
+          "cy": 306,
+          "rx": 92,
+          "ry": 205,
+          "style": { "fill": "none", "stroke": "#EEF0EC", "strokeWidth": 1, "opacity": 0.18 }
+        },
+        {
+          "type": "polygon",
+          "points": [[952,146],[1080,232],[1031,392],[876,414],[820,250]],
+          "style": { "fill": "url(#coreGlow)", "stroke": "#F7F6F2", "strokeWidth": 2, "opacity": 0.88 }
+        },
+        {
+          "type": "polyline",
+          "points": [[952,146],[952,306],[1080,232],[952,306],[1031,392],[952,306],[876,414],[952,306],[820,250],[952,306]],
+          "style": { "fill": "none", "stroke": "#07090B", "strokeWidth": 2, "opacity": 0.58 }
+        },
+        {
+          "type": "circle",
+          "cx": 952,
+          "cy": 306,
+          "r": 8,
+          "style": { "fill": "#F7F6F2" }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "x": 72,
+      "y": 72,
+      "text": "TECHNICAL ENTREPRENEUR // AI PROGRAMMER",
+      "style": {
+        "fill": "#D98516",
+        "fontFamily": "DejaVu Sans Mono, monospace",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "letterSpacing": 2
+      }
+    },
+    {
+      "type": "text",
+      "x": 67,
+      "y": 230,
+      "text": "Damiano",
+      "style": {
+        "fill": "#F7F6F2",
+        "fontFamily": "DejaVu Sans, sans-serif",
+        "fontSize": 105,
+        "fontWeight": 700,
+        "letterSpacing": -5
+      }
+    },
+    {
+      "type": "text",
+      "x": 67,
+      "y": 330,
+      "text": "Ciarla",
+      "style": {
+        "fill": "#F7F6F2",
+        "fontFamily": "DejaVu Sans, sans-serif",
+        "fontSize": 105,
+        "fontWeight": 700,
+        "letterSpacing": -5
+      }
+    },
+    {
+      "type": "text",
+      "x": 72,
+      "y": 408,
+      "text": "20 YEARS IN SOFTWARE",
+      "style": {
+        "fill": "#B9BDBC",
+        "fontFamily": "DejaVu Sans Mono, monospace",
+        "fontSize": 22,
+        "fontWeight": 500,
+        "letterSpacing": 1
+      }
+    },
+    {
+      "type": "text",
+      "x": 72,
+      "y": 447,
+      "text": "LEADERSHIP · PRODUCTS · APPLIED AI",
+      "style": {
+        "fill": "#B9BDBC",
+        "fontFamily": "DejaVu Sans Mono, monospace",
+        "fontSize": 18,
+        "fontWeight": 500,
+        "letterSpacing": 0.6
+      }
+    },
+    {
+      "type": "line",
+      "x1": 72,
+      "y1": 530,
+      "x2": 590,
+      "y2": 530,
+      "style": { "stroke": "#32383D", "strokeWidth": 1 }
+    },
+    {
+      "type": "text",
+      "x": 72,
+      "y": 568,
+      "text": "damianociarla.github.io",
+      "style": {
+        "fill": "#F7F6F2",
+        "fontFamily": "DejaVu Sans Mono, monospace",
+        "fontSize": 17,
+        "fontWeight": 500,
+        "letterSpacing": 0.8
+      }
+    },
+    {
+      "type": "text",
+      "x": 1128,
+      "y": 570,
+      "text": "DC // 2006 -> AI",
+      "anchor": "end",
+      "style": {
+        "fill": "#D98516",
+        "fontFamily": "DejaVu Sans Mono, monospace",
+        "fontSize": 15,
+        "fontWeight": 600,
+        "letterSpacing": 1
+      }
+    }
+  ],
+  "metadata": {
+    "title": "Damiano Ciarla social preview",
+    "desc": "Social sharing card for Damiano Ciarla, technical entrepreneur and AI programmer."
+  }
+}

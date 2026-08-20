@@ -86,8 +86,8 @@ CONTENT = {
             ("2007", "Intern / Developer", "Web Site S.r.l."),
         ],
         "open_source": (
-            "node-ffmpeg - creato nel 2012 per semplificare l'uso di FFmpeg da Node.js. "
-            "Snapshot agosto 2026: 629 stelle, 140 fork e 3.8 milioni di download npm in dodici mesi."
+            "node-ffmpeg - 3.8 milioni di download npm in dodici mesi sulla release storica. "
+            "Nel 2026 l'ho modernizzato in TypeScript e rilasciato come v1.0.0 per Node.js 24, ESM e CommonJS."
         ),
         "education": "Diploma di Perito tecnico informatico  /  I.T.I.S. G. Vallauri",
         "footer": "Scrivo software dal 2006. Continuo a farlo perché è ancora il modo più diretto che conosco per cambiare le cose.",
@@ -154,8 +154,8 @@ CONTENT = {
             ("2007", "Intern / Developer", "Web Site S.r.l."),
         ],
         "open_source": (
-            "node-ffmpeg - created in 2012 to make FFmpeg easier to use from Node.js. "
-            "August 2026 snapshot: 629 stars, 140 forks and 3.8 million npm downloads in twelve months."
+            "node-ffmpeg - 3.8 million npm downloads in twelve months on the historical release. "
+            "In 2026 I modernized it in TypeScript and released v1.0.0 for Node.js 24, ESM and CommonJS."
         ),
         "education": "Diploma in Information Technology  /  I.T.I.S. G. Vallauri",
         "footer": "I have written software since 2006. I still do because it remains the most direct way I know to change things.",

@@ -293,15 +293,26 @@ function App() {
             <h2>{text.openSource.title}</h2>
             <p>{text.openSource.copy}</p>
             <span className="data-note">{text.openSource.note}</span>
-            <a
-              className="text-link"
-              href="https://github.com/damianociarla/node-ffmpeg"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {text.openSource.link}
-              <ExternalIcon />
-            </a>
+            <div className="open-source-links">
+              <a
+                className="text-link"
+                href="https://github.com/damianociarla/node-ffmpeg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {text.openSource.link}
+                <ExternalIcon />
+              </a>
+              <a
+                className="text-link"
+                href="https://damianociarla.github.io/node-ffmpeg/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {text.openSource.docsLink}
+                <ExternalIcon />
+              </a>
+            </div>
           </div>
         </section>
 
