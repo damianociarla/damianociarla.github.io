@@ -1,12 +1,20 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import '@fontsource-variable/manrope';
 import '@fontsource-variable/jetbrains-mono';
 import './styles.css';
 import App from './App';
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!;
+const isPrerendered = root.hasChildNodes();
+const application = (
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <App staticRender={isPrerendered} />
+  </StrictMode>
 );
+
+if (isPrerendered) {
+  hydrateRoot(root, application);
+} else {
+  createRoot(root).render(application);
+}

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { copy, type Language } from './content';
@@ -12,18 +12,21 @@ gsap.registerPlugin(ScrollTrigger);
 const personalContactUrl =
   'https://mail.google.com/mail/?view=cm&fs=1&to=damiano.ciarla%40gmail.com&su=Portfolio%20conversation%20%2F%20Parliamo';
 
+const useBrowserLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+
 function getInitialLanguage(): Language {
-  const stored = window.localStorage.getItem('damiano-language');
-  if (stored === 'it' || stored === 'en') return stored;
-  return window.navigator.language.toLowerCase().startsWith('it') ? 'it' : 'en';
+  if (typeof window === 'undefined') return 'it';
+  return window.location.pathname.endsWith('/en.html') ? 'en' : 'it';
 }
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(() =>
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    typeof window === 'undefined'
+      ? true
+      : window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   );
 
-  useLayoutEffect(() => {
+  useBrowserLayoutEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => setReduced(media.matches);
     media.addEventListener('change', update);
@@ -49,28 +52,27 @@ function ExternalIcon() {
   );
 }
 
-function App() {
-  const [language, setLanguage] = useState<Language>(getInitialLanguage);
+type AppProps = {
+  initialLanguage?: Language;
+  staticRender?: boolean;
+};
+
+export function App({ initialLanguage, staticRender = false }: AppProps) {
+  const [language] = useState<Language>(() => initialLanguage ?? getInitialLanguage());
+  const [showWebGL, setShowWebGL] = useState(!staticRender);
   const page = useRef<HTMLDivElement>(null);
   const scrollProgress = useRef(0);
   const bootPlayed = useRef(false);
   const reducedMotion = useReducedMotion();
   const text = useMemo(() => copy[language], [language]);
 
-  const changeLanguage = (next: Language) => {
-    setLanguage(next);
-    window.localStorage.setItem('damiano-language', next);
-  };
+  useEffect(() => {
+    if (!staticRender) return undefined;
+    const frame = window.requestAnimationFrame(() => setShowWebGL(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, [staticRender]);
 
-  useLayoutEffect(() => {
-    document.documentElement.lang = language;
-    document.title = text.meta.title;
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute('content', text.meta.description);
-  }, [language, text]);
-
-  useLayoutEffect(() => {
+  useBrowserLayoutEffect(() => {
     if (!page.current) return undefined;
 
     const context = gsap.context(() => {
@@ -177,9 +179,11 @@ function App() {
         {text.utility.skip}
       </a>
 
-      <Suspense fallback={<div className="webgl-stage webgl-loading" aria-hidden="true" />}>
-        <WebGLStage progress={scrollProgress} reducedMotion={reducedMotion} />
-      </Suspense>
+      {showWebGL ? (
+        <Suspense fallback={<div className="webgl-stage webgl-loading" aria-hidden="true" />}>
+          <WebGLStage progress={scrollProgress} reducedMotion={reducedMotion} />
+        </Suspense>
+      ) : null}
       <div className="ambient-grid" aria-hidden="true" />
       <div className="progress-rail" aria-hidden="true">
         <span />
@@ -207,23 +211,25 @@ function App() {
           <a href="#contact">{text.nav.contact}</a>
         </nav>
         <div className="language-switch" aria-label={text.utility.language}>
-          <button
-            type="button"
+          <a
+            href="/"
+            hrefLang="it"
+            lang="it"
             className={language === 'it' ? 'active' : ''}
-            onClick={() => changeLanguage('it')}
-            aria-pressed={language === 'it'}
+            aria-current={language === 'it' ? 'page' : undefined}
           >
             IT
-          </button>
+          </a>
           <span>/</span>
-          <button
-            type="button"
+          <a
+            href="/en.html"
+            hrefLang="en"
+            lang="en"
             className={language === 'en' ? 'active' : ''}
-            onClick={() => changeLanguage('en')}
-            aria-pressed={language === 'en'}
+            aria-current={language === 'en' ? 'page' : undefined}
           >
             EN
-          </button>
+          </a>
         </div>
       </header>
 

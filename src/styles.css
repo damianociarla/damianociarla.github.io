@@ -254,20 +254,20 @@ button {
   font-size: 0.67rem;
 }
 
-.language-switch button {
+.language-switch a {
   padding: 0.25rem;
   border: 0;
   color: var(--muted);
   background: none;
 }
 
-.language-switch button:hover,
-.language-switch button:focus-visible,
-.language-switch button.active {
+.language-switch a:hover,
+.language-switch a:focus-visible,
+.language-switch a.active {
   color: var(--ink);
 }
 
-.language-switch button.active::after {
+.language-switch a.active::after {
   display: block;
   width: 100%;
   height: 1px;

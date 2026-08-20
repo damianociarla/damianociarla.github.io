@@ -1,7 +1,9 @@
 {
   "name": "Damiano Ciarla",
   "short_name": "Damiano",
-  "description": "Technical Entrepreneur, Software Architect and AI Programmer.",
+  "description": "Technical Leader, Software Architect and AI Engineer.",
+  "lang": "it",
+  "dir": "ltr",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#07090b",
