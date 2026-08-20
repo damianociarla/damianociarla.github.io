@@ -6,6 +6,8 @@ type Era = {
   title: string;
   copy: string;
   signal: string;
+  href?: string;
+  linkLabel?: string;
 };
 
 type Capability = {
@@ -61,6 +63,7 @@ export type SiteCopy = {
     sdkLabel: string;
     sdkTitle: string;
     sdkCopy: string;
+    sdkSignal: string;
   };
   capabilities: {
     eyebrow: string;
@@ -132,10 +135,10 @@ export const copy: Record<Language, SiteCopy> = {
       status: 'Roma / remote anywhere',
     },
     story: {
-      eyebrow: '01 // GIT LOG DI UNA CARRIERA',
+      eyebrow: 'VENT’ANNI DI SOFTWARE',
       title: 'Non ho osservato il cambiamento. Ci ho compilato dentro.',
       intro:
-        'Dal primo codice alla leadership tecnica, da una startup acquisita ai prodotti AI: ogni era ha cambiato gli strumenti, mai la voglia di costruire.',
+        'Dal primo codice alla leadership tecnica, da una startup acquisita ai prodotti AI. Gli strumenti hanno continuato a cambiare. La mia voglia di costruire no.',
       eras: [
         {
           year: '2006',
@@ -148,7 +151,7 @@ export const copy: Record<Language, SiteCopy> = {
           year: '2007—16',
           label: 'PRODUCTION',
           title: 'Imparare mentre tutto gira',
-          copy: 'Java, PHP, JavaScript, piattaforme web, sistemi condivisi e open source. Dieci anni per costruire profondità direttamente in produzione.',
+          copy: 'Java, PHP, JavaScript, piattaforme web e open source. Dieci anni di crescita costruendo sistemi reali.',
           signal: 'ship / learn / repeat',
         },
         {
@@ -164,33 +167,36 @@ export const copy: Record<Language, SiteCopy> = {
           title: 'Costruire nell’era AI',
           copy: 'Fondo ErinTechLabs e porto l’AI dentro prodotti e processi reali: dati, vincoli, supervisione e risultati misurabili.',
           signal: 'human × machine',
+          href: 'https://erintechlabs.com/',
+          linkLabel: 'Visita ErinTechLabs',
         },
       ],
     },
     openSource: {
-      eyebrow: '02 // OPEN SOURCE, ACTIVE AGAIN',
+      eyebrow: 'OPEN SOURCE // ACTIVE AGAIN',
       value: '3.8M',
-      unit: 'download legacy / 12 mesi',
-      title: 'Dal 2012 al 2026. Il legacy si evolve.',
+      unit: 'download npm / 12 mesi',
+      title: 'Dal 2012 alla 1.0. Una nuova fase per node-ffmpeg.',
       copy:
-        'I 3,8 milioni di download appartengono alla versione storica. Nel 2026 ho modernizzato node-ffmpeg in TypeScript e rilasciato la v1.0.0 per Node.js 24, ESM e CommonJS, con una nuova suite di test e documentazione completa.',
+        'La versione storica ha generato 3,8 milioni di download negli ultimi dodici mesi. Nel 2026 ho modernizzato node-ffmpeg in TypeScript e rilasciato la v1.0.0 per Node.js 24, ESM e CommonJS, con nuovi test e documentazione.',
       note: 'v1.0.0 · rilasciata il 20 agosto 2026 · 629 stelle · 140 fork',
       link: 'Vedi il repository',
       docsLink: 'Esplora la documentazione',
     },
     deliverart: {
-      eyebrow: '03 // FOUNDER MODE',
+      eyebrow: 'DELIVERART // STORIA DA FOUNDER',
       title: 'Una startup costruita, cresciuta e acquisita.',
       copy:
         'Ho co-fondato Deliverart nel 2016 e l’ho guidata come CTO, trasformando la complessità del food delivery in una piattaforma operativa. Dopo l’acquisizione da parte di TeamSystem, continuo a guidarne l’evoluzione tecnologica dall’interno.',
       acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
-      sdkLabel: 'CURRENT BUILD',
-      sdkTitle: 'Un ecosistema SDK TypeScript, non un client usa-e-getta.',
+      sdkLabel: 'COSA HO COSTRUITO',
+      sdkTitle: 'Una piattaforma SDK TypeScript per Deliverart.',
       sdkCopy:
-        'Core estendibile a plugin, contratti fortemente tipizzati, validazione runtime e pacchetti organizzati per dominio: architettura pensata per evolvere insieme al prodotto.',
+        'Ho progettato e sviluppato un ecosistema di SDK che offre a web app, servizi e integrazioni un accesso coerente ai domini del prodotto. Contratti tipizzati, validazione runtime e un’architettura a plugin permettono alla piattaforma di crescere senza diventare un monolite.',
+      sdkSignal: '1 piattaforma · più domini di prodotto',
     },
     capabilities: {
-      eyebrow: '04 // WHAT I DO',
+      eyebrow: 'COSA FACCIO',
       title: 'Guido. Progetto. Costruisco.',
       items: [
         {
@@ -216,21 +222,21 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     work: {
-      eyebrow: '05 // SELECTED SYSTEMS IN THE WILD',
+      eyebrow: 'SISTEMI SELEZIONATI',
       title: 'L’AI conta quando cambia il lavoro reale.',
       intro:
         'Tre esempi tra i tanti sistemi che ho progettato e sviluppato. Contesti diversi, stesso filo conduttore: trasformare complessità e dati in decisioni più chiare.',
       cases: [
         {
           code: 'CASE_01',
-          eyebrow: 'WORKFORCE INTELLIGENCE // ANONIMO',
-          title: 'Turni più equi. Da giorni a secondi.',
+          eyebrow: 'PIANIFICAZIONE TURNI CON AI // CASO ANONIMIZZATO',
+          title: 'Un sistema AI che crea turni mensili più equi in pochi secondi.',
           copy:
-            'Un motore di pianificazione che bilancia regole aziendali, vincoli operativi ed equità tra dipendenti, ricalcolando il piano mese dopo mese.',
+            'Ho progettato un sistema di pianificazione che trasforma regole aziendali, vincoli operativi e criteri di equità in un calendario mensile bilanciato. Ricalcola continuamente le assegnazioni per ridurre errori, squilibri e contestazioni.',
           metrics: [
-            { value: '99.7%', label: 'vincoli soddisfatti' },
-            { value: '12 mesi', label: 'orizzonte validato 2026' },
-            { value: 'secondi', label: 'da più giorni-uomo' },
+            { value: '99.7%', label: 'regole e vincoli di equità soddisfatti' },
+            { value: '12 mesi', label: 'intero piano 2026 testato' },
+            { value: 'pochi secondi', label: 'invece di giorni di lavoro manuale' },
           ],
         },
         {
@@ -262,14 +268,14 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     human: {
-      eyebrow: '06 // HUMAN RUNTIME',
+      eyebrow: 'OLTRE IL CODICE',
       title: 'Non tutto deve andare in produzione.',
       copy:
         'Quando non costruisco software, costruisco cose in legno, gioco a tennis e apprezzo una buona birra. Possibilmente in quest’ordine. Non necessariamente.',
       items: ['falegnameria', 'tennis', 'birra'],
     },
     contact: {
-      eyebrow: '07 // CHOOSE YOUR PROTOCOL',
+      eyebrow: 'PARLIAMO',
       title: 'Costruiamo qualcosa di ambizioso.',
       copy:
         'Un prodotto, una trasformazione tecnica o una conversazione che vale il tempo di entrambi.',
@@ -320,10 +326,10 @@ export const copy: Record<Language, SiteCopy> = {
       status: 'Rome / remote anywhere',
     },
     story: {
-      eyebrow: '01 // A CAREER GIT LOG',
+      eyebrow: 'TWENTY YEARS IN SOFTWARE',
       title: 'I did not watch technology change. I compiled inside it.',
       intro:
-        'From first code to technical leadership, from an acquired startup to AI products: every era changed the tools, never the urge to build.',
+        'From first code to technical leadership, from an acquired startup to AI products. The tools kept changing. My drive to build never did.',
       eras: [
         {
           year: '2006',
@@ -336,7 +342,7 @@ export const copy: Record<Language, SiteCopy> = {
           year: '2007—16',
           label: 'PRODUCTION',
           title: 'Learning while everything runs',
-          copy: 'Java, PHP, JavaScript, web platforms, shared systems and open source. Ten years of building depth directly in production.',
+          copy: 'Java, PHP, JavaScript, web platforms and open source. Ten years of learning by building real systems.',
           signal: 'ship / learn / repeat',
         },
         {
@@ -352,33 +358,36 @@ export const copy: Record<Language, SiteCopy> = {
           title: 'Building in the AI era',
           copy: 'I found ErinTechLabs and bring AI into real products and operations: data, constraints, oversight and measurable outcomes.',
           signal: 'human × machine',
+          href: 'https://erintechlabs.com/',
+          linkLabel: 'Visit ErinTechLabs',
         },
       ],
     },
     openSource: {
-      eyebrow: '02 // OPEN SOURCE, ACTIVE AGAIN',
+      eyebrow: 'OPEN SOURCE // ACTIVE AGAIN',
       value: '3.8M',
-      unit: 'legacy downloads / 12 months',
-      title: 'From 2012 to 2026. Legacy, evolved.',
+      unit: 'npm downloads / 12 months',
+      title: 'From 2012 to 1.0. A new chapter for node-ffmpeg.',
       copy:
-        'The 3.8 million downloads belong to the historical release. In 2026, I modernized node-ffmpeg in TypeScript and released v1.0.0 for Node.js 24, ESM and CommonJS, with a new test suite and complete documentation.',
+        'The historical release generated 3.8 million downloads over the last twelve months. In 2026, I modernized node-ffmpeg in TypeScript and released v1.0.0 for Node.js 24, ESM and CommonJS, with new tests and documentation.',
       note: 'v1.0.0 · released August 20, 2026 · 629 stars · 140 forks',
       link: 'View the repository',
       docsLink: 'Explore the documentation',
     },
     deliverart: {
-      eyebrow: '03 // FOUNDER MODE',
+      eyebrow: 'DELIVERART // FOUNDER STORY',
       title: 'A startup built, scaled and acquired.',
       copy:
         'I co-founded Deliverart in 2016 and led it as CTO, turning food-delivery complexity into an operational platform. After its acquisition by TeamSystem, I continue to guide its technological evolution from within.',
       acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
-      sdkLabel: 'CURRENT BUILD',
-      sdkTitle: 'A TypeScript SDK ecosystem, not a disposable client.',
+      sdkLabel: 'WHAT I BUILT',
+      sdkTitle: 'A TypeScript SDK platform for Deliverart.',
       sdkCopy:
-        'A plugin-extensible core, strongly typed contracts, runtime validation and domain-oriented packages: architecture designed to evolve with the product.',
+        'I designed and built an SDK ecosystem that gives web apps, services and integrations a consistent way to access product domains. Typed contracts, runtime validation and a plugin architecture let the platform grow without becoming a monolith.',
+      sdkSignal: '1 platform · multiple product domains',
     },
     capabilities: {
-      eyebrow: '04 // WHAT I DO',
+      eyebrow: 'WHAT I DO',
       title: 'I lead. I design. I build.',
       items: [
         {
@@ -404,21 +413,21 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     work: {
-      eyebrow: '05 // SELECTED SYSTEMS IN THE WILD',
+      eyebrow: 'SELECTED SYSTEMS',
       title: 'AI matters when it changes real work.',
       intro:
         'Three examples from the many systems I have designed and built. Different contexts, same thread: turning complexity and data into clearer decisions.',
       cases: [
         {
           code: 'CASE_01',
-          eyebrow: 'WORKFORCE INTELLIGENCE // ANONYMOUS',
-          title: 'Fairer shifts. From days to seconds.',
+          eyebrow: 'AI SHIFT PLANNING // ANONYMIZED CASE',
+          title: 'An AI system that builds fairer monthly shifts in seconds.',
           copy:
-            'A planning engine balancing company rules, operational constraints and employee fairness, recalculating the schedule month after month.',
+            'I designed a planning system that turns company rules, operational constraints and fairness criteria into a balanced monthly schedule. It continuously recalculates assignments to reduce errors, imbalances and disputes.',
           metrics: [
-            { value: '99.7%', label: 'constraints satisfied' },
-            { value: '12 months', label: '2026 horizon validated' },
-            { value: 'seconds', label: 'down from person-days' },
+            { value: '99.7%', label: 'rules and fairness constraints satisfied' },
+            { value: '12 months', label: 'full 2026 plan tested' },
+            { value: 'seconds', label: 'instead of days of manual planning' },
           ],
         },
         {
@@ -450,14 +459,14 @@ export const copy: Record<Language, SiteCopy> = {
       ],
     },
     human: {
-      eyebrow: '06 // HUMAN RUNTIME',
+      eyebrow: 'BEYOND CODE',
       title: 'Not everything needs to ship.',
       copy:
         'When I am not building software, I build things from wood, play tennis and enjoy a good beer. Preferably in that order. Not necessarily.',
       items: ['woodworking', 'tennis', 'beer'],
     },
     contact: {
-      eyebrow: '07 // CHOOSE YOUR PROTOCOL',
+      eyebrow: 'LET’S TALK',
       title: 'Let’s build something ambitious.',
       copy:
         'A product, a technical transformation or a conversation worth both our time.',

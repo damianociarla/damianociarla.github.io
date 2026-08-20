@@ -274,7 +274,18 @@ function App() {
                   <small>{era.label}</small>
                 </div>
                 <h3>{era.title}</h3>
-                <p>{era.copy}</p>
+                <p>
+                  {era.copy}
+                  {era.href && era.linkLabel ? (
+                    <>
+                      {' '}
+                      <a className="text-link era-link" href={era.href} target="_blank" rel="noreferrer">
+                        {era.linkLabel}
+                        <ExternalIcon />
+                      </a>
+                    </>
+                  ) : null}
+                </p>
                 <code>{era.signal}</code>
               </article>
             ))}
@@ -330,7 +341,7 @@ function App() {
             <span>{text.deliverart.sdkLabel}</span>
             <h3>{text.deliverart.sdkTitle}</h3>
             <p>{text.deliverart.sdkCopy}</p>
-            <code>type Future = Product &amp; Architecture</code>
+            <code>{text.deliverart.sdkSignal}</code>
           </div>
         </section>
 
@@ -345,7 +356,6 @@ function App() {
                 <span>{item.index}</span>
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
-                <i aria-hidden="true" />
               </article>
             ))}
           </div>
