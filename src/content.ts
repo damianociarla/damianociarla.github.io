@@ -38,7 +38,6 @@ export type SiteCopy = {
   meta: { title: string; description: string };
   nav: { story: string; projects: string; work: string; contact: string; mobileContact: string };
   utility: { skip: string; language: string; scroll: string; open: string };
-  boot: string[];
   hero: {
     eyebrow: string;
     title: string;
@@ -127,12 +126,6 @@ export const copy: Record<Language, SiteCopy> = {
       scroll: 'Scopri il percorso',
       open: 'Apri',
     },
-    boot: [
-      'boot sequence // 2006',
-      'loading curiosity........ ok',
-      'mounting production....... ok',
-      'hands_on_mode............. always',
-    ],
     hero: {
       eyebrow: 'CO-FOUNDER // TECHNOLOGY LEADER // HANDS-ON',
       title: 'Damiano\nCiarla',
@@ -149,11 +142,11 @@ export const copy: Record<Language, SiteCopy> = {
       copy:
         'Responsabilità end-to-end su prodotto, architettura e delivery, fino a risultati misurabili.',
       target:
-        'Aperto a ruoli CTO o Head of Engineering in product company che stanno evolvendo piattaforme complesse. Disponibile anche per incarichi selezionati di advisory strategico.',
+        'Aperto a ruoli CTO o Head of Engineering in aziende di prodotto che stanno evolvendo piattaforme complesse. Disponibile anche per incarichi selezionati di advisory strategico.',
       items: [
         {
           organization: 'Deliverart',
-          role: 'Co-founder · già CTO · Technology Lead',
+          role: 'Co-founder · CTO fondatore · Technology Lead attuale',
           nature: 'RUOLO OPERATIVO CONTINUATIVO',
           copy: 'Resto responsabile dell’evoluzione tecnologica del prodotto dopo l’acquisizione completa da parte di TeamSystem.',
         },
@@ -161,7 +154,7 @@ export const copy: Record<Language, SiteCopy> = {
           organization: 'ErinTechLabs',
           role: 'Founder · Applied AI & Product Engineering',
           nature: 'INIZIATIVA IMPRENDITORIALE INDIPENDENTE',
-          copy: 'Sviluppo prodotti di applied AI e sistemi custom, dalla definizione del problema alla produzione.',
+          copy: 'Sviluppo prodotti di applied AI e sistemi software su misura, dalla definizione del problema alla produzione.',
         },
         {
           organization: 'Verisure Italia',
@@ -192,7 +185,7 @@ export const copy: Record<Language, SiteCopy> = {
           signal: 'ship / learn / repeat',
         },
         {
-          year: '2016—NOW',
+          year: '2016—OGGI',
           label: 'SCALE',
           title: 'Da startup ad acquisizione',
           copy: 'Co-fondo Deliverart, ne guido la tecnologia come CTO e accompagno prodotto e piattaforma fino all’acquisizione completa da TeamSystem.',
@@ -257,7 +250,7 @@ export const copy: Record<Language, SiteCopy> = {
       title: 'Una startup costruita, cresciuta e acquisita.',
       copy:
         'Ho co-fondato Deliverart nel 2016 e l’ho guidata come CTO, trasformando la complessità del food delivery in una piattaforma operativa. Dopo l’acquisizione da parte di TeamSystem, continuo a guidarne l’evoluzione tecnologica dall’interno.',
-      acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
+      acquisition: 'TeamSystem // 40% 2024 → 100% 2026',
       sdkLabel: 'COSA HO COSTRUITO',
       sdkTitle: 'Una piattaforma modernizzata senza interrompere il servizio.',
       sdkCopy:
@@ -318,7 +311,7 @@ export const copy: Record<Language, SiteCopy> = {
       personalLabel: 'OPEN CHANNEL',
       personalTitle: 'Scrivimi.',
       personalCopy:
-        'Lavoro, idee, prodotti, speaking o problemi tecnici difficili: parto sempre da una conversazione.',
+        'Lavoro, idee, prodotti, conferenze e interventi tecnici o problemi difficili: parto sempre da una conversazione.',
       personalAction: 'scrivimi',
       email: 'damiano.ciarla@gmail.com',
       cvLabel: 'CURRICULUM',
@@ -345,12 +338,6 @@ export const copy: Record<Language, SiteCopy> = {
       scroll: 'Explore the story',
       open: 'Open',
     },
-    boot: [
-      'boot sequence // 2006',
-      'loading curiosity........ ok',
-      'mounting production....... ok',
-      'hands_on_mode............. always',
-    ],
     hero: {
       eyebrow: 'CO-FOUNDER // TECHNOLOGY LEADER // HANDS-ON',
       title: 'Damiano\nCiarla',
@@ -371,7 +358,7 @@ export const copy: Record<Language, SiteCopy> = {
       items: [
         {
           organization: 'Deliverart',
-          role: 'Co-founder · former CTO · Technology Lead',
+          role: 'Co-founder · Founding CTO · Current Technology Lead',
           nature: 'ONGOING LEADERSHIP ROLE',
           copy: 'I remain responsible for the product’s technological evolution following its full acquisition by TeamSystem.',
         },
@@ -475,7 +462,7 @@ export const copy: Record<Language, SiteCopy> = {
       title: 'A startup built, scaled and acquired.',
       copy:
         'I co-founded Deliverart in 2016 and led it as CTO, turning food-delivery complexity into an operational platform. After its acquisition by TeamSystem, I continue to guide its technological evolution from within.',
-      acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
+      acquisition: 'TeamSystem // 40% 2024 → 100% 2026',
       sdkLabel: 'WHAT I BUILT',
       sdkTitle: 'A platform modernized without disrupting operations.',
       sdkCopy:

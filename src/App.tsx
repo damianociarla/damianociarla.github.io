@@ -59,7 +59,6 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
   const [showWebGL, setShowWebGL] = useState(!staticRender);
   const page = useRef<HTMLDivElement>(null);
   const scrollProgress = useRef(0);
-  const bootPlayed = useRef(false);
   const reducedMotion = useReducedMotion();
   const text = useMemo(() => copy[language], [language]);
   const personalContactUrl = useMemo(
@@ -97,7 +96,6 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
       });
 
       if (reducedMotion) {
-        gsap.set('.boot-sequence', { display: 'none' });
         gsap.set('.hero-line, .hero-copy, .hero-actions, .hero-meta, .reveal', {
           opacity: 1,
           y: 0,
@@ -105,54 +103,19 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
         return;
       }
 
-      const hasSeenBoot = (() => {
-        try {
-          return window.sessionStorage.getItem('dc_boot_seen') === '1';
-        } catch {
-          return false;
-        }
-      })();
-
-      if (!bootPlayed.current && !hasSeenBoot) {
-        bootPlayed.current = true;
-        try {
-          window.sessionStorage.setItem('dc_boot_seen', '1');
-        } catch {
-          // The animation still works when storage is unavailable.
-        }
-        const boot = gsap.timeline();
-        boot
-          .fromTo(
-            '.boot-line',
-            { opacity: 0, x: -8 },
-            { opacity: 1, x: 0, duration: 0.08, stagger: 0.06 },
-          )
-          .to('.boot-sequence', {
-            opacity: 0,
-            duration: 0.18,
-            delay: 0.06,
-            pointerEvents: 'none',
-          })
-          .fromTo(
-            '.hero-line',
-            { yPercent: 112 },
-            { yPercent: 0, duration: 0.85, stagger: 0.06, ease: 'power4.out' },
-            '-=0.08',
-          )
-          .fromTo(
-            '.hero-copy, .hero-actions, .hero-meta',
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.55, stagger: 0.07, ease: 'power3.out' },
-            '-=0.55',
-          );
-      } else {
-        gsap.set('.boot-sequence', { opacity: 0, pointerEvents: 'none' });
-        gsap.set('.hero-line, .hero-copy, .hero-actions, .hero-meta', {
-          opacity: 1,
-          y: 0,
-          yPercent: 0,
-        });
-      }
+      const heroIntro = gsap.timeline();
+      heroIntro
+        .fromTo(
+          '.hero-line',
+          { yPercent: 112 },
+          { yPercent: 0, duration: 0.85, stagger: 0.06, ease: 'power4.out' },
+        )
+        .fromTo(
+          '.hero-copy, .hero-actions, .hero-meta',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.55, stagger: 0.07, ease: 'power3.out' },
+          '-=0.55',
+        );
 
       gsap.utils.toArray<HTMLElement>('.reveal').forEach((element) => {
         gsap.fromTo(
@@ -208,16 +171,6 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
       <div className="ambient-grid" aria-hidden="true" />
       <div className="progress-rail" aria-hidden="true">
         <span />
-      </div>
-
-      <div className="boot-sequence" aria-hidden="true">
-        <div className="boot-log">
-          {text.boot.map((line) => (
-            <span className="boot-line" key={line}>
-              {line}
-            </span>
-          ))}
-        </div>
       </div>
 
       <header className="site-header">

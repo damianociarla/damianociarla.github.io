@@ -158,32 +158,6 @@ button {
   background: linear-gradient(var(--amber), var(--blue));
 }
 
-.boot-sequence {
-  position: fixed;
-  inset: 0;
-  z-index: 150;
-  display: grid;
-  place-items: center;
-  color: var(--amber);
-  background: rgba(7, 9, 11, 0.94);
-  backdrop-filter: blur(8px);
-  font-family: var(--mono);
-  font-size: clamp(0.68rem, 1.2vw, 0.83rem);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.boot-log {
-  display: flex;
-  width: min(90vw, 29rem);
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.boot-line {
-  opacity: 0;
-}
-
 .site-header {
   position: fixed;
   top: 0;
@@ -1707,10 +1681,6 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .boot-sequence {
-    display: none;
   }
 
   .human-loop {
