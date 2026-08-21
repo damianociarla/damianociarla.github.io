@@ -944,6 +944,24 @@ button {
   content: '';
 }
 
+.acquisition-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  border-bottom: 1px solid transparent;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.acquisition-source:hover,
+.acquisition-source:focus-visible {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
 .deliverart-proof {
   display: grid;
   max-width: 48rem;

@@ -424,6 +424,15 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
               <span>{text.deliverart.acquisition}</span>
               <i aria-hidden="true" />
             </div>
+            <a
+              className="acquisition-source"
+              href={text.deliverart.sourceHref}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {text.deliverart.sourceLabel}
+              <ExternalIcon />
+            </a>
             <dl className="deliverart-proof">
               {text.deliverart.proof.map((item) => (
                 <div key={item.label}>

@@ -76,6 +76,8 @@ export type SiteCopy = {
     sdkTitle: string;
     sdkCopy: string;
     sdkSignal: string;
+    sourceHref: string;
+    sourceLabel: string;
     proof: Array<{ label: string; value: string }>;
   };
   work: {
@@ -142,12 +144,12 @@ export const copy: Record<Language, SiteCopy> = {
       cv: 'Curriculum',
     },
     now: {
-      eyebrow: 'COSA FACCIO OGGI',
-      title: 'Tre attività, tre rapporti diversi. Una sola traiettoria.',
+      eyebrow: 'COSA GUIDO OGGI',
+      title: 'Tre contesti. Un unico modello operativo.',
       copy:
-        'Il filo comune è la responsabilità end-to-end: collegare prodotto, architettura e delivery fino al risultato.',
+        'Responsabilità end-to-end su prodotto, architettura e delivery, fino a risultati misurabili.',
       target:
-        'Prossimo capitolo: ruoli di technology leadership — CTO, Head of Engineering o advisory strategico — in organizzazioni che vogliono evolvere piattaforme e prodotti.',
+        'Aperto a ruoli CTO o Head of Engineering in product company che stanno evolvendo piattaforme complesse. Disponibile anche per incarichi selezionati di advisory strategico.',
       items: [
         {
           organization: 'Deliverart',
@@ -157,7 +159,7 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           organization: 'ErinTechLabs',
-          role: 'Founder · AI Product Builder',
+          role: 'Founder · Applied AI & Product Engineering',
           nature: 'INIZIATIVA IMPRENDITORIALE INDIPENDENTE',
           copy: 'Sviluppo prodotti di applied AI e sistemi custom, dalla definizione del problema alla produzione.',
         },
@@ -180,7 +182,7 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'INIT',
           title: 'La prima riga',
           copy: 'Inizio a programmare. Il software smette presto di essere solo tecnologia: diventa il mio modo di risolvere problemi.',
-          signal: 'curiosity > credentials',
+          signal: 'learn / build / ship',
         },
         {
           year: '2007—16',
@@ -261,6 +263,8 @@ export const copy: Record<Language, SiteCopy> = {
       sdkCopy:
         'Frontend Next.js, API Symfony e API Platform, servizi su AWS ECS, test automatici e CI/CD. Un’evoluzione progressiva dell’intera piattaforma, con SDK TypeScript per mantenere coerenti domini, web app e integrazioni.',
       sdkSignal: 'frontend · api · cloud · test · delivery',
+      sourceHref: 'https://www.teamsystem.com/media/files/1742_V1--300626--NOTACONS--DEF.pdf',
+      sourceLabel: 'Fonte pubblica TeamSystem',
       proof: [
         { label: 'CONTRIBUTO PERSONALE', value: 'Prodotto, architettura, cloud e delivery' },
         { label: 'PASSAGGIO CHIAVE', value: 'Acquisizione completa da TeamSystem' },
@@ -276,20 +280,19 @@ export const copy: Record<Language, SiteCopy> = {
         {
           code: 'CASE_01',
           eyebrow: 'PIANIFICAZIONE TURNI CON AI // CASO ANONIMIZZATO',
-          title: 'Un sistema AI che crea turni mensili più equi in pochi secondi.',
+          title: 'Turni mensili bilanciati in pochi secondi.',
           copy:
             'In un test sull’intero piano annuale 2026, il sistema ha trasformato regole, vincoli operativi e criteri di equità in turnazioni mensili bilanciate, generando ogni pianificazione in pochi secondi.',
           metrics: [
-            { value: '99.7%', label: 'accuratezza osservata secondo i criteri di test' },
+            { value: 'mensile', label: 'pianificazione ricalcolata a ogni ciclo' },
             { value: '12 mesi', label: 'dataset di pianificazione 2026' },
             { value: 'pochi secondi', label: 'invece di giorni di lavoro manuale' },
           ],
-          note: 'Il 99,7% descrive l’accuratezza complessiva osservata nel test annuale; non indica vincoli operativi obbligatori ignorati.',
         },
         {
           code: 'CASE_02',
           eyebrow: 'VERISURE // CONSULENZA SENIOR',
-          title: 'Lead acquisition che cresce senza esporre la complessità.',
+          title: 'Lead acquisition multicanale, dall’analisi alla produzione.',
           copy:
             'Dal 2018 contribuisco all’analisi, allo sviluppo e alla modernizzazione dei sistemi di lead acquisition per il mercato italiano. Il mio lavoro collega flussi multicanale e processi commerciali, con focus su automazione, affidabilità e continuità operativa.',
           metrics: [
@@ -327,7 +330,7 @@ export const copy: Record<Language, SiteCopy> = {
     meta: {
       title: 'Damiano Ciarla | Co-founder & Technology Leader',
       description:
-        'Co-founder and hands-on technology leader. I led Deliverart from startup to TeamSystem acquisition and now build platforms and applied-AI systems.',
+        'Co-founder and hands-on technology leader. I led Deliverart from startup to TeamSystem acquisition and now build platforms and applied AI systems.',
     },
     nav: {
       story: 'Story',
@@ -352,31 +355,31 @@ export const copy: Record<Language, SiteCopy> = {
       eyebrow: 'CO-FOUNDER // TECHNOLOGY LEADER // HANDS-ON',
       title: 'Damiano\nCiarla',
       body:
-        'I led Deliverart from startup to full acquisition by TeamSystem. For twenty years I have built platforms, products and applied-AI systems without stepping away from the code.',
+        'I led Deliverart from startup to full acquisition by TeamSystem. For twenty years I have built platforms, products and applied AI systems without stepping away from the code.',
       primary: 'See my impact',
       secondary: 'Let’s talk',
       status: 'Rome, Italy · open to remote roles across Europe',
       cv: 'Curriculum',
     },
     now: {
-      eyebrow: 'WHAT I DO NOW',
-      title: 'Three activities, three different relationships. One trajectory.',
+      eyebrow: 'WHAT I LEAD TODAY',
+      title: 'Three contexts. One operating model.',
       copy:
-        'The common thread is end-to-end ownership: connecting product, architecture and delivery through to the outcome.',
+        'End-to-end ownership across product, architecture and delivery, through to measurable outcomes.',
       target:
-        'Next chapter: technology leadership roles — CTO, Head of Engineering or strategic advisory — in organizations evolving platforms and products.',
+        'Open to CTO or Head of Engineering roles in product companies modernizing complex platforms. Available for selected strategic advisory engagements.',
       items: [
         {
           organization: 'Deliverart',
           role: 'Co-founder · former CTO · Technology Lead',
-          nature: 'ONGOING OPERATING ROLE',
+          nature: 'ONGOING LEADERSHIP ROLE',
           copy: 'I remain responsible for the product’s technological evolution following its full acquisition by TeamSystem.',
         },
         {
           organization: 'ErinTechLabs',
-          role: 'Founder · AI Product Builder',
-          nature: 'INDEPENDENT ENTREPRENEURIAL VENTURE',
-          copy: 'I build applied-AI products and custom systems, from problem definition through production delivery.',
+          role: 'Founder · Applied AI & Product Engineering',
+          nature: 'INDEPENDENT VENTURE',
+          copy: 'I build applied AI products and custom systems, from problem definition through production delivery.',
         },
         {
           organization: 'Verisure Italy',
@@ -397,7 +400,7 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'INIT',
           title: 'The first line',
           copy: 'I start programming. Software quickly stops being just technology and becomes my way of solving problems.',
-          signal: 'curiosity > credentials',
+          signal: 'learn / build / ship',
         },
         {
           year: '2007—16',
@@ -460,7 +463,7 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'ERINTECHLABS // AI PRODUCT',
           title: 'Documento Facile',
           copy:
-            'I am building a product that applies AI to reading and comparing personal documents, with data normalization, history and visible human oversight.',
+            'I am building a product that applies AI to reading and comparing personal documents, with data normalization, historical comparison and visible human oversight.',
           signal: 'LLM integration / document pipeline / human oversight',
           href: 'https://documentofacile.it/',
           linkLabel: 'Explore the product',
@@ -478,6 +481,8 @@ export const copy: Record<Language, SiteCopy> = {
       sdkCopy:
         'Next.js frontends, Symfony and API Platform APIs, services on AWS ECS, automated tests and CI/CD. A progressive evolution of the whole platform, with TypeScript SDKs keeping domains, web apps and integrations consistent.',
       sdkSignal: 'frontend · api · cloud · tests · delivery',
+      sourceHref: 'https://www.teamsystem.com/media/files/1742_V1--300626--NOTACONS--DEF.pdf',
+      sourceLabel: 'Public TeamSystem source',
       proof: [
         { label: 'PERSONAL SCOPE', value: 'Product, architecture, cloud and delivery' },
         { label: 'KEY MILESTONE', value: 'Full acquisition by TeamSystem' },
@@ -493,20 +498,19 @@ export const copy: Record<Language, SiteCopy> = {
         {
           code: 'CASE_01',
           eyebrow: 'AI SHIFT PLANNING // ANONYMIZED CASE',
-          title: 'An AI system that builds fairer monthly shifts in seconds.',
+          title: 'Balanced monthly schedules generated in seconds.',
           copy:
             'In a test covering the full 2026 annual plan, the system turned company rules, operational constraints and fairness criteria into balanced monthly schedules, generating each plan in seconds.',
           metrics: [
-            { value: '99.7%', label: 'accuracy observed against the defined test criteria' },
+            { value: 'monthly', label: 'planning recalculated at every cycle' },
             { value: '12 months', label: '2026 scheduling dataset' },
             { value: 'seconds', label: 'instead of days of manual planning' },
           ],
-          note: 'The 99.7% figure describes aggregate accuracy observed in the full-year test; it does not represent mandatory operational constraints being ignored.',
         },
         {
           code: 'CASE_02',
           eyebrow: 'VERISURE // SENIOR CONSULTING',
-          title: 'Lead acquisition that grows without exposing its complexity.',
+          title: 'Multichannel lead acquisition, from analysis to production.',
           copy:
             'Since 2018 I have contributed to the analysis, development and modernization of lead acquisition systems for the Italian market. My work connects multichannel flows and commercial processes, with a focus on automation, reliability and operational continuity.',
           metrics: [

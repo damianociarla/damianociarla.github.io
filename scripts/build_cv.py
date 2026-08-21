@@ -29,7 +29,7 @@ BLUE = HexColor("#167BC0")
 CONTENT = {
     "it": {
         "file": "damiano-ciarla-cv-it.pdf",
-        "role": "CO-FOUNDER  /  TECHNOLOGY LEADER  /  SOFTWARE ARCHITECT",
+        "role": "CO-FOUNDER  /  GIÀ CTO  /  TECHNOLOGY LEADER",
         "summary": (
             "Co-founder e technology leader hands-on con vent'anni di esperienza nella costruzione e "
             "modernizzazione di piattaforme digitali. Ho guidato Deliverart dalla fase startup "
@@ -37,6 +37,8 @@ CONTENT = {
             "cloud e delivery. Oggi costruisco sistemi di applied AI e prodotti business-critical."
         ),
         "location": "Roma, Italia  /  disponibile da remoto",
+        "contact_line": "damiano.ciarla@gmail.com  /  damianociarla.dev  /  linkedin.com/in/damianociarla",
+        "languages": "Italiano: madrelingua  /  Inglese: professional working proficiency",
         "sections": {
             "focus": "PROFILO",
             "experience": "ESPERIENZA SELEZIONATA",
@@ -52,34 +54,40 @@ CONTENT = {
             (
                 "2016 - oggi",
                 "Co-founder, già CTO & Technology Lead  /  Deliverart",
-                "Ruolo operativo continuativo. Come co-founder e CTO ho collegato esigenze di prodotto, "
-                "scelte architetturali e delivery, accompagnando Deliverart dalla fase startup "
-                "all'acquisizione completa da TeamSystem. Ho guidato una modernizzazione progressiva di "
-                "frontend, API, cloud, test, CI/CD e SDK TypeScript senza interrompere l'operatività. Dopo "
-                "l'acquisizione continuo a essere responsabile dell'evoluzione tecnologica della piattaforma.",
+                "Ruolo di leadership operativo continuativo, anche dopo l'acquisizione.",
+                [
+                    "Co-fondato Deliverart e guidato tecnologia e prodotto dalla startup all'acquisizione completa da TeamSystem.",
+                    "Responsabilità end-to-end su priorità di prodotto, architettura, cloud e delivery; oggi guido l'evoluzione post-acquisizione.",
+                    "Modernizzato progressivamente frontend, API, infrastruttura, test, CI/CD e SDK TypeScript mantenendo la piattaforma operativa.",
+                ],
+                "Next.js / TypeScript / Symfony / API Platform / AWS ECS / testing / CI/CD",
             ),
             (
                 "2018 - oggi",
                 "Independent Senior Consultant  /  Verisure Italia",
-                "Incarico di consulenza indipendente. Dal 2018 seguo analisi, progettazione e sviluppo "
-                "hands-on di sistemi business-critical di lead acquisition per il mercato italiano. Il "
-                "lavoro attraversa un ecosistema multicanale e integra processi commerciali e piattaforme "
-                "digitali, con attenzione ad automazione, affidabilità, continuità operativa e riduzione "
-                "dei tempi di delivery nei flussi comparabili.",
+                "Incarico indipendente su sistemi business-critical per il mercato italiano.",
+                [
+                    "Seguo analisi, solution design e sviluppo hands-on di sistemi di lead acquisition dal 2018.",
+                    "Collego processi commerciali, canali e piattaforme digitali in un ecosistema multicanale.",
+                    "Miglioro automazione, affidabilità e continuità operativa, riducendo i tempi di delivery nei flussi comparabili.",
+                ],
+                "Web platforms / AWS / multichannel integrations / automation",
             ),
             (
                 "2025 - oggi",
-                "Founder & AI Product Builder  /  ErinTechLabs",
-                "Iniziativa imprenditoriale indipendente. Trasformo problemi operativi in prodotti, seguendo "
-                "discovery, architettura, implementazione e messa in produzione. Tra i sistemi sviluppati: "
-                "un motore di turnazione che ricalcola in pochi secondi piani prima manuali e Documento "
-                "Facile, una pipeline AI per leggere, normalizzare e confrontare documenti personali con "
-                "storico e supervisione umana.",
+                "Founder & Applied AI Lead  /  ErinTechLabs",
+                "Iniziativa imprenditoriale indipendente dedicata ad applied AI e product engineering.",
+                [
+                    "Porto i prodotti dalla discovery alla messa in produzione, mantenendo ownership su architettura e implementazione.",
+                    "Sviluppato un motore che ricalcola turnazioni mensili in pochi secondi invece di giorni di pianificazione manuale.",
+                    "Sto costruendo Documento Facile: pipeline AI per lettura, normalizzazione e confronto storico di documenti con supervisione umana.",
+                ],
+                "Applied AI / LLM systems / document pipelines / human-in-the-loop",
             ),
         ],
         "impacts": [
             ("20 anni", "software dal 2006\nancora hands-on"),
-            ("ACQUISITA", "Deliverart / TeamSystem\nacquisizione completa 2026"),
+            ("STARTUP EXIT", "Deliverart acquisita\nda TeamSystem nel 2026"),
             ("3.8M", "download npm\n12 mesi fino ad agosto 2026"),
         ],
         "capabilities": [
@@ -88,7 +96,7 @@ CONTENT = {
             "Hands-on engineering delivery",
             "Applied AI product systems",
         ],
-        "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  AI-LLM",
+        "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  Applied AI",
         "selected": [
             (
                 "Deliverart  /  Modernizzazione end-to-end",
@@ -104,14 +112,13 @@ CONTENT = {
                 "in turnazioni mensili bilanciate. In parallelo sviluppo pipeline documentali che combinano "
                 "LLM, normalizzazione, confronti storici e supervisione umana per produrre risultati "
                 "comprensibili, verificabili e utili.",
-                "99.7% accuratezza osservata nel test / 12 mesi / secondi invece di giorni-uomo",
+                "12 mesi di pianificazione / turnazioni mensili / secondi invece di giorni manuali",
             ),
             (
                 "Verisure Italia  /  Consulenza senior",
                 "Lavoro dal problema operativo fino alla soluzione in produzione: analisi dei flussi, "
                 "disegno dell'integrazione, sviluppo e miglioramento continuo. Il risultato è un ecosistema "
-                "capace di sostenere volumi cresciuti negli anni, coordinare più canali e ridurre i tempi di "
-                "delivery rispetto a processi comparabili.",
+                "capace di coordinare più canali e ridurre i tempi di delivery rispetto a processi comparabili.",
                 "multicanale / automazione / affidabilità / continuità operativa",
             ),
         ],
@@ -150,14 +157,16 @@ CONTENT = {
     },
     "en": {
         "file": "damiano-ciarla-cv-en.pdf",
-        "role": "CO-FOUNDER  /  TECHNOLOGY LEADER  /  SOFTWARE ARCHITECT",
+        "role": "CO-FOUNDER  /  FORMER CTO  /  TECHNOLOGY LEADER",
         "summary": (
             "Co-founder and hands-on technology leader with twenty years of experience building and "
             "modernizing digital platforms. I led Deliverart from startup to full acquisition by TeamSystem, "
             "retaining responsibility across product, architecture, cloud and delivery. Today I build "
-            "applied-AI systems and business-critical products."
+            "applied AI systems and business-critical products."
         ),
         "location": "Rome, Italy  /  open to remote roles across Europe",
+        "contact_line": "damiano.ciarla@gmail.com  /  damianociarla.dev  /  linkedin.com/in/damianociarla",
+        "languages": "Italian: native  /  English: professional working proficiency",
         "sections": {
             "focus": "PROFILE",
             "experience": "SELECTED EXPERIENCE",
@@ -173,34 +182,40 @@ CONTENT = {
             (
                 "2016 - Present",
                 "Co-founder, former CTO & Technology Lead  /  Deliverart",
-                "Ongoing operating role. As co-founder and CTO, I connected product needs, architectural "
-                "choices and delivery, taking Deliverart from startup through full acquisition by TeamSystem. "
-                "I led the progressive modernization of frontends, APIs, cloud, tests, CI/CD and TypeScript "
-                "SDKs without disrupting operations. Following the acquisition, I remain responsible for "
-                "the platform's technological evolution.",
+                "Ongoing leadership role, including after the acquisition.",
+                [
+                    "Co-founded Deliverart and led technology and product from startup to full acquisition by TeamSystem.",
+                    "Owned product priorities, architecture, cloud and delivery; I now lead the post-acquisition technological evolution.",
+                    "Modernized frontends, APIs, infrastructure, tests, CI/CD and TypeScript SDKs incrementally while keeping the platform operational.",
+                ],
+                "Next.js / TypeScript / Symfony / API Platform / AWS ECS / testing / CI/CD",
             ),
             (
                 "2018 - Present",
                 "Independent Senior Consultant  /  Verisure Italy",
-                "Independent consulting engagement. Since 2018 I have worked across analysis, solution "
-                "design and hands-on development of business-critical lead acquisition systems for the "
-                "Italian market. The work spans a multichannel ecosystem connecting commercial processes "
-                "and digital platforms, with a focus on automation, reliability, operational continuity and "
-                "shorter delivery timelines across comparable workflows.",
+                "Independent engagement on business-critical systems for the Italian market.",
+                [
+                    "Work across analysis, solution design and hands-on development of lead acquisition systems since 2018.",
+                    "Connect commercial processes, channels and digital platforms across a multichannel ecosystem.",
+                    "Improve automation, reliability and operational continuity while shortening delivery timelines across comparable workflows.",
+                ],
+                "Web platforms / AWS / multichannel integrations / automation",
             ),
             (
                 "2025 - Present",
-                "Founder & AI Product Builder  /  ErinTechLabs",
-                "Independent entrepreneurial venture. I turn operational problems into products, owning "
-                "discovery, architecture, implementation and production delivery. Systems include a shift "
-                "planning engine that recalculates previously manual plans in seconds and Documento Facile, "
-                "an AI pipeline for reading, normalizing and comparing personal documents with history and "
-                "human oversight.",
+                "Founder & Applied AI Lead  /  ErinTechLabs",
+                "Independent venture focused on applied AI and product engineering.",
+                [
+                    "Take products from discovery to production while retaining ownership of architecture and implementation.",
+                    "Built an engine that recalculates monthly schedules in seconds instead of days of manual planning.",
+                    "Building Documento Facile: an AI pipeline for reading, normalizing and historically comparing documents with human oversight.",
+                ],
+                "Applied AI / LLM systems / document pipelines / human-in-the-loop",
             ),
         ],
         "impacts": [
             ("20 years", "building since 2006\nstill hands-on"),
-            ("ACQUIRED", "Deliverart / TeamSystem\nfull acquisition in 2026"),
+            ("STARTUP EXIT", "Deliverart acquired\nby TeamSystem in 2026"),
             ("3.8M", "npm downloads\n12 months ending Aug 2026"),
         ],
         "capabilities": [
@@ -209,7 +224,7 @@ CONTENT = {
             "Hands-on engineering delivery",
             "Applied AI product systems",
         ],
-        "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  AI-LLM",
+        "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  Applied AI",
         "selected": [
             (
                 "Deliverart  /  End-to-end modernization",
@@ -225,14 +240,13 @@ CONTENT = {
                 "criteria into balanced monthly schedules. In parallel, I build document pipelines combining "
                 "LLMs, normalization, historical comparison and human oversight to produce understandable, "
                 "verifiable and useful outcomes.",
-                "99.7% accuracy observed in testing / 12 months / seconds instead of person-days",
+                "12 months of planning / monthly schedules / seconds instead of days of manual planning",
             ),
             (
                 "Verisure Italy  /  Senior consulting",
-                "I work from the operational problem through to the production solution: flow analysis, "
+                "I work from the operational problem to the production solution: flow analysis, "
                 "integration design, development and continuous improvement. The result is an ecosystem able "
-                "to support volumes that have grown over time, coordinate multiple channels and shorten "
-                "delivery timelines compared with similar processes.",
+                "to coordinate multiple channels and shorten delivery timelines compared with similar processes.",
                 "multichannel / automation / reliability / operational continuity",
             ),
         ],
@@ -266,7 +280,7 @@ CONTENT = {
                 "https://documentofacile.it/",
             ),
         ],
-        "education": "Diploma in Information Technology  /  I.T.I.S. G. Vallauri",
+        "education": "Technical Diploma in Computer Science  /  I.T.I.S. G. Vallauri",
         "footer": "Technology leadership  /  platform architecture  /  applied AI  /  damianociarla.dev",
     },
 }
@@ -347,9 +361,19 @@ def draw_header(canvas: Canvas, content: dict, page: int) -> float:
     canvas.setFillColor(MUTED)
     canvas.setFont("Courier", 7)
     canvas.drawRightString(PAGE_W - MARGIN_X, TOP - 3, content["location"])
-    line(canvas, MARGIN_X, TOP - 31, PAGE_W - MARGIN_X, INK, 1)
+    if page == 1:
+        canvas.setFont("Courier", 5.6)
+        canvas.drawRightString(PAGE_W - MARGIN_X, TOP - 14, content["contact_line"])
+        canvas.setFont("Courier", 5.9)
+        canvas.drawRightString(PAGE_W - MARGIN_X, TOP - 25, content["languages"])
+        rule_y = TOP - 39
+        content_y = TOP - 59
+    else:
+        rule_y = TOP - 31
+        content_y = TOP - 52
+    line(canvas, MARGIN_X, rule_y, PAGE_W - MARGIN_X, INK, 1)
     page_number(canvas, page)
-    return TOP - 52
+    return content_y
 
 
 def draw_page_one(canvas: Canvas, content: dict) -> None:
@@ -363,16 +387,25 @@ def draw_page_one(canvas: Canvas, content: dict) -> None:
     label(canvas, content["sections"]["experience"], MARGIN_X, y)
     y -= 23
 
-    for dates, title, description in content["current"]:
+    for dates, title, context, bullets, technology in content["current"]:
         canvas.setFont("Courier-Bold", 7.2)
         canvas.setFillColor(AMBER)
         canvas.drawString(MARGIN_X, y, dates)
-        canvas.setFont("Helvetica-Bold", 11.5)
+        canvas.setFont("Helvetica-Bold", 10.7)
         canvas.setFillColor(INK)
         canvas.drawString(MARGIN_X + 98, y, title)
-        y -= 17
-        y = draw_wrapped(canvas, description, MARGIN_X + 98, y, PAGE_W - MARGIN_X * 2 - 98, size=8.7, leading=12.3)
-        y -= 16
+        content_x = MARGIN_X + 98
+        content_width = PAGE_W - MARGIN_X * 2 - 98
+        y -= 15
+        y = draw_wrapped(canvas, context, content_x, y, content_width, font="Helvetica-Bold", size=7.8, leading=10.2)
+        y -= 2
+        for bullet in bullets:
+            canvas.setFillColor(AMBER)
+            canvas.circle(content_x + 1.5, y + 2.5, 1.25, stroke=0, fill=1)
+            y = draw_wrapped(canvas, bullet, content_x + 9, y, content_width - 9, size=7.8, leading=10.2)
+            y -= 1.5
+        y = draw_wrapped(canvas, technology, content_x, y, content_width, font="Courier", size=5.9, leading=8, color=BLUE)
+        y -= 11
 
     line(canvas, MARGIN_X, y, PAGE_W - MARGIN_X)
     y -= 24
@@ -385,7 +418,8 @@ def draw_page_one(canvas: Canvas, content: dict) -> None:
         if index:
             canvas.setStrokeColor(LIGHT)
             canvas.line(x - 13, y + 10, x - 13, y - 55)
-        canvas.setFont("Helvetica-Bold", 27)
+        metric_size = 20 if len(value) > 9 else 27
+        canvas.setFont("Helvetica-Bold", metric_size)
         canvas.setFillColor(BLUE if index == 1 else INK)
         canvas.drawString(x, y - 5, value)
         canvas.setFont("Courier", 6.8)
