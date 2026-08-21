@@ -29,7 +29,7 @@ BLUE = HexColor("#167BC0")
 CONTENT = {
     "it": {
         "file": "damiano-ciarla-cv-it.pdf",
-        "role": "CO-FOUNDER  /  GIÀ CTO  /  TECHNOLOGY LEADER",
+        "role": "CO-FOUNDER  /  CTO FONDATORE  /  TECHNOLOGY LEADER",
         "summary": (
             "Co-founder e technology leader hands-on con vent'anni di esperienza nella costruzione e "
             "modernizzazione di piattaforme digitali. Ho guidato Deliverart dalla fase startup "
@@ -53,7 +53,7 @@ CONTENT = {
         "current": [
             (
                 "2016 - oggi",
-                "Co-founder, già CTO & Technology Lead  /  Deliverart",
+                "Co-founder, CTO fondatore & Technology Lead attuale  /  Deliverart",
                 "Ruolo di leadership operativo continuativo, anche dopo l'acquisizione.",
                 [
                     "Co-fondato Deliverart e guidato tecnologia e prodotto dalla startup all'acquisizione completa da TeamSystem.",
@@ -69,7 +69,7 @@ CONTENT = {
                 [
                     "Seguo analisi, solution design e sviluppo hands-on di sistemi di lead acquisition dal 2018.",
                     "Collego processi commerciali, canali e piattaforme digitali in un ecosistema multicanale.",
-                    "Miglioro automazione, affidabilità e continuità operativa, riducendo i tempi di delivery nei flussi comparabili.",
+                    "Miglioro automazione, affidabilità e continuità operativa, riducendo il tempo necessario per rilasciare nuovi flussi su canali comparabili.",
                 ],
                 "Web platforms / AWS / multichannel integrations / automation",
             ),
@@ -87,23 +87,23 @@ CONTENT = {
         ],
         "impacts": [
             ("20 anni", "software dal 2006\nancora hands-on"),
-            ("STARTUP EXIT", "Deliverart acquisita\nda TeamSystem nel 2026"),
+            ("FULL ACQUISITION", "Deliverart > TeamSystem\n2026"),
             ("3.8M", "download npm\n12 mesi fino ad agosto 2026"),
         ],
         "capabilities": [
             "Technology & product leadership",
-            "Platform architecture",
-            "Hands-on engineering delivery",
-            "Applied AI product systems",
+            "Modernizzazione senza interruzioni",
+            "Integrazione tecnologica post-acquisizione",
+            "Applied AI con supervisione umana",
         ],
         "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  Applied AI",
         "selected": [
             (
-                "Deliverart  /  Modernizzazione end-to-end",
-                "Ho scelto una modernizzazione incrementale invece di una riscrittura isolata, facendo "
-                "evolvere frontend, API, servizi cloud e processi di delivery mentre il prodotto restava "
-                "operativo. Contratti tipizzati, SDK condivisi, test automatici e CI/CD hanno reso più "
-                "coerente il lavoro tra domini e integrazioni.",
+                "Deliverart  /  Strategia di modernizzazione",
+                "Ho scelto una modernizzazione incrementale invece di una riscrittura big-bang ad alto "
+                "rischio, facendo evolvere frontend, API, servizi cloud e delivery mentre il prodotto "
+                "restava operativo. La strategia ha ridotto il rischio di migrazione e preservato continuità "
+                "operativa e di rilascio; contratti tipizzati, SDK, test e CI/CD hanno reso coerenti i domini.",
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
             ),
             (
@@ -115,10 +115,11 @@ CONTENT = {
                 "12 mesi di pianificazione / turnazioni mensili / secondi invece di giorni manuali",
             ),
             (
-                "Verisure Italia  /  Consulenza senior",
+                "Verisure Italia  /  Delivery multicanale",
                 "Lavoro dal problema operativo fino alla soluzione in produzione: analisi dei flussi, "
                 "disegno dell'integrazione, sviluppo e miglioramento continuo. Il risultato è un ecosistema "
-                "capace di coordinare più canali e ridurre i tempi di delivery rispetto a processi comparabili.",
+                "capace di coordinare più canali e ridurre il tempo necessario per rilasciare nuovi flussi "
+                "di lead acquisition su canali comparabili.",
                 "multicanale / automazione / affidabilità / continuità operativa",
             ),
         ],
@@ -157,7 +158,7 @@ CONTENT = {
     },
     "en": {
         "file": "damiano-ciarla-cv-en.pdf",
-        "role": "CO-FOUNDER  /  FORMER CTO  /  TECHNOLOGY LEADER",
+        "role": "CO-FOUNDER  /  FOUNDING CTO  /  TECHNOLOGY LEADER",
         "summary": (
             "Co-founder and hands-on technology leader with twenty years of experience building and "
             "modernizing digital platforms. I led Deliverart from startup to full acquisition by TeamSystem, "
@@ -181,7 +182,7 @@ CONTENT = {
         "current": [
             (
                 "2016 - Present",
-                "Co-founder, former CTO & Technology Lead  /  Deliverart",
+                "Co-founder, Founding CTO & Current Technology Lead  /  Deliverart",
                 "Ongoing leadership role, including after the acquisition.",
                 [
                     "Co-founded Deliverart and led technology and product from startup to full acquisition by TeamSystem.",
@@ -197,7 +198,7 @@ CONTENT = {
                 [
                     "Work across analysis, solution design and hands-on development of lead acquisition systems since 2018.",
                     "Connect commercial processes, channels and digital platforms across a multichannel ecosystem.",
-                    "Improve automation, reliability and operational continuity while shortening delivery timelines across comparable workflows.",
+                    "Improve automation, reliability and operational continuity while reducing the time required to deliver new flows across comparable channels.",
                 ],
                 "Web platforms / AWS / multichannel integrations / automation",
             ),
@@ -208,30 +209,30 @@ CONTENT = {
                 [
                     "Take products from discovery to production while retaining ownership of architecture and implementation.",
                     "Built an engine that recalculates monthly schedules in seconds instead of days of manual planning.",
-                    "Building Documento Facile: an AI pipeline for reading, normalizing and historically comparing documents with human oversight.",
+                    "Building Documento Facile: an AI pipeline for reading, normalizing and comparing documents over time with human oversight.",
                 ],
                 "Applied AI / LLM systems / document pipelines / human-in-the-loop",
             ),
         ],
         "impacts": [
             ("20 years", "building since 2006\nstill hands-on"),
-            ("STARTUP EXIT", "Deliverart acquired\nby TeamSystem in 2026"),
+            ("FULL ACQUISITION", "Deliverart > TeamSystem\n2026"),
             ("3.8M", "npm downloads\n12 months ending Aug 2026"),
         ],
         "capabilities": [
             "Technology & product leadership",
-            "Platform architecture",
-            "Hands-on engineering delivery",
-            "Applied AI product systems",
+            "Legacy modernization without disruption",
+            "Post-acquisition technology integration",
+            "Applied AI with human oversight",
         ],
         "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  Applied AI",
         "selected": [
             (
-                "Deliverart  /  End-to-end modernization",
-                "I chose incremental modernization over an isolated rewrite, evolving frontends, APIs, "
-                "cloud services and delivery processes while the product remained operational. Typed "
-                "contracts, shared SDKs, automated tests and CI/CD improved consistency across domains and "
-                "integrations.",
+                "Deliverart  /  Modernization strategy",
+                "I chose incremental modernization over a high-risk big-bang rewrite, evolving frontends, "
+                "APIs, cloud services and delivery while the product remained operational. The strategy "
+                "reduced migration risk and preserved release and operational continuity; typed contracts, "
+                "shared SDKs, tests and CI/CD improved consistency across domains.",
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
             ),
             (
@@ -243,10 +244,11 @@ CONTENT = {
                 "12 months of planning / monthly schedules / seconds instead of days of manual planning",
             ),
             (
-                "Verisure Italy  /  Senior consulting",
+                "Verisure Italy  /  Multichannel delivery",
                 "I work from the operational problem to the production solution: flow analysis, "
                 "integration design, development and continuous improvement. The result is an ecosystem able "
-                "to coordinate multiple channels and shorten delivery timelines compared with similar processes.",
+                "to coordinate multiple channels and reduce the time required to deliver new lead acquisition "
+                "flows across comparable channels.",
                 "multichannel / automation / reliability / operational continuity",
             ),
         ],
@@ -387,7 +389,11 @@ def draw_page_one(canvas: Canvas, content: dict) -> None:
     label(canvas, content["sections"]["experience"], MARGIN_X, y)
     y -= 23
 
-    for dates, title, context, bullets, technology in content["current"]:
+    current_roles = sorted(
+        content["current"],
+        key=lambda item: 0 if "Deliverart" in item[1] else 1 if "ErinTechLabs" in item[1] else 2,
+    )
+    for dates, title, context, bullets, technology in current_roles:
         canvas.setFont("Courier-Bold", 7.2)
         canvas.setFillColor(AMBER)
         canvas.drawString(MARGIN_X, y, dates)
@@ -418,7 +424,7 @@ def draw_page_one(canvas: Canvas, content: dict) -> None:
         if index:
             canvas.setStrokeColor(LIGHT)
             canvas.line(x - 13, y + 10, x - 13, y - 55)
-        metric_size = 20 if len(value) > 9 else 27
+        metric_size = 17 if len(value) > 13 else 20 if len(value) > 9 else 27
         canvas.setFont("Helvetica-Bold", metric_size)
         canvas.setFillColor(BLUE if index == 1 else INK)
         canvas.drawString(x, y - 5, value)
