@@ -9,9 +9,6 @@ const WebGLStage = lazy(() =>
 
 gsap.registerPlugin(ScrollTrigger);
 
-const personalContactUrl =
-  'https://mail.google.com/mail/?view=cm&fs=1&to=damiano.ciarla%40gmail.com&su=Portfolio%20conversation%20%2F%20Parliamo';
-
 const useBrowserLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
 
 function getInitialLanguage(): Language {
@@ -65,6 +62,17 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
   const bootPlayed = useRef(false);
   const reducedMotion = useReducedMotion();
   const text = useMemo(() => copy[language], [language]);
+  const personalContactUrl = useMemo(
+    () =>
+      language === 'it'
+        ? 'mailto:damiano.ciarla@gmail.com?subject=Parliamo%20dal%20portfolio'
+        : 'mailto:damiano.ciarla@gmail.com?subject=Portfolio%20conversation',
+    [language],
+  );
+  const cvUrl =
+    language === 'it'
+      ? '/cv/damiano-ciarla-cv-it.pdf'
+      : '/cv/damiano-ciarla-cv-en.pdf';
 
   useEffect(() => {
     if (!staticRender) return undefined;
@@ -97,32 +105,45 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
         return;
       }
 
-      if (!bootPlayed.current) {
+      const hasSeenBoot = (() => {
+        try {
+          return window.sessionStorage.getItem('dc_boot_seen') === '1';
+        } catch {
+          return false;
+        }
+      })();
+
+      if (!bootPlayed.current && !hasSeenBoot) {
         bootPlayed.current = true;
+        try {
+          window.sessionStorage.setItem('dc_boot_seen', '1');
+        } catch {
+          // The animation still works when storage is unavailable.
+        }
         const boot = gsap.timeline();
         boot
           .fromTo(
             '.boot-line',
             { opacity: 0, x: -8 },
-            { opacity: 1, x: 0, duration: 0.2, stagger: 0.16 },
+            { opacity: 1, x: 0, duration: 0.08, stagger: 0.06 },
           )
           .to('.boot-sequence', {
             opacity: 0,
-            duration: 0.45,
-            delay: 0.28,
+            duration: 0.18,
+            delay: 0.06,
             pointerEvents: 'none',
           })
           .fromTo(
             '.hero-line',
             { yPercent: 112 },
-            { yPercent: 0, duration: 1.05, stagger: 0.08, ease: 'power4.out' },
-            '-=0.2',
+            { yPercent: 0, duration: 0.85, stagger: 0.06, ease: 'power4.out' },
+            '-=0.08',
           )
           .fromTo(
             '.hero-copy, .hero-actions, .hero-meta',
             { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.72, stagger: 0.1, ease: 'power3.out' },
-            '-=0.65',
+            { opacity: 1, y: 0, duration: 0.55, stagger: 0.07, ease: 'power3.out' },
+            '-=0.55',
           );
       } else {
         gsap.set('.boot-sequence', { opacity: 0, pointerEvents: 'none' });
@@ -210,6 +231,9 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
           <a href="#work">{text.nav.work}</a>
           <a href="#contact">{text.nav.contact}</a>
         </nav>
+        <a className="mobile-contact" href="#contact">
+          {text.nav.mobileContact}
+        </a>
         <div className="language-switch" aria-label={text.utility.language}>
           <a
             href="/"
@@ -246,17 +270,30 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
             </h1>
             <p className="hero-body hero-copy">{text.hero.body}</p>
             <div className="hero-actions">
-              <a className="action action-primary" href="#story">
+              <a className="action action-primary" href="#now">
                 {text.hero.primary}
                 <ArrowIcon />
               </a>
               <a
                 className="action action-quiet"
                 href={personalContactUrl}
+              >
+                {text.hero.secondary}
+              </a>
+            </div>
+            <div className="hero-links hero-copy" aria-label="Profile links">
+              <a href="https://github.com/damianociarla" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/damianociarla/"
                 target="_blank"
                 rel="noreferrer"
               >
-                {text.hero.secondary}
+                LinkedIn
+              </a>
+              <a href={cvUrl} download>
+                {text.hero.cv}
               </a>
             </div>
           </div>
@@ -267,6 +304,27 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
               <i aria-hidden="true" />
             </span>
           </div>
+        </section>
+
+        <section className="now section" id="now" aria-labelledby="now-title">
+          <div className="now-heading reveal">
+            <p className="eyebrow">{text.now.eyebrow}</p>
+            <h2 id="now-title">{text.now.title}</h2>
+            <p>{text.now.copy}</p>
+          </div>
+          <div className="current-list">
+            {text.now.items.map((item) => (
+              <article className="current-row reveal" key={item.organization}>
+                <h3>{item.organization}</h3>
+                <div>
+                  <strong>{item.role}</strong>
+                  <span>{item.nature}</span>
+                </div>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+          <p className="now-target reveal">{text.now.target}</p>
         </section>
 
         <section className="story section" id="story">
@@ -321,7 +379,19 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
                 <div className="project-body">
                   <h3>{project.title}</h3>
                   <p>{project.copy}</p>
-                  <code>{project.signal}</code>
+                  {project.signalHref ? (
+                    <a
+                      className="project-signal"
+                      href={project.signalHref}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <code>{project.signal}</code>
+                      <ExternalIcon />
+                    </a>
+                  ) : (
+                    <code>{project.signal}</code>
+                  )}
                 </div>
                 <div className="project-links">
                   <a className="text-link" href={project.href} target="_blank" rel="noreferrer">
@@ -345,41 +415,6 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
           </div>
         </section>
 
-        <section className="open-source section">
-          <div className="metric-stage reveal">
-            <p className="eyebrow">{text.openSource.eyebrow}</p>
-            <div className="giant-metric">
-              <span>{text.openSource.value}</span>
-              <small>{text.openSource.unit}</small>
-            </div>
-          </div>
-          <div className="metric-copy reveal">
-            <h2>{text.openSource.title}</h2>
-            <p>{text.openSource.copy}</p>
-            <span className="data-note">{text.openSource.note}</span>
-            <div className="open-source-links">
-              <a
-                className="text-link"
-                href="https://github.com/damianociarla/node-ffmpeg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {text.openSource.link}
-                <ExternalIcon />
-              </a>
-              <a
-                className="text-link"
-                href="https://damianociarla.github.io/node-ffmpeg/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {text.openSource.docsLink}
-                <ExternalIcon />
-              </a>
-            </div>
-          </div>
-        </section>
-
         <section className="deliverart section">
           <div className="deliverart-main reveal">
             <p className="eyebrow">{text.deliverart.eyebrow}</p>
@@ -389,6 +424,14 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
               <span>{text.deliverart.acquisition}</span>
               <i aria-hidden="true" />
             </div>
+            <dl className="deliverart-proof">
+              {text.deliverart.proof.map((item) => (
+                <div key={item.label}>
+                  <dt>{item.label}</dt>
+                  <dd>{item.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div className="sdk-proof reveal">
             <span>{text.deliverart.sdkLabel}</span>
@@ -396,25 +439,6 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
             <p>{text.deliverart.sdkCopy}</p>
             <code>{text.deliverart.sdkSignal}</code>
           </div>
-        </section>
-
-        <section className="capabilities section" id="capabilities">
-          <div className="section-heading reveal">
-            <p className="eyebrow">{text.capabilities.eyebrow}</p>
-            <h2>{text.capabilities.title}</h2>
-          </div>
-          <div className="capability-list">
-            {text.capabilities.items.map((item) => (
-              <article className="capability-row reveal" key={item.index}>
-                <span>{item.index}</span>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-              </article>
-            ))}
-          </div>
-          <p className="stack-line reveal">
-            TypeScript · Next.js · Node.js · Symfony · API Platform · AWS · CI/CD · AI/LLM
-          </p>
         </section>
 
         <section className="work section" id="work">
@@ -453,6 +477,7 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
                     </div>
                   ))}
                 </dl>
+                {item.note ? <p className="case-note">{item.note}</p> : null}
               </article>
             ))}
           </div>
@@ -484,25 +509,23 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
             <a
               className="contact-route contact-route-primary reveal"
               href={personalContactUrl}
-              target="_blank"
-              rel="noreferrer"
             >
               <span>{text.contact.personalLabel}</span>
               <h3>{text.contact.personalTitle}</h3>
               <p>{text.contact.personalCopy}</p>
+              <strong className="contact-email">{text.contact.email}</strong>
               <code>$ {text.contact.personalAction}</code>
               <ArrowIcon />
             </a>
           </div>
           <div className="cv-row reveal">
             <span>{text.contact.cvLabel}</span>
-            <a
-              href={language === 'it' ? '/cv/damiano-ciarla-cv-it.pdf' : '/cv/damiano-ciarla-cv-en.pdf'}
-              download
-            >
-              {text.contact.cvAction}
-              <ArrowIcon />
-            </a>
+            <div className="cv-links">
+              <a href={cvUrl} download>
+                {text.contact.cv}
+                <ArrowIcon />
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -520,7 +543,7 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
           >
             LinkedIn
           </a>
-          <a href={personalContactUrl} target="_blank" rel="noreferrer">
+          <a href={personalContactUrl}>
             Email
           </a>
         </div>

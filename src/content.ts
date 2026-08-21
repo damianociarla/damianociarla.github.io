@@ -10,18 +10,13 @@ type Era = {
   linkLabel?: string;
 };
 
-type Capability = {
-  index: string;
-  title: string;
-  copy: string;
-};
-
 type Project = {
   index: string;
   label: string;
   title: string;
   copy: string;
   signal: string;
+  signalHref?: string;
   href: string;
   linkLabel: string;
   secondaryHref?: string;
@@ -34,13 +29,14 @@ type CaseStudy = {
   title: string;
   copy: string;
   metrics: Array<{ value: string; label: string }>;
+  note?: string;
   href?: string;
   linkLabel?: string;
 };
 
 export type SiteCopy = {
   meta: { title: string; description: string };
-  nav: { story: string; projects: string; work: string; contact: string };
+  nav: { story: string; projects: string; work: string; contact: string; mobileContact: string };
   utility: { skip: string; language: string; scroll: string; open: string };
   boot: string[];
   hero: {
@@ -50,6 +46,14 @@ export type SiteCopy = {
     primary: string;
     secondary: string;
     status: string;
+    cv: string;
+  };
+  now: {
+    eyebrow: string;
+    title: string;
+    copy: string;
+    target: string;
+    items: Array<{ organization: string; role: string; nature: string; copy: string }>;
   };
   story: {
     eyebrow: string;
@@ -63,16 +67,6 @@ export type SiteCopy = {
     intro: string;
     items: Project[];
   };
-  openSource: {
-    eyebrow: string;
-    value: string;
-    unit: string;
-    title: string;
-    copy: string;
-    note: string;
-    link: string;
-    docsLink: string;
-  };
   deliverart: {
     eyebrow: string;
     title: string;
@@ -82,11 +76,7 @@ export type SiteCopy = {
     sdkTitle: string;
     sdkCopy: string;
     sdkSignal: string;
-  };
-  capabilities: {
-    eyebrow: string;
-    title: string;
-    items: Capability[];
+    proof: Array<{ label: string; value: string }>;
   };
   work: {
     eyebrow: string;
@@ -108,8 +98,9 @@ export type SiteCopy = {
     personalTitle: string;
     personalCopy: string;
     personalAction: string;
+    email: string;
     cvLabel: string;
-    cvAction: string;
+    cv: string;
   };
   footer: string;
 };
@@ -117,20 +108,21 @@ export type SiteCopy = {
 export const copy: Record<Language, SiteCopy> = {
   it: {
     meta: {
-      title: 'Damiano Ciarla | Technical Leader, Software Architect & AI Engineer',
+      title: 'Damiano Ciarla | Co-founder & Technology Leader',
       description:
-        'Vent’anni nel software tra leadership tecnica, modernizzazione di piattaforme, startup acquisite e AI applicata. Sempre hands-on.',
+        'Co-founder e technology leader hands-on. Ho guidato Deliverart dalla startup all’acquisizione TeamSystem e oggi costruisco piattaforme e sistemi di applied AI.',
     },
     nav: {
       story: 'Percorso',
       projects: 'Progetti',
       work: 'Lavoro',
       contact: 'Contatto',
+      mobileContact: 'Scrivimi',
     },
     utility: {
       skip: 'Vai al contenuto',
       language: 'Cambia lingua',
-      scroll: 'Scorri per evolvere',
+      scroll: 'Scopri il percorso',
       open: 'Apri',
     },
     boot: [
@@ -140,19 +132,48 @@ export const copy: Record<Language, SiteCopy> = {
       'hands_on_mode............. always',
     ],
     hero: {
-      eyebrow: 'TECHNICAL LEADER // SOFTWARE ARCHITECT // AI ENGINEER',
+      eyebrow: 'CO-FOUNDER // TECHNOLOGY LEADER // HANDS-ON',
       title: 'Damiano\nCiarla',
       body:
-        'Vent’anni nel software. Guido modernizzazioni, costruisco piattaforme e trasformo l’AI in prodotti reali. Sempre con le mani nel codice.',
-      primary: 'Esplora il percorso',
+        'Ho guidato Deliverart dalla fase startup all’acquisizione completa da TeamSystem. Da vent’anni costruisco piattaforme, prodotti e sistemi di applied AI senza allontanarmi dal codice.',
+      primary: 'Vedi il mio impatto',
       secondary: 'Parliamo',
-      status: 'Roma / remote anywhere',
+      status: 'Roma · disponibile da remoto',
+      cv: 'Curriculum',
+    },
+    now: {
+      eyebrow: 'COSA FACCIO OGGI',
+      title: 'Tre attività, tre rapporti diversi. Una sola traiettoria.',
+      copy:
+        'Il filo comune è la responsabilità end-to-end: collegare prodotto, architettura e delivery fino al risultato.',
+      target:
+        'Prossimo capitolo: ruoli di technology leadership — CTO, Head of Engineering o advisory strategico — in organizzazioni che vogliono evolvere piattaforme e prodotti.',
+      items: [
+        {
+          organization: 'Deliverart',
+          role: 'Co-founder · già CTO · Technology Lead',
+          nature: 'RUOLO OPERATIVO CONTINUATIVO',
+          copy: 'Resto responsabile dell’evoluzione tecnologica del prodotto dopo l’acquisizione completa da parte di TeamSystem.',
+        },
+        {
+          organization: 'ErinTechLabs',
+          role: 'Founder · AI Product Builder',
+          nature: 'INIZIATIVA IMPRENDITORIALE INDIPENDENTE',
+          copy: 'Sviluppo prodotti di applied AI e sistemi custom, dalla definizione del problema alla produzione.',
+        },
+        {
+          organization: 'Verisure Italia',
+          role: 'Independent Senior Consultant',
+          nature: 'INCARICO DI CONSULENZA',
+          copy: 'Supporto sistemi business-critical di lead acquisition per il mercato italiano dal 2018.',
+        },
+      ],
     },
     story: {
       eyebrow: 'VENT’ANNI DI SOFTWARE',
-      title: 'Non ho osservato il cambiamento. Ci ho compilato dentro.',
+      title: 'Vent’anni a costruire software mentre tecnologie e aziende cambiavano.',
       intro:
-        'Dal primo codice alla leadership tecnica, da una startup acquisita ai prodotti AI. Gli strumenti hanno continuato a cambiare. La mia voglia di costruire no.',
+        'Dal primo codice alla leadership tecnica, fino a una startup acquisita e ai prodotti AI. Ogni fase ha aggiunto responsabilità, non distanza dal software.',
       eras: [
         {
           year: '2006',
@@ -164,19 +185,19 @@ export const copy: Record<Language, SiteCopy> = {
         {
           year: '2007—16',
           label: 'PRODUCTION',
-          title: 'Imparare mentre tutto gira',
-          copy: 'Java, PHP, JavaScript, piattaforme web e open source. Dieci anni di crescita costruendo sistemi reali.',
+          title: 'Dieci anni in produzione',
+          copy: 'Java, PHP, JavaScript, piattaforme web e open source. Sistemi operativi, integrazioni e prodotti usati ogni giorno.',
           signal: 'ship / learn / repeat',
         },
         {
-          year: '2017—24',
+          year: '2016—NOW',
           label: 'SCALE',
-          title: 'Dal codice all’azienda',
-          copy: 'Co-fondo Deliverart e ne guido l’evoluzione end-to-end: prodotto, architettura, cloud e delivery crescono come un solo sistema.',
-          signal: 'code → product → company',
+          title: 'Da startup ad acquisizione',
+          copy: 'Co-fondo Deliverart, ne guido la tecnologia come CTO e accompagno prodotto e piattaforma fino all’acquisizione completa da TeamSystem.',
+          signal: 'founder → CTO → acquisition',
         },
         {
-          year: '2025—NOW',
+          year: '2025—OGGI',
           label: 'AUGMENT',
           title: 'Costruire nell’era AI',
           copy: 'Fondo ErinTechLabs e porto l’AI dentro prodotti e processi reali: dati, vincoli, supervisione e risultati misurabili.',
@@ -190,14 +211,14 @@ export const copy: Record<Language, SiteCopy> = {
       eyebrow: 'PROGETTI SELEZIONATI',
       title: 'Cose che puoi aprire, usare e ispezionare.',
       intro:
-        'Prodotti e strumenti pubblici che trasformano esperienza tecnica in software verificabile. Tre progetti tra i tanti costruiti negli anni.',
+        'Tre progetti rappresentativi del mio modo di lavorare: problemi concreti, architettura leggibile e software che si può usare davvero.',
       items: [
         {
           index: '01',
           label: 'OPEN SOURCE // ACCESSIBILITY TOOLING',
           title: 'FocusPath',
           copy:
-            'Uno scanner visuale per la navigazione da tastiera. Segue il percorso reale del focus in Chromium, rileva problemi deterministici e genera report HTML portabili.',
+            'Ho progettato e rilasciato uno scanner visuale per la navigazione da tastiera. Segue il focus reale in Chromium, rileva problemi deterministici e genera report HTML portabili.',
           signal: 'TypeScript / Playwright / CLI / API / MIT',
           href: 'https://damianociarla.github.io/focuspath/',
           linkLabel: 'Prova FocusPath',
@@ -209,8 +230,9 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'OPEN SOURCE // NODE.JS',
           title: 'node-ffmpeg',
           copy:
-            'Un modulo nato nel 2012 e modernizzato nel 2026: v1.0 in TypeScript, supporto Node.js 24, ESM e CommonJS, nuovi test e documentazione.',
-          signal: 'v1.0.0 / TypeScript / Node.js / 3.8M download',
+            'Mantengo il progetto pubblicato per la prima volta nel 2012. Nel 2026 ne ho guidato la modernizzazione in TypeScript e il rilascio v1.0 per Node.js 24, ESM e CommonJS.',
+          signal: '3.8M download npm / ultimi 12 mesi / agosto 2026',
+          signalHref: 'https://www.npmjs.com/package/ffmpeg',
           href: 'https://damianociarla.github.io/node-ffmpeg/',
           linkLabel: 'Esplora la documentazione',
           secondaryHref: 'https://github.com/damianociarla/node-ffmpeg',
@@ -221,23 +243,12 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'ERINTECHLABS // AI PRODUCT',
           title: 'Documento Facile',
           copy:
-            'Un prodotto che usa l’AI per rendere comprensibili bollette, buste paga e comunicazioni, collegando periodi comparabili e differenze importanti.',
-          signal: 'AI / documenti / confronti / controllo umano',
+            'Sto costruendo un prodotto che applica l’AI alla lettura e al confronto di documenti personali, con normalizzazione dei dati, storico e controllo umano visibile.',
+          signal: 'LLM integration / document pipeline / human oversight',
           href: 'https://documentofacile.it/',
           linkLabel: 'Scopri il prodotto',
         },
       ],
-    },
-    openSource: {
-      eyebrow: 'OPEN SOURCE // ACTIVE AGAIN',
-      value: '3.8M',
-      unit: 'download npm / 12 mesi',
-      title: 'Dal 2012 alla 1.0. Una nuova fase per node-ffmpeg.',
-      copy:
-        'La versione storica ha generato 3,8 milioni di download negli ultimi dodici mesi. Nel 2026 ho modernizzato node-ffmpeg in TypeScript e rilasciato la v1.0.0 per Node.js 24, ESM e CommonJS, con nuovi test e documentazione.',
-      note: 'v1.0.0 · rilasciata il 20 agosto 2026 · 629 stelle · 140 fork',
-      link: 'Vedi il repository',
-      docsLink: 'Esplora la documentazione',
     },
     deliverart: {
       eyebrow: 'DELIVERART // STORIA DA FOUNDER',
@@ -246,79 +257,45 @@ export const copy: Record<Language, SiteCopy> = {
         'Ho co-fondato Deliverart nel 2016 e l’ho guidata come CTO, trasformando la complessità del food delivery in una piattaforma operativa. Dopo l’acquisizione da parte di TeamSystem, continuo a guidarne l’evoluzione tecnologica dall’interno.',
       acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
       sdkLabel: 'COSA HO COSTRUITO',
-      sdkTitle: 'Una piattaforma modernizzata senza fermare il prodotto.',
+      sdkTitle: 'Una piattaforma modernizzata senza interrompere il servizio.',
       sdkCopy:
         'Frontend Next.js, API Symfony e API Platform, servizi su AWS ECS, test automatici e CI/CD. Un’evoluzione progressiva dell’intera piattaforma, con SDK TypeScript per mantenere coerenti domini, web app e integrazioni.',
       sdkSignal: 'frontend · api · cloud · test · delivery',
-    },
-    capabilities: {
-      eyebrow: 'COSA FACCIO',
-      title: 'Guido. Progetto. Costruisco.',
-      items: [
-        {
-          index: '01',
-          title: 'Technical leadership',
-          copy: 'Tecnologia, prodotto, team e business nella stessa direzione.',
-        },
-        {
-          index: '02',
-          title: 'Platform modernization',
-          copy: 'Evoluzione progressiva di frontend, API, cloud e delivery senza fermare il prodotto.',
-        },
-        {
-          index: '03',
-          title: 'Applied AI',
-          copy: 'AI connessa a dati, regole, persone e un risultato che si può misurare.',
-        },
-        {
-          index: '04',
-          title: 'Hands-on execution',
-          copy: 'Dalla direzione tecnica al codice funzionante e alla produzione.',
-        },
+      proof: [
+        { label: 'CONTRIBUTO PERSONALE', value: 'Prodotto, architettura, cloud e delivery' },
+        { label: 'PASSAGGIO CHIAVE', value: 'Acquisizione completa da TeamSystem' },
+        { label: 'RESPONSABILITÀ ATTUALE', value: 'Evoluzione tecnologica della piattaforma' },
       ],
     },
     work: {
       eyebrow: 'SISTEMI SELEZIONATI',
       title: 'La tecnologia conta quando cambia il lavoro reale.',
       intro:
-        'Tre esempi tra i tanti sistemi che ho progettato e sviluppato. Contesti diversi, stesso filo conduttore: trasformare complessità e dati in decisioni più chiare.',
+        'Due contesti professionali in cui architettura e delivery hanno prodotto risultati verificabili.',
       cases: [
         {
           code: 'CASE_01',
           eyebrow: 'PIANIFICAZIONE TURNI CON AI // CASO ANONIMIZZATO',
           title: 'Un sistema AI che crea turni mensili più equi in pochi secondi.',
           copy:
-            'Ho progettato un sistema di pianificazione che trasforma regole aziendali, vincoli operativi e criteri di equità in un calendario mensile bilanciato. Ricalcola continuamente le assegnazioni per ridurre errori, squilibri e contestazioni.',
+            'In un test sull’intero piano annuale 2026, il sistema ha trasformato regole, vincoli operativi e criteri di equità in turnazioni mensili bilanciate, generando ogni pianificazione in pochi secondi.',
           metrics: [
-            { value: '99.7%', label: 'regole e vincoli di equità soddisfatti' },
-            { value: '12 mesi', label: 'intero piano 2026 testato' },
+            { value: '99.7%', label: 'accuratezza osservata secondo i criteri di test' },
+            { value: '12 mesi', label: 'dataset di pianificazione 2026' },
             { value: 'pochi secondi', label: 'invece di giorni di lavoro manuale' },
           ],
+          note: 'Il 99,7% descrive l’accuratezza complessiva osservata nel test annuale; non indica vincoli operativi obbligatori ignorati.',
         },
         {
           code: 'CASE_02',
-          eyebrow: 'ERINTECHLABS // PRODUCT',
-          title: 'Documento Facile',
-          copy:
-            'Un’app che traduce bollette, buste paga e comunicazioni in informazioni comprensibili, collega periodi comparabili e segnala ciò che cambia davvero.',
-          metrics: [
-            { value: 'AI', label: 'lettura contestuale' },
-            { value: 'STORICO', label: 'confronti e trend' },
-            { value: 'HUMAN', label: 'controllo sempre visibile' },
-          ],
-          href: 'https://documentofacile.it/',
-          linkLabel: 'Scopri il prodotto',
-        },
-        {
-          code: 'CASE_03',
           eyebrow: 'VERISURE // CONSULENZA SENIOR',
           title: 'Lead acquisition che cresce senza esporre la complessità.',
           copy:
             'Dal 2018 contribuisco all’analisi, allo sviluppo e alla modernizzazione dei sistemi di lead acquisition per il mercato italiano. Il mio lavoro collega flussi multicanale e processi commerciali, con focus su automazione, affidabilità e continuità operativa.',
           metrics: [
-            { value: 'MULTICANALE', label: 'flussi connessi end-to-end' },
-            { value: 'AUTOMATION', label: 'meno attività manuali' },
-            { value: 'CONTINUITÀ', label: 'evoluzione senza fermare l’operatività' },
+            { value: '2018→', label: 'incarico continuativo sul mercato italiano' },
+            { value: 'MULTICANALE', label: 'ecosistema di sistemi e canali connessi' },
+            { value: 'DELIVERY', label: 'tempi ridotti nei flussi comparabili' },
           ],
         },
       ],
@@ -327,7 +304,7 @@ export const copy: Record<Language, SiteCopy> = {
       eyebrow: 'OLTRE IL CODICE',
       title: 'Non tutto deve andare in produzione.',
       copy:
-        'Quando non costruisco software, costruisco cose in legno, gioco a tennis e apprezzo una buona birra. Possibilmente in quest’ordine. Non necessariamente.',
+        'Quando non costruisco software, costruisco cose in legno, gioco a tennis e apprezzo una buona birra. Possibilmente in quest’ordine.',
       items: ['falegnameria', 'tennis', 'birra'],
     },
     contact: {
@@ -340,27 +317,29 @@ export const copy: Record<Language, SiteCopy> = {
       personalCopy:
         'Lavoro, idee, prodotti, speaking o problemi tecnici difficili: parto sempre da una conversazione.',
       personalAction: 'scrivimi',
-      cvLabel: 'SERVE LA VERSIONE CLASSICA?',
-      cvAction: 'Scarica il CV italiano',
+      email: 'damiano.ciarla@gmail.com',
+      cvLabel: 'CURRICULUM',
+      cv: 'Scarica il curriculum',
     },
-    footer: 'Built with TypeScript, WebGL and an unreasonable respect for details.',
+    footer: 'Built with TypeScript, WebGL and attention to detail.',
   },
   en: {
     meta: {
-      title: 'Damiano Ciarla | Technical Leader, Software Architect & AI Engineer',
+      title: 'Damiano Ciarla | Co-founder & Technology Leader',
       description:
-        'Twenty years in software across technical leadership, platform modernization, acquired startups and applied AI. Still hands-on.',
+        'Co-founder and hands-on technology leader. I led Deliverart from startup to TeamSystem acquisition and now build platforms and applied-AI systems.',
     },
     nav: {
       story: 'Story',
       projects: 'Projects',
       work: 'Work',
       contact: 'Contact',
+      mobileContact: 'Contact',
     },
     utility: {
       skip: 'Skip to content',
       language: 'Change language',
-      scroll: 'Scroll to evolve',
+      scroll: 'Explore the story',
       open: 'Open',
     },
     boot: [
@@ -370,19 +349,48 @@ export const copy: Record<Language, SiteCopy> = {
       'hands_on_mode............. always',
     ],
     hero: {
-      eyebrow: 'TECHNICAL LEADER // SOFTWARE ARCHITECT // AI ENGINEER',
+      eyebrow: 'CO-FOUNDER // TECHNOLOGY LEADER // HANDS-ON',
       title: 'Damiano\nCiarla',
       body:
-        'Twenty years in software. I lead modernization, build platforms and turn AI into real products. Still hands-on.',
-      primary: 'Explore the story',
+        'I led Deliverart from startup to full acquisition by TeamSystem. For twenty years I have built platforms, products and applied-AI systems without stepping away from the code.',
+      primary: 'See my impact',
       secondary: 'Let’s talk',
-      status: 'Rome / remote anywhere',
+      status: 'Rome, Italy · open to remote roles across Europe',
+      cv: 'Curriculum',
+    },
+    now: {
+      eyebrow: 'WHAT I DO NOW',
+      title: 'Three activities, three different relationships. One trajectory.',
+      copy:
+        'The common thread is end-to-end ownership: connecting product, architecture and delivery through to the outcome.',
+      target:
+        'Next chapter: technology leadership roles — CTO, Head of Engineering or strategic advisory — in organizations evolving platforms and products.',
+      items: [
+        {
+          organization: 'Deliverart',
+          role: 'Co-founder · former CTO · Technology Lead',
+          nature: 'ONGOING OPERATING ROLE',
+          copy: 'I remain responsible for the product’s technological evolution following its full acquisition by TeamSystem.',
+        },
+        {
+          organization: 'ErinTechLabs',
+          role: 'Founder · AI Product Builder',
+          nature: 'INDEPENDENT ENTREPRENEURIAL VENTURE',
+          copy: 'I build applied-AI products and custom systems, from problem definition through production delivery.',
+        },
+        {
+          organization: 'Verisure Italy',
+          role: 'Independent Senior Consultant',
+          nature: 'CONSULTING ENGAGEMENT',
+          copy: 'I have supported business-critical lead acquisition systems for the Italian market since 2018.',
+        },
+      ],
     },
     story: {
       eyebrow: 'TWENTY YEARS IN SOFTWARE',
-      title: 'I did not watch technology change. I compiled inside it.',
+      title: 'Twenty years building software through technological and business change.',
       intro:
-        'From first code to technical leadership, from an acquired startup to AI products. The tools kept changing. My drive to build never did.',
+        'From my first code to technical leadership, an acquired startup and AI products. Each phase added responsibility without taking me away from software.',
       eras: [
         {
           year: '2006',
@@ -394,22 +402,22 @@ export const copy: Record<Language, SiteCopy> = {
         {
           year: '2007—16',
           label: 'PRODUCTION',
-          title: 'Learning while everything runs',
-          copy: 'Java, PHP, JavaScript, web platforms and open source. Ten years of learning by building real systems.',
+          title: 'Ten years in production',
+          copy: 'Java, PHP, JavaScript, web platforms and open source. Operational systems, integrations and products used every day.',
           signal: 'ship / learn / repeat',
         },
         {
-          year: '2017—24',
+          year: '2016—PRESENT',
           label: 'SCALE',
-          title: 'From code to company',
-          copy: 'I co-found Deliverart and lead its end-to-end evolution: product, architecture, cloud and delivery grow as one system.',
-          signal: 'code → product → company',
+          title: 'From startup to acquisition',
+          copy: 'I co-founded Deliverart, led its technology as CTO and took its product and platform through to full acquisition by TeamSystem.',
+          signal: 'founder → CTO → acquisition',
         },
         {
-          year: '2025—NOW',
+          year: '2025—PRESENT',
           label: 'AUGMENT',
           title: 'Building in the AI era',
-          copy: 'I found ErinTechLabs and bring AI into real products and operations: data, constraints, oversight and measurable outcomes.',
+          copy: 'I founded ErinTechLabs and bring AI into real products and operations: data, constraints, oversight and measurable outcomes.',
           signal: 'human × machine',
           href: 'https://erintechlabs.com/',
           linkLabel: 'Visit ErinTechLabs',
@@ -420,14 +428,14 @@ export const copy: Record<Language, SiteCopy> = {
       eyebrow: 'SELECTED PROJECTS',
       title: 'Things you can open, use and inspect.',
       intro:
-        'Public products and tools that turn technical experience into verifiable software. Three projects among the many built over the years.',
+        'Three projects that represent how I work: concrete problems, legible architecture and software people can actually use.',
       items: [
         {
           index: '01',
           label: 'OPEN SOURCE // ACCESSIBILITY TOOLING',
           title: 'FocusPath',
           copy:
-            'A visual keyboard-navigation scanner. It follows the real focus path in Chromium, flags deterministic issues and generates portable HTML reports.',
+            'I designed and released a visual keyboard-navigation scanner. It follows the real focus path in Chromium, flags deterministic issues and generates portable HTML reports.',
           signal: 'TypeScript / Playwright / CLI / API / MIT',
           href: 'https://damianociarla.github.io/focuspath/',
           linkLabel: 'Try FocusPath',
@@ -439,8 +447,9 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'OPEN SOURCE // NODE.JS',
           title: 'node-ffmpeg',
           copy:
-            'A module born in 2012 and modernized in 2026: v1.0 in TypeScript, Node.js 24, ESM and CommonJS support, new tests and documentation.',
-          signal: 'v1.0.0 / TypeScript / Node.js / 3.8M downloads',
+            'I maintain the project first released in 2012. In 2026 I led its TypeScript modernization and v1.0 release for Node.js 24, ESM and CommonJS.',
+          signal: '3.8M npm downloads / past 12 months / August 2026',
+          signalHref: 'https://www.npmjs.com/package/ffmpeg',
           href: 'https://damianociarla.github.io/node-ffmpeg/',
           linkLabel: 'Explore the documentation',
           secondaryHref: 'https://github.com/damianociarla/node-ffmpeg',
@@ -451,23 +460,12 @@ export const copy: Record<Language, SiteCopy> = {
           label: 'ERINTECHLABS // AI PRODUCT',
           title: 'Documento Facile',
           copy:
-            'A product using AI to make bills, payslips and official notices understandable, connecting comparable periods and meaningful differences.',
-          signal: 'AI / documents / comparisons / human control',
+            'I am building a product that applies AI to reading and comparing personal documents, with data normalization, history and visible human oversight.',
+          signal: 'LLM integration / document pipeline / human oversight',
           href: 'https://documentofacile.it/',
           linkLabel: 'Explore the product',
         },
       ],
-    },
-    openSource: {
-      eyebrow: 'OPEN SOURCE // ACTIVE AGAIN',
-      value: '3.8M',
-      unit: 'npm downloads / 12 months',
-      title: 'From 2012 to 1.0. A new chapter for node-ffmpeg.',
-      copy:
-        'The historical release generated 3.8 million downloads over the last twelve months. In 2026, I modernized node-ffmpeg in TypeScript and released v1.0.0 for Node.js 24, ESM and CommonJS, with new tests and documentation.',
-      note: 'v1.0.0 · released August 20, 2026 · 629 stars · 140 forks',
-      link: 'View the repository',
-      docsLink: 'Explore the documentation',
     },
     deliverart: {
       eyebrow: 'DELIVERART // FOUNDER STORY',
@@ -476,79 +474,45 @@ export const copy: Record<Language, SiteCopy> = {
         'I co-founded Deliverart in 2016 and led it as CTO, turning food-delivery complexity into an operational platform. After its acquisition by TeamSystem, I continue to guide its technological evolution from within.',
       acquisition: 'TEAMSystem // 40% 2024 → 100% 2026',
       sdkLabel: 'WHAT I BUILT',
-      sdkTitle: 'A platform modernized without stopping the product.',
+      sdkTitle: 'A platform modernized without disrupting operations.',
       sdkCopy:
         'Next.js frontends, Symfony and API Platform APIs, services on AWS ECS, automated tests and CI/CD. A progressive evolution of the whole platform, with TypeScript SDKs keeping domains, web apps and integrations consistent.',
       sdkSignal: 'frontend · api · cloud · tests · delivery',
-    },
-    capabilities: {
-      eyebrow: 'WHAT I DO',
-      title: 'I lead. I design. I build.',
-      items: [
-        {
-          index: '01',
-          title: 'Technical leadership',
-          copy: 'Technology, product, teams and business moving in the same direction.',
-        },
-        {
-          index: '02',
-          title: 'Platform modernization',
-          copy: 'Progressive evolution of frontends, APIs, cloud and delivery without stopping the product.',
-        },
-        {
-          index: '03',
-          title: 'Applied AI',
-          copy: 'AI connected to data, rules, people and an outcome you can measure.',
-        },
-        {
-          index: '04',
-          title: 'Hands-on execution',
-          copy: 'From technical direction to working code and production delivery.',
-        },
+      proof: [
+        { label: 'PERSONAL SCOPE', value: 'Product, architecture, cloud and delivery' },
+        { label: 'KEY MILESTONE', value: 'Full acquisition by TeamSystem' },
+        { label: 'CURRENT OWNERSHIP', value: 'Ongoing technological evolution' },
       ],
     },
     work: {
       eyebrow: 'SELECTED SYSTEMS',
       title: 'Technology matters when it changes real work.',
       intro:
-        'Three examples from the many systems I have designed and built. Different contexts, same thread: turning complexity and data into clearer decisions.',
+        'Two professional contexts where architecture and delivery produced verifiable outcomes.',
       cases: [
         {
           code: 'CASE_01',
           eyebrow: 'AI SHIFT PLANNING // ANONYMIZED CASE',
           title: 'An AI system that builds fairer monthly shifts in seconds.',
           copy:
-            'I designed a planning system that turns company rules, operational constraints and fairness criteria into a balanced monthly schedule. It continuously recalculates assignments to reduce errors, imbalances and disputes.',
+            'In a test covering the full 2026 annual plan, the system turned company rules, operational constraints and fairness criteria into balanced monthly schedules, generating each plan in seconds.',
           metrics: [
-            { value: '99.7%', label: 'rules and fairness constraints satisfied' },
-            { value: '12 months', label: 'full 2026 plan tested' },
+            { value: '99.7%', label: 'accuracy observed against the defined test criteria' },
+            { value: '12 months', label: '2026 scheduling dataset' },
             { value: 'seconds', label: 'instead of days of manual planning' },
           ],
+          note: 'The 99.7% figure describes aggregate accuracy observed in the full-year test; it does not represent mandatory operational constraints being ignored.',
         },
         {
           code: 'CASE_02',
-          eyebrow: 'ERINTECHLABS // PRODUCT',
-          title: 'Documento Facile',
-          copy:
-            'An app that turns bills, payslips and official notices into understandable information, connects comparable periods and flags what truly changed.',
-          metrics: [
-            { value: 'AI', label: 'contextual reading' },
-            { value: 'HISTORY', label: 'comparisons and trends' },
-            { value: 'HUMAN', label: 'control stays visible' },
-          ],
-          href: 'https://documentofacile.it/',
-          linkLabel: 'Explore the product',
-        },
-        {
-          code: 'CASE_03',
           eyebrow: 'VERISURE // SENIOR CONSULTING',
           title: 'Lead acquisition that grows without exposing its complexity.',
           copy:
             'Since 2018 I have contributed to the analysis, development and modernization of lead acquisition systems for the Italian market. My work connects multichannel flows and commercial processes, with a focus on automation, reliability and operational continuity.',
           metrics: [
-            { value: 'MULTICHANNEL', label: 'flows connected end-to-end' },
-            { value: 'AUTOMATION', label: 'less manual work' },
-            { value: 'CONTINUITY', label: 'evolution without stopping operations' },
+            { value: '2018→', label: 'ongoing engagement in the Italian market' },
+            { value: 'MULTICHANNEL', label: 'connected ecosystem of systems and channels' },
+            { value: 'DELIVERY', label: 'shorter timelines across comparable workflows' },
           ],
         },
       ],
@@ -557,7 +521,7 @@ export const copy: Record<Language, SiteCopy> = {
       eyebrow: 'BEYOND CODE',
       title: 'Not everything needs to ship.',
       copy:
-        'When I am not building software, I build things from wood, play tennis and enjoy a good beer. Preferably in that order. Not necessarily.',
+        'When I am not building software, I build things from wood, play tennis and enjoy a good beer. Preferably in that order.',
       items: ['woodworking', 'tennis', 'beer'],
     },
     contact: {
@@ -570,9 +534,10 @@ export const copy: Record<Language, SiteCopy> = {
       personalCopy:
         'Roles, ideas, products, speaking or difficult technical problems: I always start with a conversation.',
       personalAction: 'start a conversation',
-      cvLabel: 'NEED THE CLASSIC VERSION?',
-      cvAction: 'Download the English CV',
+      email: 'damiano.ciarla@gmail.com',
+      cvLabel: 'CURRICULUM',
+      cv: 'Download curriculum',
     },
-    footer: 'Built with TypeScript, WebGL and an unreasonable respect for details.',
+    footer: 'Built with TypeScript, WebGL and attention to detail.',
   },
 };

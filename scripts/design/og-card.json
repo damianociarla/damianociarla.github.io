@@ -120,7 +120,7 @@
       "type": "text",
       "x": 72,
       "y": 72,
-      "text": "TECHNICAL ENTREPRENEUR // AI PROGRAMMER",
+      "text": "CO-FOUNDER // TECHNOLOGY LEADER",
       "style": {
         "fill": "#D98516",
         "fontFamily": "DejaVu Sans Mono, monospace",
@@ -172,7 +172,7 @@
       "type": "text",
       "x": 72,
       "y": 447,
-      "text": "LEADERSHIP · PRODUCTS · APPLIED AI",
+      "text": "PLATFORMS · PRODUCTS · APPLIED AI",
       "style": {
         "fill": "#B9BDBC",
         "fontFamily": "DejaVu Sans Mono, monospace",
@@ -219,6 +219,6 @@
   ],
   "metadata": {
     "title": "Damiano Ciarla social preview",
-    "desc": "Social sharing card for Damiano Ciarla, technical entrepreneur and AI programmer."
+    "desc": "Social sharing card for Damiano Ciarla, co-founder and technology leader."
   }
 }

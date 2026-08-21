@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from copy import deepcopy
 from pathlib import Path
 from shutil import copy2
 from typing import Iterable
@@ -28,18 +29,19 @@ BLUE = HexColor("#167BC0")
 CONTENT = {
     "it": {
         "file": "damiano-ciarla-cv-it.pdf",
-        "role": "TECHNICAL LEADER  /  SOFTWARE ARCHITECT  /  AI ENGINEER",
+        "role": "CO-FOUNDER  /  TECHNOLOGY LEADER  /  SOFTWARE ARCHITECT",
         "summary": (
-            "Technical leader e software architect hands-on con vent'anni di esperienza. Guido "
-            "modernizzazioni end-to-end, trasformo architetture in piattaforme affidabili e porto l'AI "
-            "dentro prodotti reali. Ho co-fondato una startup acquisita da TeamSystem."
+            "Co-founder e technology leader hands-on con vent'anni di esperienza nella costruzione e "
+            "modernizzazione di piattaforme digitali. Ho guidato Deliverart dalla fase startup "
+            "all'acquisizione completa da TeamSystem, mantenendo responsabilità su prodotto, architettura, "
+            "cloud e delivery. Oggi costruisco sistemi di applied AI e prodotti business-critical."
         ),
-        "location": "Roma, Italia  /  remote anywhere",
+        "location": "Roma, Italia  /  disponibile da remoto",
         "sections": {
             "focus": "PROFILO",
             "experience": "ESPERIENZA SELEZIONATA",
             "impact": "IMPATTO",
-            "capabilities": "CAPACITA'",
+            "capabilities": "COMPETENZE DISTINTIVE",
             "selected": "SISTEMI E RISULTATI",
             "earlier": "ESPERIENZA PRECEDENTE",
             "projects": "OPEN SOURCE & PRODOTTI",
@@ -48,58 +50,68 @@ CONTENT = {
         },
         "current": [
             (
-                "2025 - oggi",
-                "Founder & AI Product Builder  /  ErinTechLabs",
-                "Guida tecnica e delivery hands-on di prodotti AI e software custom. Tra i progetti: "
-                "un motore di turnazione validato sul piano 2026 e Documento Facile, prodotto per "
-                "comprendere e confrontare documenti personali.",
-            ),
-            (
-                "2017 - oggi",
-                "Co-founder & Technical Leader  /  Deliverart",
-                "CTO storico e guida dell'evoluzione end-to-end della piattaforma food-tech: prodotto, "
-                "architettura, cloud e delivery. Ho accompagnato Deliverart fino all'acquisizione completa "
-                "da TeamSystem nel 2026 e continuo a coordinarne l'evoluzione tecnica.",
+                "2016 - oggi",
+                "Co-founder, già CTO & Technology Lead  /  Deliverart",
+                "Ruolo operativo continuativo. Come co-founder e CTO ho collegato esigenze di prodotto, "
+                "scelte architetturali e delivery, accompagnando Deliverart dalla fase startup "
+                "all'acquisizione completa da TeamSystem. Ho guidato una modernizzazione progressiva di "
+                "frontend, API, cloud, test, CI/CD e SDK TypeScript senza interrompere l'operatività. Dopo "
+                "l'acquisizione continuo a essere responsabile dell'evoluzione tecnologica della piattaforma.",
             ),
             (
                 "2018 - oggi",
-                "Senior IT Consultant  /  Verisure Italia",
-                "Consulenza continuativa su sistemi business-critical di lead acquisition. Contribuisco "
-                "ad analisi, architettura e sviluppo di flussi multicanale, con focus su automazione, "
-                "affidabilità e riduzione della complessità operativa.",
+                "Independent Senior Consultant  /  Verisure Italia",
+                "Incarico di consulenza indipendente. Dal 2018 seguo analisi, progettazione e sviluppo "
+                "hands-on di sistemi business-critical di lead acquisition per il mercato italiano. Il "
+                "lavoro attraversa un ecosistema multicanale e integra processi commerciali e piattaforme "
+                "digitali, con attenzione ad automazione, affidabilità, continuità operativa e riduzione "
+                "dei tempi di delivery nei flussi comparabili.",
+            ),
+            (
+                "2025 - oggi",
+                "Founder & AI Product Builder  /  ErinTechLabs",
+                "Iniziativa imprenditoriale indipendente. Trasformo problemi operativi in prodotti, seguendo "
+                "discovery, architettura, implementazione e messa in produzione. Tra i sistemi sviluppati: "
+                "un motore di turnazione che ricalcola in pochi secondi piani prima manuali e Documento "
+                "Facile, una pipeline AI per leggere, normalizzare e confrontare documenti personali con "
+                "storico e supervisione umana.",
             ),
         ],
         "impacts": [
-            ("20+", "anni di software\ne delivery reale"),
-            ("99.7%", "vincoli soddisfatti\nnel piano 2026"),
-            ("3.8M", "download npm\nnegli ultimi 12 mesi"),
+            ("20 anni", "software dal 2006\nancora hands-on"),
+            ("ACQUISITA", "Deliverart / TeamSystem\nacquisizione completa 2026"),
+            ("3.8M", "download npm\n12 mesi fino ad agosto 2026"),
         ],
         "capabilities": [
-            "Technical leadership",
-            "Platform modernization",
-            "Applied AI",
-            "Hands-on delivery",
+            "Technology & product leadership",
+            "Platform architecture",
+            "Hands-on engineering delivery",
+            "Applied AI product systems",
         ],
         "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  AI-LLM",
         "selected": [
             (
                 "Deliverart  /  Modernizzazione end-to-end",
-                "Ho guidato l'evoluzione progressiva dell'intera piattaforma mantenendo il prodotto "
-                "operativo: frontend moderni, API robuste, servizi containerizzati, test automatici, "
-                "pipeline CI/CD e SDK condivisi tra più domini.",
+                "Ho scelto una modernizzazione incrementale invece di una riscrittura isolata, facendo "
+                "evolvere frontend, API, servizi cloud e processi di delivery mentre il prodotto restava "
+                "operativo. Contratti tipizzati, SDK condivisi, test automatici e CI/CD hanno reso più "
+                "coerente il lavoro tra domini e integrazioni.",
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
             ),
             (
                 "Applied AI  /  Sistemi operativi",
-                "Ho progettato un motore di pianificazione che trasforma regole, vincoli ed equità in "
-                "turnazioni mensili bilanciate, oltre a prodotti AI per analizzare e confrontare documenti.",
-                "99.7% vincoli soddisfatti / piano 2026 / secondi invece di giorni-uomo",
+                "Ho progettato un motore che traduce regole aziendali, vincoli operativi e criteri di equità "
+                "in turnazioni mensili bilanciate. In parallelo sviluppo pipeline documentali che combinano "
+                "LLM, normalizzazione, confronti storici e supervisione umana per produrre risultati "
+                "comprensibili, verificabili e utili.",
+                "99.7% accuratezza osservata nel test / 12 mesi / secondi invece di giorni-uomo",
             ),
             (
                 "Verisure Italia  /  Consulenza senior",
-                "Contribuisco a sistemi di lead acquisition business-critical attraverso analisi, sviluppo "
-                "e modernizzazione continua di flussi multicanale, con focus su automazione, affidabilità "
-                "e continuità operativa.",
+                "Lavoro dal problema operativo fino alla soluzione in produzione: analisi dei flussi, "
+                "disegno dell'integrazione, sviluppo e miglioramento continuo. Il risultato è un ecosistema "
+                "capace di sostenere volumi cresciuti negli anni, coordinare più canali e ridurre i tempi di "
+                "delivery rispetto a processi comparabili.",
                 "multicanale / automazione / affidabilità / continuità operativa",
             ),
         ],
@@ -116,13 +128,13 @@ CONTENT = {
         "projects": [
             (
                 "FocusPath",
-                "Scanner visuale open source per la navigazione da tastiera, costruito con TypeScript e Playwright come CLI, libreria, web app e API.",
+                "Creator e maintainer di uno scanner visuale open source per la navigazione da tastiera, distribuito come CLI, libreria, web app e API.",
                 "focuspath",
                 "https://damianociarla.github.io/focuspath/",
             ),
             (
                 "node-ffmpeg",
-                "3.8M download npm in 12 mesi sulla release storica; modernizzato in TypeScript e rilasciato v1.0.0 nel 2026.",
+                "Maintainer; 3.8M download npm nei 12 mesi fino ad agosto 2026 sulle versioni precedenti. Ho guidato modernizzazione TypeScript e v1.0.",
                 "node-ffmpeg",
                 "https://github.com/damianociarla/node-ffmpeg",
             ),
@@ -134,22 +146,23 @@ CONTENT = {
             ),
         ],
         "education": "Diploma di Perito tecnico informatico  /  I.T.I.S. G. Vallauri",
-        "footer": "Scrivo software dal 2006. Continuo a farlo perché è ancora il modo più diretto che conosco per cambiare le cose.",
+        "footer": "Technology leadership  /  platform architecture  /  applied AI  /  damianociarla.dev",
     },
     "en": {
         "file": "damiano-ciarla-cv-en.pdf",
-        "role": "TECHNICAL LEADER  /  SOFTWARE ARCHITECT  /  AI ENGINEER",
+        "role": "CO-FOUNDER  /  TECHNOLOGY LEADER  /  SOFTWARE ARCHITECT",
         "summary": (
-            "Hands-on technical leader and software architect with twenty years of experience. I lead "
-            "end-to-end modernization, turn architectures into reliable platforms and bring AI into real "
-            "products. I co-founded a startup acquired by TeamSystem."
+            "Co-founder and hands-on technology leader with twenty years of experience building and "
+            "modernizing digital platforms. I led Deliverart from startup to full acquisition by TeamSystem, "
+            "retaining responsibility across product, architecture, cloud and delivery. Today I build "
+            "applied-AI systems and business-critical products."
         ),
-        "location": "Rome, Italy  /  remote anywhere",
+        "location": "Rome, Italy  /  open to remote roles across Europe",
         "sections": {
             "focus": "PROFILE",
             "experience": "SELECTED EXPERIENCE",
             "impact": "IMPACT",
-            "capabilities": "CAPABILITIES",
+            "capabilities": "DISTINCTIVE EXPERTISE",
             "selected": "SELECTED SYSTEMS & OUTCOMES",
             "earlier": "EARLIER EXPERIENCE",
             "projects": "OPEN SOURCE & PRODUCTS",
@@ -158,58 +171,68 @@ CONTENT = {
         },
         "current": [
             (
-                "2025 - now",
+                "2016 - Present",
+                "Co-founder, former CTO & Technology Lead  /  Deliverart",
+                "Ongoing operating role. As co-founder and CTO, I connected product needs, architectural "
+                "choices and delivery, taking Deliverart from startup through full acquisition by TeamSystem. "
+                "I led the progressive modernization of frontends, APIs, cloud, tests, CI/CD and TypeScript "
+                "SDKs without disrupting operations. Following the acquisition, I remain responsible for "
+                "the platform's technological evolution.",
+            ),
+            (
+                "2018 - Present",
+                "Independent Senior Consultant  /  Verisure Italy",
+                "Independent consulting engagement. Since 2018 I have worked across analysis, solution "
+                "design and hands-on development of business-critical lead acquisition systems for the "
+                "Italian market. The work spans a multichannel ecosystem connecting commercial processes "
+                "and digital platforms, with a focus on automation, reliability, operational continuity and "
+                "shorter delivery timelines across comparable workflows.",
+            ),
+            (
+                "2025 - Present",
                 "Founder & AI Product Builder  /  ErinTechLabs",
-                "Technical direction and hands-on delivery of AI products and custom software. Projects "
-                "include a scheduling engine validated across the 2026 plan and Documento Facile, a "
-                "product for understanding and comparing personal documents.",
-            ),
-            (
-                "2017 - now",
-                "Co-founder & Technical Leader  /  Deliverart",
-                "Historical CTO and leader of the food-tech platform's end-to-end evolution across product, "
-                "architecture, cloud and delivery. I led Deliverart through its full acquisition by "
-                "TeamSystem in 2026 and continue to guide its technical evolution.",
-            ),
-            (
-                "2018 - now",
-                "Senior IT Consultant  /  Verisure Italy",
-                "Long-term consulting on business-critical lead acquisition systems. I contribute to "
-                "analysis, architecture and development of multichannel flows, focusing on automation, "
-                "reliability and reduced operational complexity.",
+                "Independent entrepreneurial venture. I turn operational problems into products, owning "
+                "discovery, architecture, implementation and production delivery. Systems include a shift "
+                "planning engine that recalculates previously manual plans in seconds and Documento Facile, "
+                "an AI pipeline for reading, normalizing and comparing personal documents with history and "
+                "human oversight.",
             ),
         ],
         "impacts": [
-            ("20+", "years of software\nand real delivery"),
-            ("99.7%", "constraints satisfied\nin the 2026 plan"),
-            ("3.8M", "npm downloads\nin the last 12 months"),
+            ("20 years", "building since 2006\nstill hands-on"),
+            ("ACQUIRED", "Deliverart / TeamSystem\nfull acquisition in 2026"),
+            ("3.8M", "npm downloads\n12 months ending Aug 2026"),
         ],
         "capabilities": [
-            "Technical leadership",
-            "Platform modernization",
-            "Applied AI",
-            "Hands-on delivery",
+            "Technology & product leadership",
+            "Platform architecture",
+            "Hands-on engineering delivery",
+            "Applied AI product systems",
         ],
         "stack": "TypeScript  /  Next.js  /  Node.js  /  Symfony  /  API Platform  /  AWS  /  CI/CD  /  AI-LLM",
         "selected": [
             (
                 "Deliverart  /  End-to-end modernization",
-                "I led the progressive evolution of the entire platform while keeping the product live: "
-                "modern frontends, robust APIs, containerized services, automated tests, CI/CD pipelines "
-                "and shared SDKs across multiple domains.",
+                "I chose incremental modernization over an isolated rewrite, evolving frontends, APIs, "
+                "cloud services and delivery processes while the product remained operational. Typed "
+                "contracts, shared SDKs, automated tests and CI/CD improved consistency across domains and "
+                "integrations.",
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
             ),
             (
                 "Applied AI  /  Operational systems",
-                "I designed a planning engine that turns rules, constraints and fairness into balanced "
-                "monthly schedules, alongside AI products for analyzing and comparing documents.",
-                "99.7% constraints satisfied / 2026 plan / seconds instead of person-days",
+                "I designed an engine that translates company rules, operational constraints and fairness "
+                "criteria into balanced monthly schedules. In parallel, I build document pipelines combining "
+                "LLMs, normalization, historical comparison and human oversight to produce understandable, "
+                "verifiable and useful outcomes.",
+                "99.7% accuracy observed in testing / 12 months / seconds instead of person-days",
             ),
             (
                 "Verisure Italy  /  Senior consulting",
-                "I contribute to business-critical lead acquisition systems through analysis, development "
-                "and continuous modernization of multichannel flows, focusing on automation, reliability "
-                "and operational continuity.",
+                "I work from the operational problem through to the production solution: flow analysis, "
+                "integration design, development and continuous improvement. The result is an ecosystem able "
+                "to support volumes that have grown over time, coordinate multiple channels and shorten "
+                "delivery timelines compared with similar processes.",
                 "multichannel / automation / reliability / operational continuity",
             ),
         ],
@@ -226,13 +249,13 @@ CONTENT = {
         "projects": [
             (
                 "FocusPath",
-                "An open-source visual keyboard-navigation scanner built with TypeScript and Playwright as a CLI, library, web app and API.",
+                "Creator and maintainer of an open-source visual keyboard-navigation scanner shipped as a CLI, library, web app and API.",
                 "focuspath",
                 "https://damianociarla.github.io/focuspath/",
             ),
             (
                 "node-ffmpeg",
-                "3.8M npm downloads in 12 months on the historical release; modernized in TypeScript and released as v1.0.0 in 2026.",
+                "Maintainer; 3.8M npm downloads in the 12 months ending August 2026 on earlier versions. Led the TypeScript modernization and v1.0 release.",
                 "node-ffmpeg",
                 "https://github.com/damianociarla/node-ffmpeg",
             ),
@@ -244,7 +267,7 @@ CONTENT = {
             ),
         ],
         "education": "Diploma in Information Technology  /  I.T.I.S. G. Vallauri",
-        "footer": "I have written software since 2006. I still do because it remains the most direct way I know to change things.",
+        "footer": "Technology leadership  /  platform architecture  /  applied AI  /  damianociarla.dev",
     },
 }
 
@@ -468,22 +491,14 @@ def draw_page_two(canvas: Canvas, content: dict) -> None:
     x = add_link(canvas, "linkedin.com/in/damianociarla", "https://www.linkedin.com/in/damianociarla/", MARGIN_X, y) + 22
     add_link(canvas, "github.com/damianociarla", "https://github.com/damianociarla", x, y)
 
-    canvas.setFillColor(MUTED)
-    canvas.setFont("Helvetica-Bold", 7.5)
-    canvas.drawString(MARGIN_X, 48, content["footer"])
-    canvas.setStrokeColor(BLUE)
-    canvas.setLineWidth(2)
-    canvas.line(MARGIN_X, 61, MARGIN_X + 72, 61)
-
-
 def build(language: str) -> Path:
-    content = CONTENT[language]
+    content = deepcopy(CONTENT[language])
     output = OUTPUT / content["file"]
     output.parent.mkdir(parents=True, exist_ok=True)
     canvas = Canvas(str(output), pagesize=A4, pageCompression=1)
-    canvas.setTitle(f"Damiano Ciarla - CV ({language.upper()})")
+    canvas.setTitle(f"Damiano Ciarla - Curriculum Vitae ({language.upper()})")
     canvas.setAuthor("Damiano Ciarla")
-    canvas.setSubject("Technical Leader, Software Architect and AI Engineer")
+    canvas.setSubject(content["role"].replace("  /  ", " | "))
     draw_page_one(canvas, content)
     canvas.showPage()
     draw_page_two(canvas, content)
