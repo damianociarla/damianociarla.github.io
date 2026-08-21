@@ -42,7 +42,7 @@ CONTENT = {
             "capabilities": "CAPACITA'",
             "selected": "SISTEMI E RISULTATI",
             "earlier": "ESPERIENZA PRECEDENTE",
-            "opensource": "OPEN SOURCE",
+            "projects": "OPEN SOURCE & PRODOTTI",
             "education": "FORMAZIONE",
             "details": "DETTAGLI",
         },
@@ -113,10 +113,26 @@ CONTENT = {
             ("2008 - 2009", "PHP / Frontend Developer", "Cpu Group S.r.l."),
             ("2007", "Intern / Developer", "Web Site S.r.l."),
         ],
-        "open_source": (
-            "node-ffmpeg - 3.8 milioni di download npm in dodici mesi sulla release storica. "
-            "Nel 2026 l'ho modernizzato in TypeScript e rilasciato come v1.0.0 per Node.js 24, ESM e CommonJS."
-        ),
+        "projects": [
+            (
+                "FocusPath",
+                "Scanner visuale open source per la navigazione da tastiera, costruito con TypeScript e Playwright come CLI, libreria, web app e API.",
+                "focuspath",
+                "https://damianociarla.github.io/focuspath/",
+            ),
+            (
+                "node-ffmpeg",
+                "3.8M download npm in 12 mesi sulla release storica; modernizzato in TypeScript e rilasciato v1.0.0 nel 2026.",
+                "node-ffmpeg",
+                "https://github.com/damianociarla/node-ffmpeg",
+            ),
+            (
+                "Documento Facile",
+                "Prodotto AI per comprendere e confrontare documenti personali, mantenendo il controllo umano sempre visibile.",
+                "documentofacile.it",
+                "https://documentofacile.it/",
+            ),
+        ],
         "education": "Diploma di Perito tecnico informatico  /  I.T.I.S. G. Vallauri",
         "footer": "Scrivo software dal 2006. Continuo a farlo perché è ancora il modo più diretto che conosco per cambiare le cose.",
     },
@@ -136,7 +152,7 @@ CONTENT = {
             "capabilities": "CAPABILITIES",
             "selected": "SELECTED SYSTEMS & OUTCOMES",
             "earlier": "EARLIER EXPERIENCE",
-            "opensource": "OPEN SOURCE",
+            "projects": "OPEN SOURCE & PRODUCTS",
             "education": "EDUCATION",
             "details": "DETAILS",
         },
@@ -207,10 +223,26 @@ CONTENT = {
             ("2008 - 2009", "PHP / Frontend Developer", "Cpu Group S.r.l."),
             ("2007", "Intern / Developer", "Web Site S.r.l."),
         ],
-        "open_source": (
-            "node-ffmpeg - 3.8 million npm downloads in twelve months on the historical release. "
-            "In 2026 I modernized it in TypeScript and released v1.0.0 for Node.js 24, ESM and CommonJS."
-        ),
+        "projects": [
+            (
+                "FocusPath",
+                "An open-source visual keyboard-navigation scanner built with TypeScript and Playwright as a CLI, library, web app and API.",
+                "focuspath",
+                "https://damianociarla.github.io/focuspath/",
+            ),
+            (
+                "node-ffmpeg",
+                "3.8M npm downloads in 12 months on the historical release; modernized in TypeScript and released as v1.0.0 in 2026.",
+                "node-ffmpeg",
+                "https://github.com/damianociarla/node-ffmpeg",
+            ),
+            (
+                "Documento Facile",
+                "An AI product for understanding and comparing personal documents while keeping human control visible.",
+                "documentofacile.it",
+                "https://documentofacile.it/",
+            ),
+        ],
         "education": "Diploma in Information Technology  /  I.T.I.S. G. Vallauri",
         "footer": "I have written software since 2006. I still do because it remains the most direct way I know to change things.",
     },
@@ -392,13 +424,31 @@ def draw_page_two(canvas: Canvas, content: dict) -> None:
 
     line(canvas, MARGIN_X, y, PAGE_W - MARGIN_X)
     y -= 24
-    label(canvas, content["sections"]["opensource"], MARGIN_X, y)
-    y -= 19
-    y = draw_wrapped(canvas, content["open_source"], MARGIN_X, y, PAGE_W - MARGIN_X * 2, size=9.3, leading=13.5, color=INK)
-    y -= 9
-    add_link(canvas, "github.com/damianociarla/node-ffmpeg", "https://github.com/damianociarla/node-ffmpeg", MARGIN_X, y)
+    label(canvas, content["sections"]["projects"], MARGIN_X, y)
+    y -= 21
+    project_gap = 14
+    project_width = (PAGE_W - MARGIN_X * 2 - project_gap * 2) / 3
+    project_top = y
+    project_bottom = y
+    for index, (title, description, link_text, url) in enumerate(content["projects"]):
+        x = MARGIN_X + index * (project_width + project_gap)
+        canvas.setFillColor(INK)
+        canvas.setFont("Helvetica-Bold", 10.2)
+        canvas.drawString(x, project_top, title)
+        next_y = draw_wrapped(
+            canvas,
+            description,
+            x,
+            project_top - 15,
+            project_width,
+            size=7.8,
+            leading=10.2,
+            color=MUTED,
+        )
+        add_link(canvas, link_text, url, x, next_y - 1)
+        project_bottom = min(project_bottom, next_y - 1)
 
-    y -= 31
+    y = project_bottom - 22
     line(canvas, MARGIN_X, y, PAGE_W - MARGIN_X)
     y -= 24
     label(canvas, content["sections"]["education"], MARGIN_X, y)

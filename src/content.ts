@@ -16,6 +16,18 @@ type Capability = {
   copy: string;
 };
 
+type Project = {
+  index: string;
+  label: string;
+  title: string;
+  copy: string;
+  signal: string;
+  href: string;
+  linkLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+};
+
 type CaseStudy = {
   code: string;
   eyebrow: string;
@@ -28,7 +40,7 @@ type CaseStudy = {
 
 export type SiteCopy = {
   meta: { title: string; description: string };
-  nav: { story: string; work: string; capabilities: string; contact: string };
+  nav: { story: string; projects: string; work: string; contact: string };
   utility: { skip: string; language: string; scroll: string; open: string };
   boot: string[];
   hero: {
@@ -44,6 +56,12 @@ export type SiteCopy = {
     title: string;
     intro: string;
     eras: Era[];
+  };
+  projects: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: Project[];
   };
   openSource: {
     eyebrow: string;
@@ -105,8 +123,8 @@ export const copy: Record<Language, SiteCopy> = {
     },
     nav: {
       story: 'Percorso',
+      projects: 'Progetti',
       work: 'Lavoro',
-      capabilities: 'Capacità',
       contact: 'Contatto',
     },
     utility: {
@@ -165,6 +183,48 @@ export const copy: Record<Language, SiteCopy> = {
           signal: 'human × machine',
           href: 'https://erintechlabs.com/',
           linkLabel: 'Visita ErinTechLabs',
+        },
+      ],
+    },
+    projects: {
+      eyebrow: 'PROGETTI SELEZIONATI',
+      title: 'Cose che puoi aprire, usare e ispezionare.',
+      intro:
+        'Prodotti e strumenti pubblici che trasformano esperienza tecnica in software verificabile. Tre progetti tra i tanti costruiti negli anni.',
+      items: [
+        {
+          index: '01',
+          label: 'OPEN SOURCE // ACCESSIBILITY TOOLING',
+          title: 'FocusPath',
+          copy:
+            'Uno scanner visuale per la navigazione da tastiera. Segue il percorso reale del focus in Chromium, rileva problemi deterministici e genera report HTML portabili.',
+          signal: 'TypeScript / Playwright / CLI / API / MIT',
+          href: 'https://damianociarla.github.io/focuspath/',
+          linkLabel: 'Prova FocusPath',
+          secondaryHref: 'https://github.com/damianociarla/focuspath',
+          secondaryLabel: 'Codice sorgente',
+        },
+        {
+          index: '02',
+          label: 'OPEN SOURCE // NODE.JS',
+          title: 'node-ffmpeg',
+          copy:
+            'Un modulo nato nel 2012 e modernizzato nel 2026: v1.0 in TypeScript, supporto Node.js 24, ESM e CommonJS, nuovi test e documentazione.',
+          signal: 'v1.0.0 / TypeScript / Node.js / 3.8M download',
+          href: 'https://damianociarla.github.io/node-ffmpeg/',
+          linkLabel: 'Esplora la documentazione',
+          secondaryHref: 'https://github.com/damianociarla/node-ffmpeg',
+          secondaryLabel: 'Codice sorgente',
+        },
+        {
+          index: '03',
+          label: 'ERINTECHLABS // AI PRODUCT',
+          title: 'Documento Facile',
+          copy:
+            'Un prodotto che usa l’AI per rendere comprensibili bollette, buste paga e comunicazioni, collegando periodi comparabili e differenze importanti.',
+          signal: 'AI / documenti / confronti / controllo umano',
+          href: 'https://documentofacile.it/',
+          linkLabel: 'Scopri il prodotto',
         },
       ],
     },
@@ -293,8 +353,8 @@ export const copy: Record<Language, SiteCopy> = {
     },
     nav: {
       story: 'Story',
+      projects: 'Projects',
       work: 'Work',
-      capabilities: 'Capabilities',
       contact: 'Contact',
     },
     utility: {
@@ -353,6 +413,48 @@ export const copy: Record<Language, SiteCopy> = {
           signal: 'human × machine',
           href: 'https://erintechlabs.com/',
           linkLabel: 'Visit ErinTechLabs',
+        },
+      ],
+    },
+    projects: {
+      eyebrow: 'SELECTED PROJECTS',
+      title: 'Things you can open, use and inspect.',
+      intro:
+        'Public products and tools that turn technical experience into verifiable software. Three projects among the many built over the years.',
+      items: [
+        {
+          index: '01',
+          label: 'OPEN SOURCE // ACCESSIBILITY TOOLING',
+          title: 'FocusPath',
+          copy:
+            'A visual keyboard-navigation scanner. It follows the real focus path in Chromium, flags deterministic issues and generates portable HTML reports.',
+          signal: 'TypeScript / Playwright / CLI / API / MIT',
+          href: 'https://damianociarla.github.io/focuspath/',
+          linkLabel: 'Try FocusPath',
+          secondaryHref: 'https://github.com/damianociarla/focuspath',
+          secondaryLabel: 'Source code',
+        },
+        {
+          index: '02',
+          label: 'OPEN SOURCE // NODE.JS',
+          title: 'node-ffmpeg',
+          copy:
+            'A module born in 2012 and modernized in 2026: v1.0 in TypeScript, Node.js 24, ESM and CommonJS support, new tests and documentation.',
+          signal: 'v1.0.0 / TypeScript / Node.js / 3.8M downloads',
+          href: 'https://damianociarla.github.io/node-ffmpeg/',
+          linkLabel: 'Explore the documentation',
+          secondaryHref: 'https://github.com/damianociarla/node-ffmpeg',
+          secondaryLabel: 'Source code',
+        },
+        {
+          index: '03',
+          label: 'ERINTECHLABS // AI PRODUCT',
+          title: 'Documento Facile',
+          copy:
+            'A product using AI to make bills, payslips and official notices understandable, connecting comparable periods and meaningful differences.',
+          signal: 'AI / documents / comparisons / human control',
+          href: 'https://documentofacile.it/',
+          linkLabel: 'Explore the product',
         },
       ],
     },

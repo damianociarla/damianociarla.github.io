@@ -206,8 +206,8 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#story">{text.nav.story}</a>
+          <a href="#projects">{text.nav.projects}</a>
           <a href="#work">{text.nav.work}</a>
-          <a href="#capabilities">{text.nav.capabilities}</a>
           <a href="#contact">{text.nav.contact}</a>
         </nav>
         <div className="language-switch" aria-label={text.utility.language}>
@@ -298,6 +298,48 @@ export function App({ initialLanguage, staticRender = false }: AppProps) {
                   ) : null}
                 </p>
                 <code>{era.signal}</code>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="projects section" id="projects">
+          <div className="section-heading reveal">
+            <p className="eyebrow">{text.projects.eyebrow}</p>
+            <h2>{text.projects.title}</h2>
+            <p className="section-intro">{text.projects.intro}</p>
+          </div>
+
+          <div className="project-list">
+            {text.projects.items.map((project) => (
+              <article className="project-row reveal" key={project.title}>
+                <i className="project-scan" aria-hidden="true" />
+                <div className="project-index">
+                  <span>{project.index}</span>
+                  <small>{project.label}</small>
+                </div>
+                <div className="project-body">
+                  <h3>{project.title}</h3>
+                  <p>{project.copy}</p>
+                  <code>{project.signal}</code>
+                </div>
+                <div className="project-links">
+                  <a className="text-link" href={project.href} target="_blank" rel="noreferrer">
+                    {project.linkLabel}
+                    <ExternalIcon />
+                  </a>
+                  {project.secondaryHref && project.secondaryLabel ? (
+                    <a
+                      className="text-link"
+                      href={project.secondaryHref}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.secondaryLabel}
+                      <ExternalIcon />
+                    </a>
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
