@@ -33,8 +33,9 @@ CONTENT = {
         "summary": (
             "Co-founder e technology leader hands-on con vent'anni di esperienza nella costruzione e "
             "modernizzazione di piattaforme digitali. Ho guidato Deliverart dalla fase startup "
-            "all'acquisizione completa da TeamSystem, mantenendo responsabilità su prodotto, architettura, "
-            "cloud e delivery. Oggi costruisco sistemi di applied AI e prodotti business-critical."
+            "all'acquisizione completa da TeamSystem, guidando un team di 4 persone e mantenendo "
+            "responsabilità su prodotto, architettura, cloud e delivery. Oggi costruisco sistemi di "
+            "applied AI e prodotti business-critical."
         ),
         "location": "Roma, Italia  /  disponibile da remoto",
         "contact_line": "damiano.ciarla@gmail.com  /  damianociarla.dev  /  linkedin.com/in/damianociarla",
@@ -56,9 +57,9 @@ CONTENT = {
                 "Co-founder, CTO fondatore & Technology Lead attuale  /  Deliverart",
                 "Ruolo di leadership operativo continuativo, anche dopo l'acquisizione.",
                 [
-                    "Co-fondato Deliverart e guidato tecnologia e prodotto dalla startup all'acquisizione completa da TeamSystem.",
-                    "Responsabilità end-to-end su priorità di prodotto, architettura, cloud e delivery; oggi guido l'evoluzione post-acquisizione.",
-                    "Modernizzato progressivamente frontend, API, infrastruttura, test, CI/CD e SDK TypeScript mantenendo la piattaforma operativa.",
+                    "Co-fondato Deliverart e guidato tecnologia e prodotto fino all'acquisizione completa, contribuendo a due diligence e integrazione TeamSystem.",
+                    "Guidato un team di 4 persone, con responsabilità su selezione, onboarding, roadmap, priorità tecniche e coordinamento fornitori.",
+                    "Modernizzato frontend, API, cloud, test e SDK TypeScript; la CI/CD supporta rilasci in produzione anche più volte al giorno.",
                 ],
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / testing / CI/CD",
             ),
@@ -103,7 +104,7 @@ CONTENT = {
                 "Ho scelto una modernizzazione incrementale invece di una riscrittura big-bang ad alto "
                 "rischio, facendo evolvere frontend, API, servizi cloud e delivery mentre il prodotto "
                 "restava operativo. La strategia ha ridotto il rischio di migrazione e preservato continuità "
-                "operativa e di rilascio; contratti tipizzati, SDK, test e CI/CD hanno reso coerenti i domini.",
+                "operativa e di rilascio; la CI/CD consente deploy in produzione anche più volte al giorno.",
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
             ),
             (
@@ -115,12 +116,12 @@ CONTENT = {
                 "12 mesi di pianificazione / turnazioni mensili / secondi invece di giorni manuali",
             ),
             (
-                "Verisure Italia  /  Delivery multicanale",
-                "Lavoro dal problema operativo fino alla soluzione in produzione: analisi dei flussi, "
-                "disegno dell'integrazione, sviluppo e miglioramento continuo. Il risultato è un ecosistema "
-                "capace di coordinare più canali e ridurre il tempo necessario per rilasciare nuovi flussi "
-                "di lead acquisition su canali comparabili.",
-                "multicanale / automazione / affidabilità / continuità operativa",
+                "Cliente enterprise riservato  /  Lead acquisition multicanale",
+                "In un incarico continuativo sul mercato italiano lavoro dal problema operativo alla "
+                "produzione: analisi, integrazione, sviluppo e miglioramento continuo. L'ecosistema gestisce "
+                "volumi annui di lead a sei cifre su canali di acquisizione a doppia cifra, con nuovi flussi "
+                "rilasciati più rapidamente.",
+                "cliente riservato / volume annuo a sei cifre / canali a doppia cifra",
             ),
         ],
         "earlier": [
@@ -162,8 +163,8 @@ CONTENT = {
         "summary": (
             "Co-founder and hands-on technology leader with twenty years of experience building and "
             "modernizing digital platforms. I led Deliverart from startup to full acquisition by TeamSystem, "
-            "retaining responsibility across product, architecture, cloud and delivery. Today I build "
-            "applied AI systems and business-critical products."
+            "leading a four-person team and retaining responsibility across product, architecture, cloud "
+            "and delivery. Today I build applied AI systems and business-critical products."
         ),
         "location": "Rome, Italy  /  open to remote roles across Europe",
         "contact_line": "damiano.ciarla@gmail.com  /  damianociarla.dev  /  linkedin.com/in/damianociarla",
@@ -185,9 +186,9 @@ CONTENT = {
                 "Co-founder, Founding CTO & Current Technology Lead  /  Deliverart",
                 "Ongoing leadership role, including after the acquisition.",
                 [
-                    "Co-founded Deliverart and led technology and product from startup to full acquisition by TeamSystem.",
-                    "Owned product priorities, architecture, cloud and delivery; I now lead the post-acquisition technological evolution.",
-                    "Modernized frontends, APIs, infrastructure, tests, CI/CD and TypeScript SDKs incrementally while keeping the platform operational.",
+                    "Co-founded Deliverart and led technology and product through full acquisition, contributing to TeamSystem technical due diligence and integration.",
+                    "Led a four-person team, owning hiring, onboarding, roadmap, technical priorities and vendor coordination.",
+                    "Modernized frontends, APIs, cloud, tests and TypeScript SDKs; CI/CD now supports multiple production releases per day.",
                 ],
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / testing / CI/CD",
             ),
@@ -231,8 +232,8 @@ CONTENT = {
                 "Deliverart  /  Modernization strategy",
                 "I chose incremental modernization over a high-risk big-bang rewrite, evolving frontends, "
                 "APIs, cloud services and delivery while the product remained operational. The strategy "
-                "reduced migration risk and preserved release and operational continuity; typed contracts, "
-                "shared SDKs, tests and CI/CD improved consistency across domains.",
+                "reduced migration risk and preserved operational continuity, while CI/CD enabled multiple "
+                "production releases per day.",
                 "Next.js / TypeScript / Symfony / API Platform / AWS ECS / automated testing / CI/CD",
             ),
             (
@@ -244,12 +245,12 @@ CONTENT = {
                 "12 months of planning / monthly schedules / seconds instead of days of manual planning",
             ),
             (
-                "Verisure Italy  /  Multichannel delivery",
-                "I work from the operational problem to the production solution: flow analysis, "
-                "integration design, development and continuous improvement. The result is an ecosystem able "
-                "to coordinate multiple channels and reduce the time required to deliver new lead acquisition "
-                "flows across comparable channels.",
-                "multichannel / automation / reliability / operational continuity",
+                "Confidential enterprise client  /  Multichannel lead acquisition",
+                "In an ongoing engagement in the Italian market, I work from operational problem to "
+                "production: analysis, integration, development and continuous improvement. The ecosystem "
+                "handles six-figure annual lead volumes across double-digit acquisition channels, with new "
+                "flows released faster.",
+                "confidential client / six-figure annual volume / double-digit channels",
             ),
         ],
         "earlier": [

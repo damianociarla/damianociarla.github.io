@@ -148,7 +148,7 @@ export const copy: Record<Language, SiteCopy> = {
           organization: 'Deliverart',
           role: 'Co-founder · CTO fondatore · Technology Lead attuale',
           nature: 'RUOLO OPERATIVO CONTINUATIVO',
-          copy: 'Resto responsabile dell’evoluzione tecnologica del prodotto dopo l’acquisizione completa da parte di TeamSystem.',
+          copy: 'Guido un team di 4 persone e resto responsabile dell’evoluzione tecnologica del prodotto dopo l’acquisizione completa da parte di TeamSystem.',
         },
         {
           organization: 'ErinTechLabs',
@@ -259,9 +259,9 @@ export const copy: Record<Language, SiteCopy> = {
       sourceHref: 'https://www.teamsystem.com/media/files/1742_V1--300626--NOTACONS--DEF.pdf',
       sourceLabel: 'Fonte pubblica TeamSystem',
       proof: [
-        { label: 'CONTRIBUTO PERSONALE', value: 'Prodotto, architettura, cloud e delivery' },
-        { label: 'PASSAGGIO CHIAVE', value: 'Acquisizione completa da TeamSystem' },
-        { label: 'RESPONSABILITÀ ATTUALE', value: 'Evoluzione tecnologica della piattaforma' },
+        { label: 'LEADERSHIP', value: 'Team di 4 persone · hiring, onboarding e roadmap' },
+        { label: 'ACQUISIZIONE', value: 'Due diligence e integrazione tecnologica TeamSystem' },
+        { label: 'DELIVERY', value: 'Rilasci in produzione anche più volte al giorno' },
       ],
     },
     work: {
@@ -284,14 +284,14 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           code: 'CASE_02',
-          eyebrow: 'VERISURE // CONSULENZA SENIOR',
+          eyebrow: 'LEAD ACQUISITION ENTERPRISE // CASO ANONIMIZZATO',
           title: 'Lead acquisition multicanale, dall’analisi alla produzione.',
           copy:
-            'Dal 2018 contribuisco all’analisi, allo sviluppo e alla modernizzazione dei sistemi di lead acquisition per il mercato italiano. Il mio lavoro collega flussi multicanale e processi commerciali, con focus su automazione, affidabilità e continuità operativa.',
+            'In un incarico enterprise continuativo sul mercato italiano contribuisco all’analisi, allo sviluppo e alla modernizzazione di un ecosistema che gestisce volumi annui di lead a sei cifre su canali a doppia cifra.',
           metrics: [
-            { value: '2018→', label: 'incarico continuativo sul mercato italiano' },
-            { value: 'MULTICANALE', label: 'ecosistema di sistemi e canali connessi' },
-            { value: 'DELIVERY', label: 'tempi ridotti nei flussi comparabili' },
+            { value: '6 CIFRE/ANNO', label: 'ordine di grandezza del volume di lead' },
+            { value: 'DOPPIA CIFRA', label: 'canali di acquisizione collegati' },
+            { value: 'DELIVERY', label: 'nuovi flussi rilasciati più rapidamente' },
           ],
         },
       ],
@@ -360,7 +360,7 @@ export const copy: Record<Language, SiteCopy> = {
           organization: 'Deliverart',
           role: 'Co-founder · Founding CTO · Current Technology Lead',
           nature: 'ONGOING LEADERSHIP ROLE',
-          copy: 'I remain responsible for the product’s technological evolution following its full acquisition by TeamSystem.',
+          copy: 'I lead a four-person team and remain responsible for the product’s technological evolution following its full acquisition by TeamSystem.',
         },
         {
           organization: 'ErinTechLabs',
@@ -471,9 +471,9 @@ export const copy: Record<Language, SiteCopy> = {
       sourceHref: 'https://www.teamsystem.com/media/files/1742_V1--300626--NOTACONS--DEF.pdf',
       sourceLabel: 'Public TeamSystem source',
       proof: [
-        { label: 'PERSONAL SCOPE', value: 'Product, architecture, cloud and delivery' },
-        { label: 'KEY MILESTONE', value: 'Full acquisition by TeamSystem' },
-        { label: 'CURRENT OWNERSHIP', value: 'Ongoing technological evolution' },
+        { label: 'LEADERSHIP', value: 'Four-person team · hiring, onboarding and roadmap' },
+        { label: 'ACQUISITION', value: 'Technical due diligence and TeamSystem integration' },
+        { label: 'DELIVERY', value: 'Production releases multiple times per day' },
       ],
     },
     work: {
@@ -496,14 +496,14 @@ export const copy: Record<Language, SiteCopy> = {
         },
         {
           code: 'CASE_02',
-          eyebrow: 'VERISURE // SENIOR CONSULTING',
+          eyebrow: 'ENTERPRISE LEAD ACQUISITION // ANONYMIZED CASE',
           title: 'Multichannel lead acquisition, from analysis to production.',
           copy:
-            'Since 2018 I have contributed to the analysis, development and modernization of lead acquisition systems for the Italian market. My work connects multichannel flows and commercial processes, with a focus on automation, reliability and operational continuity.',
+            'In an ongoing enterprise engagement in the Italian market, I contribute to the analysis, development and modernization of an ecosystem handling six-figure annual lead volumes across double-digit acquisition channels.',
           metrics: [
-            { value: '2018→', label: 'ongoing engagement in the Italian market' },
-            { value: 'MULTICHANNEL', label: 'connected ecosystem of systems and channels' },
-            { value: 'DELIVERY', label: 'shorter timelines across comparable workflows' },
+            { value: '6 FIGURES/YR', label: 'order of magnitude of annual lead volume' },
+            { value: 'DOUBLE-DIGIT', label: 'connected acquisition channels' },
+            { value: 'DELIVERY', label: 'new flows released faster' },
           ],
         },
       ],
