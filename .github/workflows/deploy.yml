@@ -65,11 +65,8 @@ jobs:
             --distribution-id "${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
             --paths "/*"
 
-  deploy-github-pages-redirect:
+  build-github-pages-redirect:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -82,6 +79,23 @@ jobs:
         with:
           path: github-pages
 
+  deploy-github-pages-redirect:
+    needs: build-github-pages-redirect
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.retry.outputs.page_url || steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy redirect site
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait for the Pages artifact to become visible
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+
+      - name: Retry redirect deployment
+        id: retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v5
